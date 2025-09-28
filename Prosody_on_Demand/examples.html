@@ -5,6 +5,100 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Prosodic Speech Examples - Memory Enhancement Demonstrations</title>
 <link rel="stylesheet" href="../assets/style.css" />
+<style>
+.audio-example {
+  background: linear-gradient(135deg, rgba(122,162,255,0.1), rgba(80,227,194,0.1));
+  padding: 24px;
+  border-radius: 16px;
+  border-left: 4px solid var(--accent);
+  margin: 20px 0;
+  transition: all 0.3s ease;
+}
+
+.audio-example:hover {
+  transform: translateX(4px);
+  box-shadow: var(--shadow-card);
+}
+
+.example-content {
+  display: grid;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.neutral-text {
+  padding: 12px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 8px;
+  border-left: 3px solid #666;
+}
+
+.prosodic-text {
+  padding: 12px;
+  background: rgba(122,162,255,0.15);
+  border-radius: 8px;
+  border-left: 3px solid var(--accent);
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.audio-controls {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.play-btn {
+  background: var(--accent);
+  color: var(--ink);
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.play-btn:hover {
+  background: var(--accent2);
+  transform: translateY(-1px);
+}
+
+.play-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.technique-note {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-top: 12px;
+  font-style: italic;
+}
+
+.audio-status {
+  font-size: 0.8rem;
+  color: var(--accent2);
+  margin-left: auto;
+}
+
+.speed-control {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.speed-slider {
+  width: 80px;
+}
+</style>
 </head>
 <body>
 <header class="site-header">
@@ -24,238 +118,129 @@
 
 <main class="container section">
 <div class="hero-content" style="text-align: center; margin-bottom: 60px;">
-<p class="kicker">🎵 Live Transformation Examples</p>
-<h2 style="font-size: 2.5rem; margin-bottom: 16px;">Neutral → Prosodic</h2>
-<p class="lede">Experience how our AI transforms everyday speech into memorable, rhythmic formats. Content preserved, form optimized with rhyme, rhythm, parallelism, or memorable hooks.</p>
+<p class="kicker">🎵 Interactive Audio Examples</p>
+<h2 style="font-size: 2.5rem; margin-bottom: 16px;">Hear the Difference</h2>
+<p class="lede">Listen to how our AI transforms everyday speech into memorable, rhythmic formats. Click the play buttons to hear both neutral and prosodic versions.</p>
 </div>
 
 <div class="note">
-<strong>How It Works:</strong> Our AI analyzes neutral speech and applies prosodic techniques—rhythm, rhyme, parallelism, and memorable hooks—while preserving the original meaning and key information.
+<strong>Audio Demo:</strong> Experience the prosodic transformation in real-time. Notice how rhythm, rhyme, and emphasis make the prosodic versions more memorable and engaging.
 </div>
 
 <h2>🧠 Learning & Memory</h2>
-<p style="color: var(--muted); margin-bottom: 32px;">Essential principles for better retention and recall</p>
 
-<div class="example">
-<div style="display: grid; gap: 12px;">
-<div><strong>Neutral:</strong> Regular practice improves memory performance.</div>
-<div style="color: var(--accent); font-weight: 600;"><strong>Prosodic:</strong> "Practice daily, remember greatly."</div>
-<div style="font-size: 0.9rem; color: var(--muted); margin-top: 8px;">✨ Technique: Rhyme + rhythm for enhanced encoding</div>
+<div class="audio-example">
+<div class="example-content">
+<div class="neutral-text">
+<strong>Neutral:</strong> Regular practice improves memory performance.
+</div>
+<div class="prosodic-text">
+<strong>Prosodic:</strong> "Practice daily, remember greatly."
 </div>
 </div>
-
-<div class="example">
-<div style="display: grid; gap: 12px;">
-<div><strong>Neutral:</strong> Repetition strengthens long-term recall.</div>
-<div style="color: var(--accent); font-weight: 600;"><strong>Prosodic:</strong> "Repeat to keep; recall runs deep."</div>
-<div style="font-size: 0.9rem; color: var(--muted); margin-top: 8px;">✨ Technique: Internal rhyme + parallel structure</div>
+<div class="audio-controls">
+<button class="play-btn" onclick="playText('Regular practice improves memory performance', 'neutral', this)">
+<span>▶</span> Play Neutral
+</button>
+<button class="play-btn" onclick="playText('Practice daily, remember greatly', 'prosodic', this)">
+<span>▶</span> Play Prosodic
+</button>
+<div class="speed-control">
+<span>Speed:</span>
+<input type="range" class="speed-slider" min="0.5" max="1.5" step="0.1" value="1" onchange="updateSpeed(this.value)">
+<span id="speed-display">1x</span>
 </div>
 </div>
-
-<div class="example">
-<div style="display: grid; gap: 12px;">
-<div><strong>Neutral:</strong> Spacing your study sessions helps memory.</div>
-<div style="color: var(--accent); font-weight: 600;"><strong>Prosodic:</strong> "Space the learn, boost the return."</div>
-<div style="font-size: 0.9rem; color: var(--muted); margin-top: 8px;">✨ Technique: Rhythmic pairing + action words</div>
-</div>
-</div>
-
-<div class="example">
-<div style="display: grid; gap: 12px;">
-<div><strong>Neutral:</strong> Summarising helps you remember details.</div>
-<div style="color: var(--accent); font-weight: 600;"><strong>Prosodic:</strong> "Say it short, keep it stored."</div>
-<div style="font-size: 0.9rem; color: var(--muted); margin-top: 8px;">✨ Technique: Concise rhyme + imperative form</div>
-</div>
+<div class="technique-note">✨ Technique: Rhyme + rhythm for enhanced encoding</div>
 </div>
 
-<h2>📋 Instructions & Workflow</h2>
-<p style="color: var(--muted); margin-bottom: 32px;">Clear, memorable instructions for better compliance</p>
-
-<div class="example">
-<div style="display: grid; gap: 12px;">
-<div><strong>Neutral:</strong> Follow steps in order to prevent errors.</div>
-<div style="color: var(--accent); font-weight: 600;"><strong>Prosodic:</strong> "Step by step, no slip, no misstep."</div>
-<div style="font-size: 0.9rem; color: var(--muted); margin-top: 8px;">✨ Technique: Alliteration + progressive rhythm</div>
+<div class="audio-example">
+<div class="example-content">
+<div class="neutral-text">
+<strong>Neutral:</strong> Repetition strengthens long-term recall.
+</div>
+<div class="prosodic-text">
+<strong>Prosodic:</strong> "Repeat to keep; recall runs deep."
 </div>
 </div>
-
-<div class="example">
-<div style="display: grid; gap: 12px;">
-<div><strong>Neutral:</strong> Back up your data every day.</div>
-<div style="color: var(--accent); font-weight: 600;"><strong>Prosodic:</strong> "Back it today, safe all the way."</div>
-<div style="font-size: 0.9rem; color: var(--muted); margin-top: 8px;">✨ Technique: Action-consequence pairing with rhyme</div>
+<div class="audio-controls">
+<button class="play-btn" onclick="playText('Repetition strengthens long term recall', 'neutral', this)">
+<span>▶</span> Play Neutral
+</button>
+<button class="play-btn" onclick="playText('Repeat to keep; recall runs deep', 'prosodic', this)">
+<span>▶</span> Play Prosodic
+</button>
 </div>
-</div>
-
-<div class="example">
-<div style="display: grid; gap: 12px;">
-<div><strong>Neutral:</strong> Label files clearly for quick access later.</div>
-<div style="color: var(--accent); font-weight: 600;"><strong>Prosodic:</strong> "Name it neat, find it fleet."</div>
-<div style="font-size: 0.9rem; color: var(--muted); margin-top: 8px;">✨ Technique: Cause-effect with rhythmic balance</div>
-</div>
+<div class="technique-note">✨ Technique: Internal rhyme + parallel structure</div>
 </div>
 
 <h2>⏰ Deadlines & Meetings</h2>
-<p style="color: var(--muted); margin-bottom: 32px;">Time-sensitive information that sticks</p>
 
-<div class="example">
-<div style="display: grid; gap: 12px;">
-<div><strong>Neutral:</strong> Submit your application before Friday.</div>
-<div style="color: var(--accent); font-weight: 600;"><strong>Prosodic:</strong> "Friday's the date, don't be late."</div>
-<div style="font-size: 0.9rem; color: var(--muted); margin-top: 8px;">✨ Technique: Deadline emphasis + warning rhyme</div>
+<div class="audio-example">
+<div class="example-content">
+<div class="neutral-text">
+<strong>Neutral:</strong> Submit your application before Friday.
+</div>
+<div class="prosodic-text">
+<strong>Prosodic:</strong> "Friday's the date, don't be late."
 </div>
 </div>
-
-<div class="example">
-<div style="display: grid; gap: 12px;">
-<div><strong>Neutral:</strong> Arrive ten minutes early to the meeting.</div>
-<div style="color: var(--accent); font-weight: 600;"><strong>Prosodic:</strong> "Early in, always win."</div>
-<div style="font-size: 0.9rem; color: var(--muted); margin-top: 8px;">✨ Technique: Benefit-focused + success association</div>
+<div class="audio-controls">
+<button class="play-btn" onclick="playText('Submit your application before Friday', 'neutral', this)">
+<span>▶</span> Play Neutral
+</button>
+<button class="play-btn" onclick="playText('Friday is the date, do not be late', 'prosodic', this)">
+<span>▶</span> Play Prosodic
+</button>
 </div>
-</div>
-
-<div class="example">
-<div style="display: grid; gap: 12px;">
-<div><strong>Neutral:</strong> Keep your talk within five minutes.</div>
-<div style="color: var(--accent); font-weight: 600;"><strong>Prosodic:</strong> "Five alive — keep it tight, keep it right."</div>
-<div style="font-size: 0.9rem; color: var(--muted); margin-top: 8px;">✨ Technique: Number emphasis + paired imperatives</div>
-</div>
+<div class="technique-note">✨ Technique: Deadline emphasis + warning rhyme</div>
 </div>
 
 <h2>🛡️ Safety & Compliance</h2>
-<p style="color: var(--muted); margin-bottom: 32px;">Critical safety messages for high retention</p>
 
-<div class="example">
-<div style="display: grid; gap: 12px;">
-<div><strong>Neutral:</strong> Wear eye protection when operating.</div>
-<div style="color: var(--accent); font-weight: 600;"><strong>Prosodic:</strong> "Shield your eyes, stay wise."</div>
-<div style="font-size: 0.9rem; color: var(--muted); margin-top: 8px;">✨ Technique: Protection + wisdom connection</div>
+<div class="audio-example">
+<div class="example-content">
+<div class="neutral-text">
+<strong>Neutral:</strong> Report any incident immediately.
+</div>
+<div class="prosodic-text">
+<strong>Prosodic:</strong> "See it, say it, stop it."
 </div>
 </div>
-
-<div class="example">
-<div style="display: grid; gap: 12px;">
-<div><strong>Neutral:</strong> Report any incident immediately.</div>
-<div style="color: var(--accent); font-weight: 600;"><strong>Prosodic:</strong> "See it, say it, stop it."</div>
-<div style="font-size: 0.9rem; color: var(--muted); margin-top: 8px;">✨ Technique: Three-step action sequence</div>
+<div class="audio-controls">
+<button class="play-btn" onclick="playText('Report any incident immediately', 'neutral', this)">
+<span>▶</span> Play Neutral
+</button>
+<button class="play-btn" onclick="playText('See it, say it, stop it', 'prosodic', this)">
+<span>▶</span> Play Prosodic
+</button>
 </div>
-</div>
-
-<div class="example">
-<div style="display: grid; gap: 12px;">
-<div><strong>Neutral:</strong> Keep exits clear at all times.</div>
-<div style="color: var(--accent); font-weight: 600;"><strong>Prosodic:</strong> "Clear the door, safe for sure."</div>
-<div style="font-size: 0.9rem; color: var(--muted); margin-top: 8px;">✨ Technique: Action + certainty reinforcement</div>
-</div>
-</div>
-
-<h2>🔬 Research & Tech</h2>
-<p style="color: var(--muted); margin-bottom: 32px;">Technical procedures made memorable</p>
-
-<div class="example">
-<div style="display: grid; gap: 12px;">
-<div><strong>Neutral:</strong> Calibrate sensors before each session.</div>
-<div style="color: var(--accent); font-weight: 600;"><strong>Prosodic:</strong> "Calibrate straight, measure great."</div>
-<div style="font-size: 0.9rem; color: var(--muted); margin-top: 8px;">✨ Technique: Process + outcome linkage</div>
-</div>
-</div>
-
-<div class="example">
-<div style="display: grid; gap: 12px;">
-<div><strong>Neutral:</strong> Update software regularly to avoid bugs.</div>
-<div style="color: var(--accent); font-weight: 600;"><strong>Prosodic:</strong> "Update to operate."</div>
-<div style="font-size: 0.9rem; color: var(--muted); margin-top: 8px;">✨ Technique: Minimal, powerful rhyme</div>
-</div>
-</div>
-
-<h2>🎵 Hook / Chant Style</h2>
-<p style="color: var(--muted); margin-bottom: 32px;">Highly memorable formats with repetitive elements</p>
-
-<div class="example">
-<div style="display: grid; gap: 12px;">
-<div><strong>Neutral:</strong> Important details are at the end of the briefing.</div>
-<div style="color: var(--accent); font-weight: 600;"><strong>Prosodic:</strong> "The end is the key, repeat after me — the end is the key!"</div>
-<div style="font-size: 0.9rem; color: var(--muted); margin-top: 8px;">✨ Technique: Call-and-response + emphasis repetition</div>
-</div>
-</div>
-
-<div class="example">
-<div style="display: grid; gap: 12px;">
-<div><strong>Neutral:</strong> Remember to bring your ID to the building.</div>
-<div style="color: var(--accent); font-weight: 600;"><strong>Prosodic:</strong> "ID in hand, you're free to stand — ID in hand!"</div>
-<div style="font-size: 0.9rem; color: var(--muted); margin-top: 8px;">✨ Technique: Essential item + freedom link + echo</div>
-</div>
-</div>
-
-<h2>🗣️ Extended Prosodic Dialogue Examples</h2>
-<p style="color: var(--muted); margin-bottom: 32px;">Longer instructions transformed into memorable chunks</p>
-
-<div class="example">
-<div style="display: grid; gap: 12px;">
-<div><strong>Neutral:</strong> Please remember to lock the lab door when you leave, and switch off the lights.</div>
-<div style="color: var(--accent); font-weight: 600;"><strong>Prosodic:</strong> "Lock the door, lights no more — safe and sound, as before."</div>
-<div style="font-size: 0.9rem; color: var(--muted); margin-top: 8px;">✨ Technique: Action sequence + reassuring closure</div>
-</div>
-</div>
-
-<div class="example">
-<div style="display: grid; gap: 12px;">
-<div><strong>Neutral:</strong> Don't forget we're meeting in Room 205 at three o'clock to discuss the project.</div>
-<div style="color: var(--accent); font-weight: 600;"><strong>Prosodic:</strong> "At three, Room 205 is the hive — meet to keep the project alive."</div>
-<div style="font-size: 0.9rem; color: var(--muted); margin-top: 8px;">✨ Technique: Location metaphor + purpose reminder</div>
-</div>
-</div>
-
-<div class="example">
-<div style="display: grid; gap: 12px;">
-<div><strong>Neutral:</strong> In case of fire, use the nearest exit and do not take the elevator.</div>
-<div style="color: var(--accent); font-weight: 600;"><strong>Prosodic:</strong> "Fire alarm, exit calm — stairs, not air, to safety there."</div>
-<div style="font-size: 0.9rem; color: var(--muted); margin-top: 8px;">✨ Technique: Emergency clarity + method specification</div>
-</div>
-</div>
-
-<div class="example">
-<div style="display: grid; gap: 12px;">
-<div><strong>Neutral:</strong> Please put your phone on silent during the presentation so we aren't interrupted.</div>
-<div style="color: var(--accent); font-weight: 600;"><strong>Prosodic:</strong> "Phones on mute, let the talk compute."</div>
-<div style="font-size: 0.9rem; color: var(--muted); margin-top: 8px;">✨ Technique: Technology metaphor + courtesy request</div>
-</div>
-</div>
-
-<div class="example">
-<div style="display: grid; gap: 12px;">
-<div><strong>Neutral:</strong> Send me the final report by Monday morning so I can review it.</div>
-<div style="color: var(--accent); font-weight: 600;"><strong>Prosodic:</strong> "Report by Mon, review gets done."</div>
-<div style="font-size: 0.9rem; color: var(--muted); margin-top: 8px;">✨ Technique: Deadline compression + completion promise</div>
-</div>
+<div class="technique-note">✨ Technique: Three-step action sequence</div>
 </div>
 
 <div class="highlight-section" style="margin-top: 80px;">
 <div class="container">
 <div class="highlight-content">
-<h3>The Science Behind the Rhythm</h3>
-<p class="highlight-text">"Prosody provides scaffolding for memory. When speech has rhythm, rhyme, and structure, our brains can better encode and retrieve information. It's not just poetic—it's neurologically optimized."</p>
+<h3>Experience the Technology</h3>
+<p class="highlight-text">"Notice how the prosodic versions are easier to remember and more engaging. This is the power of rhythmic speech processing working in real-time."</p>
 <div class="impact-stats">
 <div class="impact-item">
-<strong>Neurological Basis</strong>
-<span>Rhythm activates memory-encoding regions</span>
+<strong>Immediate Impact</strong>
+<span>Prosodic speech captures attention better</span>
 </div>
 <div class="impact-item">
-<strong>Clinical Evidence</strong>
-<span>Alzheimer's patients retain prosodic speech better</span>
+<strong>Memory Enhancement</strong>
+<span>Rhythm and rhyme improve recall</span>
 </div>
 <div class="impact-item">
-<strong>Universal Application</strong>
-<span>Benefits anyone under cognitive load</span>
-</div>
-</div>
-<div style="margin-top: 32px;">
-<a class="btn btn-primary" href="qa.html">📚 Read Technical Q&A</a>
-<a class="btn btn-secondary" href="summary.html">📄 Research Summary</a>
+<strong>Real-time Processing</strong>
+<span>Transforms any speech instantly</span>
 </div>
 </div>
 </div>
 </div>
+</div>
+
 </main>
 
 <footer class="site-footer">
@@ -263,6 +248,67 @@
 <p>© <span id="y"></span> Hamed Ghane · University of Glasgow</p>
 </div>
 </footer>
-<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+
+<script>
+let currentUtterance = null;
+let speechRate = 1;
+
+// Check if speech synthesis is available
+if (!window.speechSynthesis) {
+  console.log('Speech synthesis not supported');
+}
+
+function updateSpeed(value) {
+  speechRate = parseFloat(value);
+  document.getElementById('speed-display').textContent = value + 'x';
+}
+
+function playText(text, type, button) {
+  // Stop any currently playing speech
+  if (currentUtterance) {
+    speechSynthesis.cancel();
+  }
+  
+  // Disable button during playback
+  button.disabled = true;
+  const originalText = button.innerHTML;
+  button.innerHTML = '<span>⏸</span> Playing...';
+  
+  // Create new utterance
+  currentUtterance = new SpeechSynthesisUtterance(text);
+  
+  // Configure speech settings based on type
+  if (type === 'prosodic') {
+    currentUtterance.rate = speechRate * 0.8; // Slightly slower for prosodic
+    currentUtterance.pitch = 1.2; // Higher pitch for emphasis
+    currentUtterance.volume = 1;
+  } else {
+    currentUtterance.rate = speechRate;
+    currentUtterance.pitch = 1;
+    currentUtterance.volume = 0.9;
+  }
+  
+  // Handle speech end
+  currentUtterance.onend = function() {
+    button.disabled = false;
+    button.innerHTML = originalText;
+    currentUtterance = null;
+  };
+  
+  // Handle speech error
+  currentUtterance.onerror = function() {
+    button.disabled = false;
+    button.innerHTML = originalText;
+    currentUtterance = null;
+    console.log('Speech synthesis error');
+  };
+  
+  // Start speaking
+  speechSynthesis.speak(currentUtterance);
+}
+
+// Set current year
+document.getElementById('y').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
