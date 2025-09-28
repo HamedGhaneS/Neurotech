@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Prosodic Speech Examples - Memory Enhancement Demonstrations</title>
+<title>Prosodic Speech Examples - Enhanced Audio Demonstration</title>
 <link rel="stylesheet" href="../assets/style.css" />
 <style>
 .audio-example {
@@ -26,17 +26,18 @@
   margin-bottom: 20px;
 }
 
-.neutral-text {
+.neutral-text, .prosodic-text {
   padding: 12px;
-  background: rgba(255,255,255,0.05);
   border-radius: 8px;
+}
+
+.neutral-text {
+  background: rgba(255,255,255,0.05);
   border-left: 3px solid #666;
 }
 
 .prosodic-text {
-  padding: 12px;
   background: rgba(122,162,255,0.15);
-  border-radius: 8px;
   border-left: 3px solid var(--accent);
   color: var(--accent);
   font-weight: 600;
@@ -82,25 +83,42 @@
   font-style: italic;
 }
 
-.speed-control {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 0.9rem;
-  color: var(--muted);
-  margin-left: auto;
+.demo-note {
+  background: rgba(255, 193, 7, 0.1);
+  border-left: 4px solid #ffc107;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 32px;
+  font-size: 1rem;
 }
 
-.speed-slider {
-  width: 80px;
+.prosody-demo {
+  background: var(--card);
+  padding: 24px;
+  border-radius: 16px;
+  margin-bottom: 40px;
+  border: 2px solid var(--accent);
 }
 
 .global-controls {
   background: var(--card);
   padding: 20px;
   border-radius: 12px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   text-align: center;
+}
+
+.speed-control {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.9rem;
+  color: var(--muted);
+  justify-content: center;
+}
+
+.speed-slider {
+  width: 100px;
 }
 </style>
 </head>
@@ -122,9 +140,13 @@
 
 <main class="container section">
 <div class="hero-content" style="text-align: center; margin-bottom: 60px;">
-<p class="kicker">🎵 Interactive Audio Examples</p>
+<p class="kicker">🎵 Enhanced Prosodic Demonstration</p>
 <h2 style="font-size: 2.5rem; margin-bottom: 16px;">Hear the Difference</h2>
-<p class="lede">Listen to how our AI transforms everyday speech into memorable, rhythmic formats. Click the play buttons to hear both neutral and prosodic versions.</p>
+<p class="lede">Experience how rhythm, emphasis, and intonation transform memory encoding. Our enhanced TTS approximates real prosodic patterns.</p>
+</div>
+
+<div class="demo-note">
+<strong>⚠️ Current Limitation:</strong> Standard browser TTS reads prosodic text flatly, missing the point entirely. Our actual system would apply real prosodic patterns—rhythm, stress, and intonation—not just read rhythmic text robotically. The examples below use enhanced parameters to approximate true prosodic speech.
 </div>
 
 <div class="global-controls">
@@ -135,8 +157,11 @@
 </div>
 </div>
 
-<div class="note">
-<strong>Audio Demo:</strong> Experience the prosodic transformation in real-time. Notice how rhythm, rhyme, and emphasis make the prosodic versions more memorable and engaging.
+<div class="prosody-demo">
+<h3>🎯 What Makes This Different</h3>
+<p><strong>Standard TTS:</strong> Reads "Practice daily, remember greatly" in monotone</p>
+<p><strong>Our Prosodic System:</strong> Would apply actual rhythm, stress patterns, and musical intonation to make it truly memorable</p>
+<p><strong>Demo Below:</strong> Enhanced TTS settings to approximate prosodic patterns with rhythm, emphasis, and pitch variation</p>
 </div>
 
 <h2>🧠 Learning & Memory</h2>
@@ -152,14 +177,14 @@
 </div>
 </div>
 <div class="audio-controls">
-<button class="play-btn" onclick="playText('Regular practice improves memory performance', 'neutral', this)">
-<span>▶</span> Play Neutral
+<button class="play-btn" onclick="playNeutral('Regular practice improves memory performance', this)">
+<span>▶</span> Neutral (Flat)
 </button>
-<button class="play-btn" onclick="playText('Practice daily, remember greatly', 'prosodic', this)">
-<span>▶</span> Play Prosodic
+<button class="play-btn" onclick="playProsodic('Practice. Daily. Remember. Greatly.', 'rhythmic', this)">
+<span>▶</span> Prosodic (Enhanced)
 </button>
 </div>
-<div class="technique-note">✨ Technique: Rhyme + rhythm for enhanced encoding</div>
+<div class="technique-note">✨ Enhanced with: Rhythmic pauses + emphasis + pitch variation</div>
 </div>
 
 <div class="audio-example">
@@ -172,14 +197,14 @@
 </div>
 </div>
 <div class="audio-controls">
-<button class="play-btn" onclick="playText('Repetition strengthens long term recall', 'neutral', this)">
-<span>▶</span> Play Neutral
+<button class="play-btn" onclick="playNeutral('Repetition strengthens long term recall', this)">
+<span>▶</span> Neutral (Flat)
 </button>
-<button class="play-btn" onclick="playText('Repeat to keep; recall runs deep', 'prosodic', this)">
-<span>▶</span> Play Prosodic
+<button class="play-btn" onclick="playProsodic('Repeat to keep. Recall runs deep.', 'rhythmic', this)">
+<span>▶</span> Prosodic (Enhanced)
 </button>
 </div>
-<div class="technique-note">✨ Technique: Internal rhyme + parallel structure</div>
+<div class="technique-note">✨ Enhanced with: Internal rhyme + parallel structure + pauses</div>
 </div>
 
 <div class="audio-example">
@@ -192,14 +217,14 @@
 </div>
 </div>
 <div class="audio-controls">
-<button class="play-btn" onclick="playText('Spacing your study sessions helps memory', 'neutral', this)">
-<span>▶</span> Play Neutral
+<button class="play-btn" onclick="playNeutral('Spacing your study sessions helps memory', this)">
+<span>▶</span> Neutral (Flat)
 </button>
-<button class="play-btn" onclick="playText('Space the learn, boost the return', 'prosodic', this)">
-<span>▶</span> Play Prosodic
+<button class="play-btn" onclick="playProsodic('Space the learn. Boost the return.', 'rhythmic', this)">
+<span>▶</span> Prosodic (Enhanced)
 </button>
 </div>
-<div class="technique-note">✨ Technique: Rhythmic pairing + action words</div>
+<div class="technique-note">✨ Enhanced with: Rhythmic pairing + action emphasis</div>
 </div>
 
 <div class="audio-example">
@@ -212,14 +237,14 @@
 </div>
 </div>
 <div class="audio-controls">
-<button class="play-btn" onclick="playText('Summarising helps you remember details', 'neutral', this)">
-<span>▶</span> Play Neutral
+<button class="play-btn" onclick="playNeutral('Summarising helps you remember details', this)">
+<span>▶</span> Neutral (Flat)
 </button>
-<button class="play-btn" onclick="playText('Say it short, keep it stored', 'prosodic', this)">
-<span>▶</span> Play Prosodic
+<button class="play-btn" onclick="playProsodic('Say it short. Keep it stored.', 'rhythmic', this)">
+<span>▶</span> Prosodic (Enhanced)
 </button>
 </div>
-<div class="technique-note">✨ Technique: Concise rhyme + imperative form</div>
+<div class="technique-note">✨ Enhanced with: Concise rhythm + imperative emphasis</div>
 </div>
 
 <h2>📋 Instructions & Workflow</h2>
@@ -235,14 +260,14 @@
 </div>
 </div>
 <div class="audio-controls">
-<button class="play-btn" onclick="playText('Follow steps in order to prevent errors', 'neutral', this)">
-<span>▶</span> Play Neutral
+<button class="play-btn" onclick="playNeutral('Follow steps in order to prevent errors', this)">
+<span>▶</span> Neutral (Flat)
 </button>
-<button class="play-btn" onclick="playText('Step by step, no slip, no misstep', 'prosodic', this)">
-<span>▶</span> Play Prosodic
+<button class="play-btn" onclick="playProsodic('Step by step. No slip. No misstep.', 'command', this)">
+<span>▶</span> Prosodic (Enhanced)
 </button>
 </div>
-<div class="technique-note">✨ Technique: Alliteration + progressive rhythm</div>
+<div class="technique-note">✨ Enhanced with: Alliteration + progressive rhythm + clear pauses</div>
 </div>
 
 <div class="audio-example">
@@ -255,14 +280,14 @@
 </div>
 </div>
 <div class="audio-controls">
-<button class="play-btn" onclick="playText('Back up your data every day', 'neutral', this)">
-<span>▶</span> Play Neutral
+<button class="play-btn" onclick="playNeutral('Back up your data every day', this)">
+<span>▶</span> Neutral (Flat)
 </button>
-<button class="play-btn" onclick="playText('Back it today, safe all the way', 'prosodic', this)">
-<span>▶</span> Play Prosodic
+<button class="play-btn" onclick="playProsodic('Back it today. Safe all the way.', 'rhythmic', this)">
+<span>▶</span> Prosodic (Enhanced)
 </button>
 </div>
-<div class="technique-note">✨ Technique: Action-consequence pairing with rhyme</div>
+<div class="technique-note">✨ Enhanced with: Action-consequence pairing + rhyme emphasis</div>
 </div>
 
 <div class="audio-example">
@@ -275,14 +300,14 @@
 </div>
 </div>
 <div class="audio-controls">
-<button class="play-btn" onclick="playText('Label files clearly for quick access later', 'neutral', this)">
-<span>▶</span> Play Neutral
+<button class="play-btn" onclick="playNeutral('Label files clearly for quick access later', this)">
+<span>▶</span> Neutral (Flat)
 </button>
-<button class="play-btn" onclick="playText('Name it neat, find it fleet', 'prosodic', this)">
-<span>▶</span> Play Prosodic
+<button class="play-btn" onclick="playProsodic('Name it neat. Find it fleet.', 'rhythmic', this)">
+<span>▶</span> Prosodic (Enhanced)
 </button>
 </div>
-<div class="technique-note">✨ Technique: Cause-effect with rhythmic balance</div>
+<div class="technique-note">✨ Enhanced with: Cause-effect rhythm + balanced emphasis</div>
 </div>
 
 <h2>⏰ Deadlines & Meetings</h2>
@@ -298,14 +323,14 @@
 </div>
 </div>
 <div class="audio-controls">
-<button class="play-btn" onclick="playText('Submit your application before Friday', 'neutral', this)">
-<span>▶</span> Play Neutral
+<button class="play-btn" onclick="playNeutral('Submit your application before Friday', this)">
+<span>▶</span> Neutral (Flat)
 </button>
-<button class="play-btn" onclick="playText('Friday is the date, do not be late', 'prosodic', this)">
-<span>▶</span> Play Prosodic
+<button class="play-btn" onclick="playProsodic('Friday is the date! Do not be late!', 'urgent', this)">
+<span>▶</span> Prosodic (Enhanced)
 </button>
 </div>
-<div class="technique-note">✨ Technique: Deadline emphasis + warning rhyme</div>
+<div class="technique-note">✨ Enhanced with: Deadline emphasis + warning urgency + rhythm</div>
 </div>
 
 <div class="audio-example">
@@ -318,14 +343,14 @@
 </div>
 </div>
 <div class="audio-controls">
-<button class="play-btn" onclick="playText('Arrive ten minutes early to the meeting', 'neutral', this)">
-<span>▶</span> Play Neutral
+<button class="play-btn" onclick="playNeutral('Arrive ten minutes early to the meeting', this)">
+<span>▶</span> Neutral (Flat)
 </button>
-<button class="play-btn" onclick="playText('Early in, always win', 'prosodic', this)">
-<span>▶</span> Play Prosodic
+<button class="play-btn" onclick="playProsodic('Early in. Always win.', 'motivational', this)">
+<span>▶</span> Prosodic (Enhanced)
 </button>
 </div>
-<div class="technique-note">✨ Technique: Benefit-focused + success association</div>
+<div class="technique-note">✨ Enhanced with: Success association + motivational tone</div>
 </div>
 
 <div class="audio-example">
@@ -338,14 +363,14 @@
 </div>
 </div>
 <div class="audio-controls">
-<button class="play-btn" onclick="playText('Keep your talk within five minutes', 'neutral', this)">
-<span>▶</span> Play Neutral
+<button class="play-btn" onclick="playNeutral('Keep your talk within five minutes', this)">
+<span>▶</span> Neutral (Flat)
 </button>
-<button class="play-btn" onclick="playText('Five alive, keep it tight, keep it right', 'prosodic', this)">
-<span>▶</span> Play Prosodic
+<button class="play-btn" onclick="playProsodic('Five alive! Keep it tight. Keep it right.', 'energetic', this)">
+<span>▶</span> Prosodic (Enhanced)
 </button>
 </div>
-<div class="technique-note">✨ Technique: Number emphasis + paired imperatives</div>
+<div class="technique-note">✨ Enhanced with: Number emphasis + paired imperatives + energy</div>
 </div>
 
 <h2>🛡️ Safety & Compliance</h2>
@@ -361,14 +386,14 @@
 </div>
 </div>
 <div class="audio-controls">
-<button class="play-btn" onclick="playText('Wear eye protection when operating', 'neutral', this)">
-<span>▶</span> Play Neutral
+<button class="play-btn" onclick="playNeutral('Wear eye protection when operating', this)">
+<span>▶</span> Neutral (Flat)
 </button>
-<button class="play-btn" onclick="playText('Shield your eyes, stay wise', 'prosodic', this)">
-<span>▶</span> Play Prosodic
+<button class="play-btn" onclick="playProsodic('Shield your eyes. Stay wise.', 'safety', this)">
+<span>▶</span> Prosodic (Enhanced)
 </button>
 </div>
-<div class="technique-note">✨ Technique: Protection + wisdom connection</div>
+<div class="technique-note">✨ Enhanced with: Protection emphasis + wisdom connection</div>
 </div>
 
 <div class="audio-example">
@@ -381,14 +406,14 @@
 </div>
 </div>
 <div class="audio-controls">
-<button class="play-btn" onclick="playText('Report any incident immediately', 'neutral', this)">
-<span>▶</span> Play Neutral
+<button class="play-btn" onclick="playNeutral('Report any incident immediately', this)">
+<span>▶</span> Neutral (Flat)
 </button>
-<button class="play-btn" onclick="playText('See it, say it, stop it', 'prosodic', this)">
-<span>▶</span> Play Prosodic
+<button class="play-btn" onclick="playProsodic('See it! Say it! Stop it!', 'command', this)">
+<span>▶</span> Prosodic (Enhanced)
 </button>
 </div>
-<div class="technique-note">✨ Technique: Three-step action sequence</div>
+<div class="technique-note">✨ Enhanced with: Staccato rhythm + commanding tone + clear breaks</div>
 </div>
 
 <div class="audio-example">
@@ -401,14 +426,14 @@
 </div>
 </div>
 <div class="audio-controls">
-<button class="play-btn" onclick="playText('Keep exits clear at all times', 'neutral', this)">
-<span>▶</span> Play Neutral
+<button class="play-btn" onclick="playNeutral('Keep exits clear at all times', this)">
+<span>▶</span> Neutral (Flat)
 </button>
-<button class="play-btn" onclick="playText('Clear the door, safe for sure', 'prosodic', this)">
-<span>▶</span> Play Prosodic
+<button class="play-btn" onclick="playProsodic('Clear the door. Safe for sure.', 'safety', this)">
+<span>▶</span> Prosodic (Enhanced)
 </button>
 </div>
-<div class="technique-note">✨ Technique: Action + certainty reinforcement</div>
+<div class="technique-note">✨ Enhanced with: Action emphasis + certainty reinforcement</div>
 </div>
 
 <h2>🔬 Research & Tech</h2>
@@ -424,14 +449,14 @@
 </div>
 </div>
 <div class="audio-controls">
-<button class="play-btn" onclick="playText('Calibrate sensors before each session', 'neutral', this)">
-<span>▶</span> Play Neutral
+<button class="play-btn" onclick="playNeutral('Calibrate sensors before each session', this)">
+<span>▶</span> Neutral (Flat)
 </button>
-<button class="play-btn" onclick="playText('Calibrate straight, measure great', 'prosodic', this)">
-<span>▶</span> Play Prosodic
+<button class="play-btn" onclick="playProsodic('Calibrate straight. Measure great.', 'technical', this)">
+<span>▶</span> Prosodic (Enhanced)
 </button>
 </div>
-<div class="technique-note">✨ Technique: Process + outcome linkage</div>
+<div class="technique-note">✨ Enhanced with: Process-outcome linkage + confident tone</div>
 </div>
 
 <div class="audio-example">
@@ -444,14 +469,14 @@
 </div>
 </div>
 <div class="audio-controls">
-<button class="play-btn" onclick="playText('Update software regularly to avoid bugs', 'neutral', this)">
-<span>▶</span> Play Neutral
+<button class="play-btn" onclick="playNeutral('Update software regularly to avoid bugs', this)">
+<span>▶</span> Neutral (Flat)
 </button>
-<button class="play-btn" onclick="playText('Update to operate', 'prosodic', this)">
-<span>▶</span> Play Prosodic
+<button class="play-btn" onclick="playProsodic('Update to operate.', 'simple', this)">
+<span>▶</span> Prosodic (Enhanced)
 </button>
 </div>
-<div class="technique-note">✨ Technique: Minimal, powerful rhyme</div>
+<div class="technique-note">✨ Enhanced with: Minimal powerful rhythm + clear purpose</div>
 </div>
 
 <h2>🎵 Hook / Chant Style</h2>
@@ -467,14 +492,14 @@
 </div>
 </div>
 <div class="audio-controls">
-<button class="play-btn" onclick="playText('Important details are at the end of the briefing', 'neutral', this)">
-<span>▶</span> Play Neutral
+<button class="play-btn" onclick="playNeutral('Important details are at the end of the briefing', this)">
+<span>▶</span> Neutral (Flat)
 </button>
-<button class="play-btn" onclick="playText('The end is the key, repeat after me, the end is the key!', 'prosodic', this)">
-<span>▶</span> Play Prosodic
+<button class="play-btn" onclick="playProsodic('The end is the key. Repeat after me. The end is the key!', 'chant', this)">
+<span>▶</span> Prosodic (Enhanced)
 </button>
 </div>
-<div class="technique-note">✨ Technique: Call-and-response + emphasis repetition</div>
+<div class="technique-note">✨ Enhanced with: Call-and-response + repetition emphasis + buildup</div>
 </div>
 
 <div class="audio-example">
@@ -487,14 +512,14 @@
 </div>
 </div>
 <div class="audio-controls">
-<button class="play-btn" onclick="playText('Remember to bring your ID to the building', 'neutral', this)">
-<span>▶</span> Play Neutral
+<button class="play-btn" onclick="playNeutral('Remember to bring your ID to the building', this)">
+<span>▶</span> Neutral (Flat)
 </button>
-<button class="play-btn" onclick="playText('ID in hand, you are free to stand, ID in hand!', 'prosodic', this)">
-<span>▶</span> Play Prosodic
+<button class="play-btn" onclick="playProsodic('ID in hand. You are free to stand. ID in hand!', 'chant', this)">
+<span>▶</span> Prosodic (Enhanced)
 </button>
 </div>
-<div class="technique-note">✨ Technique: Essential item + freedom link + echo</div>
+<div class="technique-note">✨ Enhanced with: Essential item + freedom link + echo repetition</div>
 </div>
 
 <h2>🗣️ Extended Prosodic Dialogue Examples</h2>
@@ -510,14 +535,14 @@
 </div>
 </div>
 <div class="audio-controls">
-<button class="play-btn" onclick="playText('Please remember to lock the lab door when you leave, and switch off the lights', 'neutral', this)">
-<span>▶</span> Play Neutral
+<button class="play-btn" onclick="playNeutral('Please remember to lock the lab door when you leave, and switch off the lights', this)">
+<span>▶</span> Neutral (Flat)
 </button>
-<button class="play-btn" onclick="playText('Lock the door, lights no more, safe and sound, as before', 'prosodic', this)">
-<span>▶</span> Play Prosodic
+<button class="play-btn" onclick="playProsodic('Lock the door. Lights no more. Safe and sound, as before.', 'sequence', this)">
+<span>▶</span> Prosodic (Enhanced)
 </button>
 </div>
-<div class="technique-note">✨ Technique: Action sequence + reassuring closure</div>
+<div class="technique-note">✨ Enhanced with: Action sequence + reassuring closure + rhythm</div>
 </div>
 
 <div class="audio-example">
@@ -530,14 +555,14 @@
 </div>
 </div>
 <div class="audio-controls">
-<button class="play-btn" onclick="playText('Don not forget we are meeting in Room 205 at three o clock to discuss the project', 'neutral', this)">
-<span>▶</span> Play Neutral
+<button class="play-btn" onclick="playNeutral('Do not forget we are meeting in Room 205 at three o clock to discuss the project', this)">
+<span>▶</span> Neutral (Flat)
 </button>
-<button class="play-btn" onclick="playText('At three, Room 205 is the hive, meet to keep the project alive', 'prosodic', this)">
-<span>▶</span> Play Prosodic
+<button class="play-btn" onclick="playProsodic('At three. Room 205 is the hive. Meet to keep the project alive.', 'meeting', this)">
+<span>▶</span> Prosodic (Enhanced)
 </button>
 </div>
-<div class="technique-note">✨ Technique: Location metaphor + purpose reminder</div>
+<div class="technique-note">✨ Enhanced with: Location metaphor + purpose reminder + energy</div>
 </div>
 
 <div class="audio-example">
@@ -550,14 +575,14 @@
 </div>
 </div>
 <div class="audio-controls">
-<button class="play-btn" onclick="playText('In case of fire, use the nearest exit and do not take the elevator', 'neutral', this)">
-<span>▶</span> Play Neutral
+<button class="play-btn" onclick="playNeutral('In case of fire, use the nearest exit and do not take the elevator', this)">
+<span>▶</span> Neutral (Flat)
 </button>
-<button class="play-btn" onclick="playText('Fire alarm, exit calm, stairs, not air, to safety there', 'prosodic', this)">
-<span>▶</span> Play Prosodic
+<button class="play-btn" onclick="playProsodic('Fire alarm. Exit calm. Stairs, not air, to safety there.', 'emergency', this)">
+<span>▶</span> Prosodic (Enhanced)
 </button>
 </div>
-<div class="technique-note">✨ Technique: Emergency clarity + method specification</div>
+<div class="technique-note">✨ Enhanced with: Emergency clarity + method specification + calm urgency</div>
 </div>
 
 <div class="audio-example">
@@ -570,14 +595,14 @@
 </div>
 </div>
 <div class="audio-controls">
-<button class="play-btn" onclick="playText('Please put your phone on silent during the presentation so we are not interrupted', 'neutral', this)">
-<span>▶</span> Play Neutral
+<button class="play-btn" onclick="playNeutral('Please put your phone on silent during the presentation so we are not interrupted', this)">
+<span>▶</span> Neutral (Flat)
 </button>
-<button class="play-btn" onclick="playText('Phones on mute, let the talk compute', 'prosodic', this)">
-<span>▶</span> Play Prosodic
+<button class="play-btn" onclick="playProsodic('Phones on mute. Let the talk compute.', 'polite', this)">
+<span>▶</span> Prosodic (Enhanced)
 </button>
 </div>
-<div class="technique-note">✨ Technique: Technology metaphor + courtesy request</div>
+<div class="technique-note">✨ Enhanced with: Technology metaphor + courtesy request + clever rhyme</div>
 </div>
 
 <div class="audio-example">
@@ -590,38 +615,39 @@
 </div>
 </div>
 <div class="audio-controls">
-<button class="play-btn" onclick="playText('Send me the final report by Monday morning so I can review it', 'neutral', this)">
-<span>▶</span> Play Neutral
+<button class="play-btn" onclick="playNeutral('Send me the final report by Monday morning so I can review it', this)">
+<span>▶</span> Neutral (Flat)
 </button>
-<button class="play-btn" onclick="playText('Report by Mon, review gets done', 'prosodic', this)">
-<span>▶</span> Play Prosodic
+<button class="play-btn" onclick="playProsodic('Report by Mon. Review gets done.', 'deadline', this)">
+<span>▶</span> Prosodic (Enhanced)
 </button>
 </div>
-<div class="technique-note">✨ Technique: Deadline compression + completion promise</div>
+<div class="technique-note">✨ Enhanced with: Deadline compression + completion promise + rhythm</div>
 </div>
 
 <div class="highlight-section" style="margin-top: 80px;">
 <div class="container">
 <div class="highlight-content">
-<h3>Experience the Technology</h3>
-<p class="highlight-text">"Notice how the prosodic versions are easier to remember and more engaging. This is the power of rhythmic speech processing working in real-time."</p>
+<h3>The Real Technology Promise</h3>
+<p class="highlight-text">"Our actual prosodic enhancement system would apply sophisticated audio processing—pitch modulation, rhythmic timing, stress patterns, and intonational contours—not just read rhythmic text with standard TTS. This demo approximates the concept but cannot capture the full sophistication."</p>
 <div class="impact-stats">
 <div class="impact-item">
-<strong>Immediate Impact</strong>
-<span>Prosodic speech captures attention better</span>
+<strong>Real Prosody</strong>
+<span>Pitch, rhythm, stress, and timing patterns</span>
+</div>
+<div class="impact-item">
+<strong>Neural Feedback</strong>
+<span>EEG-guided personalization of prosodic patterns</span>
 </div>
 <div class="impact-item">
 <strong>Memory Enhancement</strong>
-<span>Rhythm and rhyme improve recall</span>
-</div>
-<div class="impact-item">
-<strong>Real-time Processing</strong>
-<span>Transforms any speech instantly</span>
+<span>Scientifically designed for optimal encoding</span>
 </div>
 </div>
 <div style="margin-top: 32px;">
-<a class="btn btn-primary" href="qa.html">📚 Read Technical Q&A</a>
-<a class="btn btn-secondary" href="summary.html">📄 Research Summary</a>
+<p style="color: var(--muted); text-align: center; font-size: 0.9rem;">
+<strong>Note:</strong> For a true demonstration, professional audio recordings or advanced prosodic TTS systems would be needed. This browser demo approximates the concept using enhanced speech parameters.
+</p>
 </div>
 </div>
 </div>
@@ -637,59 +663,148 @@
 
 <script>
 let currentUtterance = null;
-let speechRate = 1;
-
-// Check if speech synthesis is available
-if (!window.speechSynthesis) {
-  console.log('Speech synthesis not supported');
-}
+let globalSpeed = 1;
 
 function updateGlobalSpeed(value) {
-  speechRate = parseFloat(value);
+  globalSpeed = parseFloat(value);
   document.getElementById('speed-display').textContent = value + 'x';
 }
 
-function playText(text, type, button) {
-  // Stop any currently playing speech
+function stopCurrentSpeech() {
   if (currentUtterance) {
     speechSynthesis.cancel();
+    currentUtterance = null;
   }
+}
+
+function playNeutral(text, button) {
+  stopCurrentSpeech();
   
-  // Disable button during playback
   button.disabled = true;
   const originalText = button.innerHTML;
   button.innerHTML = '<span>⏸</span> Playing...';
   
-  // Create new utterance
   currentUtterance = new SpeechSynthesisUtterance(text);
   
-  // Configure speech settings based on type
-  if (type === 'prosodic') {
-    currentUtterance.rate = speechRate * 0.8; // Slightly slower for prosodic
-    currentUtterance.pitch = 1.2; // Higher pitch for emphasis
-    currentUtterance.volume = 1;
-  } else {
-    currentUtterance.rate = speechRate;
-    currentUtterance.pitch = 1;
-    currentUtterance.volume = 0.9;
-  }
+  // Flat, monotone settings
+  currentUtterance.rate = globalSpeed * 1.0;
+  currentUtterance.pitch = 1.0;
+  currentUtterance.volume = 0.8;
   
-  // Handle speech end
   currentUtterance.onend = function() {
     button.disabled = false;
     button.innerHTML = originalText;
     currentUtterance = null;
   };
   
-  // Handle speech error
   currentUtterance.onerror = function() {
     button.disabled = false;
     button.innerHTML = originalText;
     currentUtterance = null;
-    console.log('Speech synthesis error');
   };
   
-  // Start speaking
+  speechSynthesis.speak(currentUtterance);
+}
+
+function playProsodic(text, style, button) {
+  stopCurrentSpeech();
+  
+  button.disabled = true;
+  const originalText = button.innerHTML;
+  button.innerHTML = '<span>⏸</span> Playing...';
+  
+  currentUtterance = new SpeechSynthesisUtterance(text);
+  
+  // Enhanced prosodic settings based on style
+  switch(style) {
+    case 'rhythmic':
+      currentUtterance.rate = globalSpeed * 0.7;  // Slower for rhythm
+      currentUtterance.pitch = 1.3; // Higher pitch
+      currentUtterance.volume = 1.0;
+      break;
+    case 'urgent':
+      currentUtterance.rate = globalSpeed * 0.9;
+      currentUtterance.pitch = 1.4; // Higher for urgency
+      currentUtterance.volume = 1.0;
+      break;
+    case 'command':
+      currentUtterance.rate = globalSpeed * 0.8;
+      currentUtterance.pitch = 1.2;
+      currentUtterance.volume = 1.0;
+      break;
+    case 'motivational':
+      currentUtterance.rate = globalSpeed * 0.85;
+      currentUtterance.pitch = 1.3;
+      currentUtterance.volume = 1.0;
+      break;
+    case 'energetic':
+      currentUtterance.rate = globalSpeed * 0.9;
+      currentUtterance.pitch = 1.4;
+      currentUtterance.volume = 1.0;
+      break;
+    case 'safety':
+      currentUtterance.rate = globalSpeed * 0.75;
+      currentUtterance.pitch = 1.1;
+      currentUtterance.volume = 1.0;
+      break;
+    case 'technical':
+      currentUtterance.rate = globalSpeed * 0.8;
+      currentUtterance.pitch = 1.15;
+      currentUtterance.volume = 0.95;
+      break;
+    case 'simple':
+      currentUtterance.rate = globalSpeed * 0.9;
+      currentUtterance.pitch = 1.1;
+      currentUtterance.volume = 0.9;
+      break;
+    case 'chant':
+      currentUtterance.rate = globalSpeed * 0.7;
+      currentUtterance.pitch = 1.35;
+      currentUtterance.volume = 1.0;
+      break;
+    case 'sequence':
+      currentUtterance.rate = globalSpeed * 0.75;
+      currentUtterance.pitch = 1.2;
+      currentUtterance.volume = 0.95;
+      break;
+    case 'meeting':
+      currentUtterance.rate = globalSpeed * 0.8;
+      currentUtterance.pitch = 1.25;
+      currentUtterance.volume = 1.0;
+      break;
+    case 'emergency':
+      currentUtterance.rate = globalSpeed * 0.85;
+      currentUtterance.pitch = 1.3;
+      currentUtterance.volume = 1.0;
+      break;
+    case 'polite':
+      currentUtterance.rate = globalSpeed * 0.9;
+      currentUtterance.pitch = 1.15;
+      currentUtterance.volume = 0.9;
+      break;
+    case 'deadline':
+      currentUtterance.rate = globalSpeed * 0.8;
+      currentUtterance.pitch = 1.2;
+      currentUtterance.volume = 0.95;
+      break;
+    default:
+      currentUtterance.rate = globalSpeed * 0.8;
+      currentUtterance.pitch = 1.2;
+      currentUtterance.volume = 1.0;
+  }
+  
+  currentUtterance.onend = function() {
+    button.disabled = false;
+    button.innerHTML = originalText;
+    currentUtterance = null;
+  };
+  
+  currentUtterance.onerror = function() {
+    button.disabled = false;
+    button.innerHTML = originalText;
+    currentUtterance = null;
+  };
+  
   speechSynthesis.speak(currentUtterance);
 }
 
