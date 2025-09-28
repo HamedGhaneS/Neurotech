@@ -62,6 +62,7 @@
   align-items: center;
   gap: 6px;
   transition: all 0.2s ease;
+  font-size: 0.9rem;
 }
 
 .play-btn:hover {
@@ -81,22 +82,25 @@
   font-style: italic;
 }
 
-.audio-status {
-  font-size: 0.8rem;
-  color: var(--accent2);
-  margin-left: auto;
-}
-
 .speed-control {
   display: flex;
   align-items: center;
   gap: 8px;
   font-size: 0.9rem;
   color: var(--muted);
+  margin-left: auto;
 }
 
 .speed-slider {
   width: 80px;
+}
+
+.global-controls {
+  background: var(--card);
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 40px;
+  text-align: center;
 }
 </style>
 </head>
@@ -123,11 +127,20 @@
 <p class="lede">Listen to how our AI transforms everyday speech into memorable, rhythmic formats. Click the play buttons to hear both neutral and prosodic versions.</p>
 </div>
 
+<div class="global-controls">
+<div class="speed-control">
+<span>Global Speech Speed:</span>
+<input type="range" class="speed-slider" min="0.5" max="1.5" step="0.1" value="1" onchange="updateGlobalSpeed(this.value)">
+<span id="speed-display">1x</span>
+</div>
+</div>
+
 <div class="note">
 <strong>Audio Demo:</strong> Experience the prosodic transformation in real-time. Notice how rhythm, rhyme, and emphasis make the prosodic versions more memorable and engaging.
 </div>
 
 <h2>🧠 Learning & Memory</h2>
+<p style="color: var(--muted); margin-bottom: 32px;">Essential principles for better retention and recall</p>
 
 <div class="audio-example">
 <div class="example-content">
@@ -145,11 +158,6 @@
 <button class="play-btn" onclick="playText('Practice daily, remember greatly', 'prosodic', this)">
 <span>▶</span> Play Prosodic
 </button>
-<div class="speed-control">
-<span>Speed:</span>
-<input type="range" class="speed-slider" min="0.5" max="1.5" step="0.1" value="1" onchange="updateSpeed(this.value)">
-<span id="speed-display">1x</span>
-</div>
 </div>
 <div class="technique-note">✨ Technique: Rhyme + rhythm for enhanced encoding</div>
 </div>
@@ -174,7 +182,111 @@
 <div class="technique-note">✨ Technique: Internal rhyme + parallel structure</div>
 </div>
 
+<div class="audio-example">
+<div class="example-content">
+<div class="neutral-text">
+<strong>Neutral:</strong> Spacing your study sessions helps memory.
+</div>
+<div class="prosodic-text">
+<strong>Prosodic:</strong> "Space the learn, boost the return."
+</div>
+</div>
+<div class="audio-controls">
+<button class="play-btn" onclick="playText('Spacing your study sessions helps memory', 'neutral', this)">
+<span>▶</span> Play Neutral
+</button>
+<button class="play-btn" onclick="playText('Space the learn, boost the return', 'prosodic', this)">
+<span>▶</span> Play Prosodic
+</button>
+</div>
+<div class="technique-note">✨ Technique: Rhythmic pairing + action words</div>
+</div>
+
+<div class="audio-example">
+<div class="example-content">
+<div class="neutral-text">
+<strong>Neutral:</strong> Summarising helps you remember details.
+</div>
+<div class="prosodic-text">
+<strong>Prosodic:</strong> "Say it short, keep it stored."
+</div>
+</div>
+<div class="audio-controls">
+<button class="play-btn" onclick="playText('Summarising helps you remember details', 'neutral', this)">
+<span>▶</span> Play Neutral
+</button>
+<button class="play-btn" onclick="playText('Say it short, keep it stored', 'prosodic', this)">
+<span>▶</span> Play Prosodic
+</button>
+</div>
+<div class="technique-note">✨ Technique: Concise rhyme + imperative form</div>
+</div>
+
+<h2>📋 Instructions & Workflow</h2>
+<p style="color: var(--muted); margin-bottom: 32px;">Clear, memorable instructions for better compliance</p>
+
+<div class="audio-example">
+<div class="example-content">
+<div class="neutral-text">
+<strong>Neutral:</strong> Follow steps in order to prevent errors.
+</div>
+<div class="prosodic-text">
+<strong>Prosodic:</strong> "Step by step, no slip, no misstep."
+</div>
+</div>
+<div class="audio-controls">
+<button class="play-btn" onclick="playText('Follow steps in order to prevent errors', 'neutral', this)">
+<span>▶</span> Play Neutral
+</button>
+<button class="play-btn" onclick="playText('Step by step, no slip, no misstep', 'prosodic', this)">
+<span>▶</span> Play Prosodic
+</button>
+</div>
+<div class="technique-note">✨ Technique: Alliteration + progressive rhythm</div>
+</div>
+
+<div class="audio-example">
+<div class="example-content">
+<div class="neutral-text">
+<strong>Neutral:</strong> Back up your data every day.
+</div>
+<div class="prosodic-text">
+<strong>Prosodic:</strong> "Back it today, safe all the way."
+</div>
+</div>
+<div class="audio-controls">
+<button class="play-btn" onclick="playText('Back up your data every day', 'neutral', this)">
+<span>▶</span> Play Neutral
+</button>
+<button class="play-btn" onclick="playText('Back it today, safe all the way', 'prosodic', this)">
+<span>▶</span> Play Prosodic
+</button>
+</div>
+<div class="technique-note">✨ Technique: Action-consequence pairing with rhyme</div>
+</div>
+
+<div class="audio-example">
+<div class="example-content">
+<div class="neutral-text">
+<strong>Neutral:</strong> Label files clearly for quick access later.
+</div>
+<div class="prosodic-text">
+<strong>Prosodic:</strong> "Name it neat, find it fleet."
+</div>
+</div>
+<div class="audio-controls">
+<button class="play-btn" onclick="playText('Label files clearly for quick access later', 'neutral', this)">
+<span>▶</span> Play Neutral
+</button>
+<button class="play-btn" onclick="playText('Name it neat, find it fleet', 'prosodic', this)">
+<span>▶</span> Play Prosodic
+</button>
+</div>
+<div class="technique-note">✨ Technique: Cause-effect with rhythmic balance</div>
+</div>
+
 <h2>⏰ Deadlines & Meetings</h2>
+<p style="color: var(--muted); margin-bottom: 32px;">Time-sensitive information that sticks</p>
 
 <div class="audio-example">
 <div class="example-content">
@@ -196,7 +308,68 @@
 <div class="technique-note">✨ Technique: Deadline emphasis + warning rhyme</div>
 </div>
 
+<div class="audio-example">
+<div class="example-content">
+<div class="neutral-text">
+<strong>Neutral:</strong> Arrive ten minutes early to the meeting.
+</div>
+<div class="prosodic-text">
+<strong>Prosodic:</strong> "Early in, always win."
+</div>
+</div>
+<div class="audio-controls">
+<button class="play-btn" onclick="playText('Arrive ten minutes early to the meeting', 'neutral', this)">
+<span>▶</span> Play Neutral
+</button>
+<button class="play-btn" onclick="playText('Early in, always win', 'prosodic', this)">
+<span>▶</span> Play Prosodic
+</button>
+</div>
+<div class="technique-note">✨ Technique: Benefit-focused + success association</div>
+</div>
+
+<div class="audio-example">
+<div class="example-content">
+<div class="neutral-text">
+<strong>Neutral:</strong> Keep your talk within five minutes.
+</div>
+<div class="prosodic-text">
+<strong>Prosodic:</strong> "Five alive — keep it tight, keep it right."
+</div>
+</div>
+<div class="audio-controls">
+<button class="play-btn" onclick="playText('Keep your talk within five minutes', 'neutral', this)">
+<span>▶</span> Play Neutral
+</button>
+<button class="play-btn" onclick="playText('Five alive, keep it tight, keep it right', 'prosodic', this)">
+<span>▶</span> Play Prosodic
+</button>
+</div>
+<div class="technique-note">✨ Technique: Number emphasis + paired imperatives</div>
+</div>
+
 <h2>🛡️ Safety & Compliance</h2>
+<p style="color: var(--muted); margin-bottom: 32px;">Critical safety messages for high retention</p>
+
+<div class="audio-example">
+<div class="example-content">
+<div class="neutral-text">
+<strong>Neutral:</strong> Wear eye protection when operating.
+</div>
+<div class="prosodic-text">
+<strong>Prosodic:</strong> "Shield your eyes, stay wise."
+</div>
+</div>
+<div class="audio-controls">
+<button class="play-btn" onclick="playText('Wear eye protection when operating', 'neutral', this)">
+<span>▶</span> Play Neutral
+</button>
+<button class="play-btn" onclick="playText('Shield your eyes, stay wise', 'prosodic', this)">
+<span>▶</span> Play Prosodic
+</button>
+</div>
+<div class="technique-note">✨ Technique: Protection + wisdom connection</div>
+</div>
 
 <div class="audio-example">
 <div class="example-content">
@@ -218,6 +391,215 @@
 <div class="technique-note">✨ Technique: Three-step action sequence</div>
 </div>
 
+<div class="audio-example">
+<div class="example-content">
+<div class="neutral-text">
+<strong>Neutral:</strong> Keep exits clear at all times.
+</div>
+<div class="prosodic-text">
+<strong>Prosodic:</strong> "Clear the door, safe for sure."
+</div>
+</div>
+<div class="audio-controls">
+<button class="play-btn" onclick="playText('Keep exits clear at all times', 'neutral', this)">
+<span>▶</span> Play Neutral
+</button>
+<button class="play-btn" onclick="playText('Clear the door, safe for sure', 'prosodic', this)">
+<span>▶</span> Play Prosodic
+</button>
+</div>
+<div class="technique-note">✨ Technique: Action + certainty reinforcement</div>
+</div>
+
+<h2>🔬 Research & Tech</h2>
+<p style="color: var(--muted); margin-bottom: 32px;">Technical procedures made memorable</p>
+
+<div class="audio-example">
+<div class="example-content">
+<div class="neutral-text">
+<strong>Neutral:</strong> Calibrate sensors before each session.
+</div>
+<div class="prosodic-text">
+<strong>Prosodic:</strong> "Calibrate straight, measure great."
+</div>
+</div>
+<div class="audio-controls">
+<button class="play-btn" onclick="playText('Calibrate sensors before each session', 'neutral', this)">
+<span>▶</span> Play Neutral
+</button>
+<button class="play-btn" onclick="playText('Calibrate straight, measure great', 'prosodic', this)">
+<span>▶</span> Play Prosodic
+</button>
+</div>
+<div class="technique-note">✨ Technique: Process + outcome linkage</div>
+</div>
+
+<div class="audio-example">
+<div class="example-content">
+<div class="neutral-text">
+<strong>Neutral:</strong> Update software regularly to avoid bugs.
+</div>
+<div class="prosodic-text">
+<strong>Prosodic:</strong> "Update to operate."
+</div>
+</div>
+<div class="audio-controls">
+<button class="play-btn" onclick="playText('Update software regularly to avoid bugs', 'neutral', this)">
+<span>▶</span> Play Neutral
+</button>
+<button class="play-btn" onclick="playText('Update to operate', 'prosodic', this)">
+<span>▶</span> Play Prosodic
+</button>
+</div>
+<div class="technique-note">✨ Technique: Minimal, powerful rhyme</div>
+</div>
+
+<h2>🎵 Hook / Chant Style</h2>
+<p style="color: var(--muted); margin-bottom: 32px;">Highly memorable formats with repetitive elements</p>
+
+<div class="audio-example">
+<div class="example-content">
+<div class="neutral-text">
+<strong>Neutral:</strong> Important details are at the end of the briefing.
+</div>
+<div class="prosodic-text">
+<strong>Prosodic:</strong> "The end is the key, repeat after me — the end is the key!"
+</div>
+</div>
+<div class="audio-controls">
+<button class="play-btn" onclick="playText('Important details are at the end of the briefing', 'neutral', this)">
+<span>▶</span> Play Neutral
+</button>
+<button class="play-btn" onclick="playText('The end is the key, repeat after me, the end is the key!', 'prosodic', this)">
+<span>▶</span> Play Prosodic
+</button>
+</div>
+<div class="technique-note">✨ Technique: Call-and-response + emphasis repetition</div>
+</div>
+
+<div class="audio-example">
+<div class="example-content">
+<div class="neutral-text">
+<strong>Neutral:</strong> Remember to bring your ID to the building.
+</div>
+<div class="prosodic-text">
+<strong>Prosodic:</strong> "ID in hand, you're free to stand — ID in hand!"
+</div>
+</div>
+<div class="audio-controls">
+<button class="play-btn" onclick="playText('Remember to bring your ID to the building', 'neutral', this)">
+<span>▶</span> Play Neutral
+</button>
+<button class="play-btn" onclick="playText('ID in hand, you are free to stand, ID in hand!', 'prosodic', this)">
+<span>▶</span> Play Prosodic
+</button>
+</div>
+<div class="technique-note">✨ Technique: Essential item + freedom link + echo</div>
+</div>
+
+<h2>🗣️ Extended Prosodic Dialogue Examples</h2>
+<p style="color: var(--muted); margin-bottom: 32px;">Longer instructions transformed into memorable chunks</p>
+
+<div class="audio-example">
+<div class="example-content">
+<div class="neutral-text">
+<strong>Neutral:</strong> Please remember to lock the lab door when you leave, and switch off the lights.
+</div>
+<div class="prosodic-text">
+<strong>Prosodic:</strong> "Lock the door, lights no more — safe and sound, as before."
+</div>
+</div>
+<div class="audio-controls">
+<button class="play-btn" onclick="playText('Please remember to lock the lab door when you leave, and switch off the lights', 'neutral', this)">
+<span>▶</span> Play Neutral
+</button>
+<button class="play-btn" onclick="playText('Lock the door, lights no more, safe and sound, as before', 'prosodic', this)">
+<span>▶</span> Play Prosodic
+</button>
+</div>
+<div class="technique-note">✨ Technique: Action sequence + reassuring closure</div>
+</div>
+
+<div class="audio-example">
+<div class="example-content">
+<div class="neutral-text">
+<strong>Neutral:</strong> Don't forget we're meeting in Room 205 at three o'clock to discuss the project.
+</div>
+<div class="prosodic-text">
+<strong>Prosodic:</strong> "At three, Room 205 is the hive — meet to keep the project alive."
+</div>
+</div>
+<div class="audio-controls">
+<button class="play-btn" onclick="playText('Don not forget we are meeting in Room 205 at three o clock to discuss the project', 'neutral', this)">
+<span>▶</span> Play Neutral
+</button>
+<button class="play-btn" onclick="playText('At three, Room 205 is the hive, meet to keep the project alive', 'prosodic', this)">
+<span>▶</span> Play Prosodic
+</button>
+</div>
+<div class="technique-note">✨ Technique: Location metaphor + purpose reminder</div>
+</div>
+
+<div class="audio-example">
+<div class="example-content">
+<div class="neutral-text">
+<strong>Neutral:</strong> In case of fire, use the nearest exit and do not take the elevator.
+</div>
+<div class="prosodic-text">
+<strong>Prosodic:</strong> "Fire alarm, exit calm — stairs, not air, to safety there."
+</div>
+</div>
+<div class="audio-controls">
+<button class="play-btn" onclick="playText('In case of fire, use the nearest exit and do not take the elevator', 'neutral', this)">
+<span>▶</span> Play Neutral
+</button>
+<button class="play-btn" onclick="playText('Fire alarm, exit calm, stairs, not air, to safety there', 'prosodic', this)">
+<span>▶</span> Play Prosodic
+</button>
+</div>
+<div class="technique-note">✨ Technique: Emergency clarity + method specification</div>
+</div>
+
+<div class="audio-example">
+<div class="example-content">
+<div class="neutral-text">
+<strong>Neutral:</strong> Please put your phone on silent during the presentation so we aren't interrupted.
+</div>
+<div class="prosodic-text">
+<strong>Prosodic:</strong> "Phones on mute, let the talk compute."
+</div>
+</div>
+<div class="audio-controls">
+<button class="play-btn" onclick="playText('Please put your phone on silent during the presentation so we are not interrupted', 'neutral', this)">
+<span>▶</span> Play Neutral
+</button>
+<button class="play-btn" onclick="playText('Phones on mute, let the talk compute', 'prosodic', this)">
+<span>▶</span> Play Prosodic
+</button>
+</div>
+<div class="technique-note">✨ Technique: Technology metaphor + courtesy request</div>
+</div>
+
+<div class="audio-example">
+<div class="example-content">
+<div class="neutral-text">
+<strong>Neutral:</strong> Send me the final report by Monday morning so I can review it.
+</div>
+<div class="prosodic-text">
+<strong>Prosodic:</strong> "Report by Mon, review gets done."
+</div>
+</div>
+<div class="audio-controls">
+<button class="play-btn" onclick="playText('Send me the final report by Monday morning so I can review it', 'neutral', this)">
+<span>▶</span> Play Neutral
+</button>
+<button class="play-btn" onclick="playText('Report by Mon, review gets done', 'prosodic', this)">
+<span>▶</span> Play Prosodic
+</button>
+</div>
+<div class="technique-note">✨ Technique: Deadline compression + completion promise</div>
+</div>
+
 <div class="highlight-section" style="margin-top: 80px;">
 <div class="container">
 <div class="highlight-content">
@@ -236,6 +618,10 @@
 <strong>Real-time Processing</strong>
 <span>Transforms any speech instantly</span>
 </div>
+</div>
+<div style="margin-top: 32px;">
+<a class="btn btn-primary" href="qa.html">📚 Read Technical Q&A</a>
+<a class="btn btn-secondary" href="summary.html">📄 Research Summary</a>
 </div>
 </div>
 </div>
@@ -258,7 +644,7 @@ if (!window.speechSynthesis) {
   console.log('Speech synthesis not supported');
 }
 
-function updateSpeed(value) {
+function updateGlobalSpeed(value) {
   speechRate = parseFloat(value);
   document.getElementById('speed-display').textContent = value + 'x';
 }
