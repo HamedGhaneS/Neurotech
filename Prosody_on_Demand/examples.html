@@ -162,6 +162,44 @@
 <p><strong>Standard TTS:</strong> Reads "Practice daily, remember greatly" in monotone</p>
 <p><strong>Our Prosodic System:</strong> Would apply actual rhythm, stress patterns, and musical intonation to make it truly memorable</p>
 <p><strong>Demo Below:</strong> Enhanced TTS settings to approximate prosodic patterns with rhythm, emphasis, and pitch variation</p>
+
+<div style="margin-top: 20px;">
+<button class="play-btn" onclick="toggleTechnicalDetails()" id="tech-toggle">
+<span>🔧</span> Show Technical Details
+</button>
+</div>
+
+<div id="technical-details" style="display: none; margin-top: 20px; padding: 20px; background: rgba(255,255,255,0.05); border-radius: 12px; border-left: 4px solid var(--accent2);">
+<h4 style="margin: 0 0 16px; color: var(--accent2);">Enhanced TTS Parameter Settings</h4>
+<div style="display: grid; gap: 16px;">
+<div>
+<strong>Standard (Neutral) TTS:</strong>
+<br><code style="background: rgba(0,0,0,0.3); padding: 4px 8px; border-radius: 4px; font-size: 0.9rem;">rate: 1.0, pitch: 1.0, volume: 0.8</code>
+<br><span style="color: var(--muted); font-size: 0.9rem;">→ Flat, monotone delivery</span>
+</div>
+<div>
+<strong>Enhanced Prosodic Parameters:</strong>
+<ul style="margin: 8px 0; padding-left: 20px; font-size: 0.9rem;">
+<li><strong>Rhythmic:</strong> <code style="background: rgba(0,0,0,0.3); padding: 2px 6px; border-radius: 3px;">rate: 0.7, pitch: 1.3</code> (30% slower, 30% higher pitch)</li>
+<li><strong>Urgent:</strong> <code style="background: rgba(0,0,0,0.3); padding: 2px 6px; border-radius: 3px;">rate: 0.9, pitch: 1.4</code> (40% higher pitch for urgency)</li>
+<li><strong>Command:</strong> <code style="background: rgba(0,0,0,0.3); padding: 2px 6px; border-radius: 3px;">rate: 0.8, pitch: 1.2</code> (deliberate pacing)</li>
+<li><strong>Chant:</strong> <code style="background: rgba(0,0,0,0.3); padding: 2px 6px; border-radius: 3px;">rate: 0.7, pitch: 1.35</code> (very slow for memorability)</li>
+</ul>
+</div>
+<div>
+<strong>Key Enhancements:</strong>
+<ul style="margin: 8px 0; padding-left: 20px; font-size: 0.9rem; color: var(--muted);">
+<li><strong>Slower Rate:</strong> Allows brain time to process rhythmic patterns</li>
+<li><strong>Higher Pitch:</strong> Increases attention and memorability</li>
+<li><strong>Added Pauses:</strong> Creates rhythm (e.g., "Practice. Daily. Remember. Greatly.")</li>
+<li><strong>Category Tuning:</strong> Different styles for safety vs. learning vs. deadlines</li>
+</ul>
+</div>
+<div style="background: rgba(255, 193, 7, 0.1); padding: 12px; border-radius: 8px; border-left: 3px solid #ffc107;">
+<strong>⚠️ Limitation:</strong> Even enhanced browser TTS lacks true prosodic control (musical intonation, stress patterns, rhythmic timing). Our actual system would use advanced audio signal processing, not just parameter adjustments.
+</div>
+</div>
+</div>
 </div>
 
 <h2>🧠 Learning & Memory</h2>
@@ -810,6 +848,20 @@ function playProsodic(text, style, button) {
 
 // Set current year
 document.getElementById('y').textContent = new Date().getFullYear();
+
+// Toggle technical details
+function toggleTechnicalDetails() {
+  const details = document.getElementById('technical-details');
+  const button = document.getElementById('tech-toggle');
+  
+  if (details.style.display === 'none') {
+    details.style.display = 'block';
+    button.innerHTML = '<span>🔧</span> Hide Technical Details';
+  } else {
+    details.style.display = 'none';
+    button.innerHTML = '<span>🔧</span> Show Technical Details';
+  }
+}
 </script>
 </body>
 </html>
