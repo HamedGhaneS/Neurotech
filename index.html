@@ -7,6 +7,77 @@
 <link rel="icon" href="assets/favicon.png" />
 <meta name="description" content="Neurotech projects by Hamed Ghane — Prosody-on-Demand, real-time BCI, EEG-ECG-EMG timing, and more." />
 <link rel="stylesheet" href="assets/style.css" />
+<style>
+.construction-notice {
+  background: linear-gradient(135deg, rgba(255, 193, 7, 0.1), rgba(255, 152, 0, 0.1));
+  border: 2px solid #ffc107;
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 40px;
+  text-align: center;
+  animation: pulse 3s ease-in-out infinite;
+}
+
+.construction-notice h3 {
+  color: #ffc107;
+  margin: 0 0 12px;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.construction-notice p {
+  color: var(--fg);
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.construction-icon {
+  font-size: 1.5rem;
+  animation: rotate 2s linear infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(255, 193, 7, 0.2); }
+  50% { box-shadow: 0 0 30px rgba(255, 193, 7, 0.4); }
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.status-badge {
+  display: inline-block;
+  background: rgba(255, 193, 7, 0.2);
+  color: #ffc107;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-left: 8px;
+}
+
+.coming-soon-overlay {
+  position: relative;
+}
+
+.coming-soon-overlay::after {
+  content: '🚧 In Development';
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(255, 193, 7, 0.9);
+  color: #000;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+</style>
 </head>
 <body>
 <header class="site-header">
@@ -29,6 +100,19 @@
 <main>
 <section class="hero">
 <div class="container">
+<div class="construction-notice">
+<h3>
+<span class="construction-icon">🚧</span>
+Website Under Development
+<span class="construction-icon">🚧</span>
+</h3>
+<p>
+This research portfolio is currently being enhanced with additional content and features. 
+Some sections may be incomplete. Expected completion: <strong>Next Week</strong>. 
+The Prosody-on-Demand research is fully available for review.
+</p>
+</div>
+
 <div class="hero-content">
 <h2 class="hero-title">Turn Speech into Memory</h2>
 <p class="hero-sub">Revolutionary audio-neural interface that transforms how we encode and recall information through prosodic speech enhancement.</p>
@@ -55,12 +139,12 @@
 </section>
 
 <section id="projects" class="container section">
-<h3>Featured Research</h3>
+<h3>Featured Research <span class="status-badge">Content Expanding</span></h3>
 <div class="grid">
 <article class="card featured">
 <div class="card-header">
 <h4>Prosody-on-Demand</h4>
-<span class="badge primary">Active Research</span>
+<span class="badge primary">Complete & Available</span>
 </div>
 <p class="card-description">AI-driven earplug that converts neutral speech into rhythmic, memorable formats using real-time EEG feedback. Helping Alzheimer's patients and learners retain information better.</p>
 <div class="card-features">
@@ -74,12 +158,12 @@
 </div>
 </article>
 
-<article class="card">
+<article class="card coming-soon-overlay">
 <div class="card-header">
 <h4>Closed-Loop BCI for Decision Timing</h4>
-<span class="badge">Coming Soon</span>
+<span class="badge">Content Coming Soon</span>
 </div>
-<p class="card-description">Real-time EEG/ECG markers to align stimuli with cardiac and intentional phases for optimal decision-making.</p>
+<p class="card-description">Real-time EEG/ECG markers to align stimuli with cardiac and intentional phases for optimal decision-making. Detailed documentation in progress.</p>
 <div class="card-features">
 <span class="feature">❤️ Cardiac Sync</span>
 <span class="feature">🧠 EEG Integration</span>
@@ -87,12 +171,12 @@
 </div>
 </article>
 
-<article class="card">
+<article class="card coming-soon-overlay">
 <div class="card-header">
 <h4>EEG-ECG-EMG Synchrony</h4>
-<span class="badge">Development</span>
+<span class="badge">Content Coming Soon</span>
 </div>
-<p class="card-description">End-to-end timing verification and hardware-in-the-loop testing for multi-modal biosignal processing.</p>
+<p class="card-description">End-to-end timing verification and hardware-in-the-loop testing for multi-modal biosignal processing. Research details being compiled.</p>
 <div class="card-features">
 <span class="feature">📊 Multi-modal</span>
 <span class="feature">🔬 Precision Testing</span>
@@ -126,11 +210,14 @@
 </section>
 
 <section id="about" class="container section">
-<h3>About the Research</h3>
+<h3>About the Research <span class="status-badge">Bio Updating</span></h3>
 <div class="about-grid">
 <div class="about-text">
 <p>Research Associate at the University of Glasgow, specializing in the intersection of neurotechnology, control engineering, and real-time systems. My work focuses on developing human-centered neurotechnology that enhances cognitive function through innovative audio-neural interfaces.</p>
 <p>The Prosody-on-Demand project represents a breakthrough in memory enhancement technology, combining AI-driven speech processing with neural feedback to create truly personalized learning experiences.</p>
+<p style="color: var(--muted); font-style: italic; margin-top: 24px;">
+📝 Additional research publications and project details will be added throughout the week.
+</p>
 </div>
 <div class="about-highlights">
 <h4>Research Focus</h4>
@@ -145,19 +232,28 @@
 </section>
 
 <section id="contact" class="container section contact-section">
-<h3>Get Involved</h3>
+<h3>Get Involved <span class="status-badge">Contact Info Expanding</span></h3>
 <div class="contact-grid">
 <div class="contact-item">
 <h4>🤝 Collaboration</h4>
 <p>Interested in partnering on neurotechnology research? Let's discuss potential collaborations.</p>
+<p style="color: var(--muted); font-size: 0.9rem; margin-top: 12px;">
+Additional contact methods and collaboration details coming soon.
+</p>
 </div>
 <div class="contact-item">
 <h4>📧 Contact</h4>
 <p>University of Glasgow<br>Research Associate, Neurotech Lab</p>
+<p style="color: var(--muted); font-size: 0.9rem; margin-top: 12px;">
+Full contact information and office hours being updated.
+</p>
 </div>
 <div class="contact-item">
 <h4>📊 Data & Code</h4>
 <p>Open research practices - code and datasets available on GitHub.</p>
+<p style="color: var(--muted); font-size: 0.9rem; margin-top: 12px;">
+Additional repositories and datasets will be linked throughout the week.
+</p>
 </div>
 </div>
 </section>
@@ -166,6 +262,9 @@
 <footer class="site-footer">
 <div class="container">
 <p>© <span id="y"></span> Hamed Ghane · University of Glasgow · Built with GitHub Pages</p>
+<p style="color: var(--muted); font-size: 0.8rem; margin-top: 8px;">
+🚧 Website actively under development - Content updates daily
+</p>
 </div>
 </footer>
 <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
