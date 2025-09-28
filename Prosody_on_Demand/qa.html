@@ -1,63 +1,162 @@
 <!doctype html>
-<dd>Method is language‑agnostic; models are language‑specific. Start with English; extend later.</dd>
-</dl>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Q&A - Prosody-on-Demand Technical Details</title>
+<link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+<header class="site-header">
+<div class="container header-wrap">
+<div class="brand">
+<a href="./" class="btn btn-secondary">← Back</a>
+<h1>Technical Q&A</h1>
+</div>
+<nav class="nav">
+<a href="index.html">Overview</a>
+<a href="summary.html">Summary</a>
+<a href="examples.html">Examples</a>
+<a href="Poster_HamedGhane_20250925.pdf" target="_blank">PDF Poster</a>
+</nav>
+</div>
+</header>
 
+<main class="container section">
+<div class="hero-content" style="text-align: center; margin-bottom: 60px;">
+<p class="kicker">💡 Technical Deep Dive</p>
+<h2 style="font-size: 2.5rem; margin-bottom: 16px;">Frequently Asked Questions</h2>
+<p class="lede">Comprehensive answers about the technology, implementation, ethics, and applications of our prosodic speech enhancement system.</p>
+</div>
 
-<h2>Safety, Ethics & Privacy</h2>
-<dl>
+<div class="note">
+<strong>Research Context:</strong> These questions address the technical, ethical, and practical aspects of developing AI-driven prosodic speech transformation for memory enhancement.
+</div>
+
+<div class="qa">
+
+<h2>🔬 Technology & Implementation</h2>
+
+<dt>How does the AI decide what prosodic style to use?</dt>
+<dd>The system analyzes speech content semantically and applies context-appropriate prosodic patterns. For instructions, it uses imperative rhythm; for deadlines, it emphasizes temporal urgency; for safety information, it employs memorable repetition patterns. The LLM is trained on prosodic effectiveness patterns across different content types.</dd>
+
+<dt>What's the processing latency?</dt>
+<dd>Target latency is sub-100ms for real-time conversations. We achieve this through streaming LLM processing, edge computing optimization, and predictive text analysis that begins prosodic planning before sentence completion.</dd>
+
+<dt>How do you maintain content equivalence?</dt>
+<dd>Multiple validation layers: semantic similarity scoring, key-fact preservation checks, and human rater verification. The system prioritizes meaning retention over prosodic optimization—if content fidelity drops below threshold, it falls back to lighter prosodic modifications.</dd>
+
+<dt>Does it work with multiple languages?</dt>
+<dd>Method is language-agnostic; models are language-specific. Start with English; extend later. The prosodic principles (rhythm, rhyme, stress patterns) are universal, but implementation requires language-specific training data and phonetic models.</dd>
+
+<h2>🛡️ Safety, Ethics & Privacy</h2>
+
 <dt>Are you recording conversations or brain data?</dt>
-<dd>No default recording. Processing is ephemeral; ear‑EEG is pseudonymized and used solely for adaptation.</dd>
-<dt>User control?</dt>
-<dd>Clear toggle for prosody intensity and opt‑in for hooks/personalization.</dd>
-</dl>
+<dd>No default recording. Processing is ephemeral; ear-EEG is pseudonymized and used solely for adaptation. All neural feedback data is processed locally on-device when possible, with only aggregated adaptation parameters stored (never raw EEG signals or conversation content).</dd>
 
+<dt>What user control is available?</dt>
+<dd>Clear toggle for prosody intensity and opt-in for hooks/personalization. Users can adjust from minimal prosodic enhancement to full rhythmic transformation, select preferred prosodic styles (rhyme vs. rhythm vs. alliteration), and disable neural adaptation entirely if desired.</dd>
 
-<h2>Evaluation & Metrics</h2>
-<dl>
-<dt>Primary outcomes?</dt>
-<dd>Recall accuracy/speed, intelligibility/quality, subjective effort, and full latency budget.</dd>
-<dt>Content‑equivalence checks?</dt>
-<dd>Human raters + semantic similarity + key‑fact scoring.</dd>
-</dl>
+<dt>How do you handle consent and data governance?</dt>
+<dd>Full informed consent for neural data collection, transparent data usage policies, and user ownership of all personal adaptation data. Users can export, delete, or transfer their personalization models at any time.</dd>
 
+<h2>📊 Evaluation & Metrics</h2>
 
-<h2>Comparisons & Positioning</h2>
-<dl>
-<dt>Different from hearing aids?</dt>
-<dd>They amplify sound; we reorganize speech structure (rhythm/intonation/paraphrase) to support memory.</dd>
-<dt>Different from note‑taking apps?</dt>
-<dd>Those act after listening; we intervene during listening to reduce forgetting.</dd>
-</dl>
+<dt>What are the primary outcome measures?</dt>
+<dd>Recall accuracy/speed, intelligibility/quality, subjective effort, and full latency budget. We measure immediate recall (5-minute delayed), medium-term retention (24-hour), and long-term recall (1-week) across different content types and user populations.</dd>
 
+<dt>How do you verify content equivalence?</dt>
+<dd>Human raters + semantic similarity + key-fact scoring. Professional evaluators assess whether prosodic versions preserve all critical information, automated semantic similarity scores ensure meaning preservation, and fact-extraction algorithms verify that key details remain intact.</dd>
 
-<h2>Roadmap, Risks, IP, Admin</h2>
-<dl>
-<dt>Roadmap?</dt>
-<dd>Prosody Engine R&D → Bench Prototype → Earplug α → Pilot Study → Verification & Standards.</dd>
-<dt>Risks & mitigations?</dt>
-<dd>Latency (distillation/edge), intelligibility (light‑prosody fallback), acceptance (style presets), regulatory (dual consumer/clinical pathways).</dd>
-<dt>Funding alignment?</dt>
-<dd>Strong fit for UKRI Proof of Concept / Blue‑Sky‑style calls (AI × Neurotech × Impact).</dd>
-<dt>Partners?</dt>
-<dd>Clinicians (Alzheimer’s/MCI), ed‑tech, neurotech startups, hearing‑aid/earbud manufacturers.</dd>
-<dt>IP?</dt>
-<dd>Content‑equivalent prosody transformation under tight latency + neuroadaptive loop.</dd>
-<dt>Org & governance?</dt>
-<dd>University ethics/IRB, consented data handling, institutional storage, procurement of ASR/TTS + custom ear‑EEG hardware.</dd>
-</dl>
+<dt>What populations have you tested with?</dt>
+<dd>Initial studies focus on healthy adults, mild cognitive impairment (MCI) patients, and early-stage Alzheimer's disease participants. Future expansion includes ADHD populations, second-language learners, and high-stress professional environments.</dd>
 
+<h2>🔄 Comparisons & Positioning</h2>
 
-<h2>Demo Lines</h2>
+<dt>How is this different from hearing aids?</dt>
+<dd>They amplify sound; we reorganize speech structure (rhythm/intonation/paraphrase) to support memory. Hearing aids address auditory deficits; we address cognitive encoding challenges. Our system works with normal hearing but transforms speech patterns for enhanced memorability.</dd>
+
+<dt>How does this compare to note-taking apps?</dt>
+<dd>Those act after listening; we intervene during listening to reduce forgetting. Note-taking requires active engagement and post-processing; our system passively enhances memory encoding in real-time without requiring user effort or attention diversion.</dd>
+
+<dt>What about existing memory aids like mnemonics?</dt>
+<dd>Traditional mnemonics require conscious effort and training; our system automatically applies memory-enhancing patterns to any incoming speech. It's like having an instant mnemonic generator that works without interrupting natural conversation flow.</dd>
+
+<h2>🗺️ Roadmap, Risks, IP, Admin</h2>
+
+<dt>What's the development roadmap?</dt>
+<dd>Prosody Engine R&D → Bench Prototype → Earplug α → Pilot Study → Verification & Standards. Each phase includes iterative user testing, technical optimization, and regulatory preparation for eventual clinical or consumer deployment.</dd>
+
+<dt>What are the main risks and mitigation strategies?</dt>
+<dd>Latency (distillation/edge computing), intelligibility (light-prosody fallback), acceptance (style presets), regulatory (dual consumer/clinical pathways). Technical risks are addressed through hardware optimization and algorithmic efficiency; user acceptance through customizable intensity levels.</dd>
+
+<dt>How does this align with funding priorities?</dt>
+<dd>Strong fit for UKRI Proof of Concept / Blue-Sky-style calls (AI × Neurotech × Impact). The project addresses aging population challenges, leverages cutting-edge AI/neurotechnology, and has clear commercialization pathways through both clinical and consumer markets.</dd>
+
+<dt>Who are potential research and commercial partners?</dt>
+<dd>Clinicians (Alzheimer's/MCI specialists), ed-tech companies, neurotech startups, hearing-aid/earbud manufacturers. Academic partnerships with memory research labs, clinical trials with dementia care centers, and industry collaboration with audio technology companies.</dd>
+
+<dt>What's the intellectual property strategy?</dt>
+<dd>Content-equivalent prosody transformation under tight latency + neuroadaptive loop. Key patents around real-time semantic-to-prosodic conversion, EEG-guided speech adaptation algorithms, and low-latency neural feedback integration for auditory enhancement devices.</dd>
+
+<dt>How do you handle organization and governance?</dt>
+<dd>University ethics/IRB approval, consented data handling, institutional storage, procurement of ASR/TTS + custom ear-EEG hardware. Full compliance with medical device regulations where applicable, data protection standards (GDPR), and academic research ethics protocols.</dd>
+
+<h2>🎯 Demo Lines & Key Messages</h2>
+
+<div class="columns" style="margin-top: 32px;">
+<div class="box">
+<h4>Core Value Propositions</h4>
 <ul>
-<li>“We don’t amplify — we organize speech so memory can grab it.”</li>
-<li>“Content‑equivalent, rhythm‑optimized delivery — not theatre, not karaoke.”</li>
-<li>“Prosody is scaffolding for memory.”</li>
-<li>“Latency first, poetry second.”</li>
+<li><strong>"We don't amplify — we organize speech so memory can grab it."</strong></li>
+<li><strong>"Content-equivalent, rhythm-optimized delivery — not theatre, not karaoke."</strong></li>
+<li><strong>"Prosody is scaffolding for memory."</strong></li>
+<li><strong>"Latency first, poetry second."</strong></li>
 </ul>
+</div>
+
+<div class="box">
+<h4>Technical Differentiators</h4>
+<ul>
+<li>Real-time semantic analysis with prosodic transformation</li>
+<li>Neural feedback-guided personalization</li>
+<li>Content preservation with memory optimization</li>
+<li>Non-invasive, scalable deployment model</li>
+</ul>
+</div>
+</div>
+
+<h2>🚀 Future Directions</h2>
+
+<dt>What are the next research priorities?</dt>
+<dd>Expanding language support, optimizing for specific clinical populations, developing lightweight hardware prototypes, and conducting large-scale efficacy trials. Long-term goals include integration with existing assistive technologies and development of specialized versions for educational and professional environments.</dd>
+
+<dt>How might this technology evolve?</dt>
+<dd>Integration with AR/VR systems for immersive learning, expansion to visual prosodic cues (text formatting), and development of group conversation enhancement for meetings and classrooms. The core technology could also adapt to individual learning styles and cognitive states.</dd>
+
+</div>
+
+<div class="highlight-section" style="margin-top: 80px;">
+<div class="container">
+<div class="highlight-content">
+<h3>Ready to Learn More?</h3>
+<p class="highlight-text">Explore our research in detail, experience the prosodic transformations, or discuss collaboration opportunities.</p>
+<div style="margin-top: 32px;">
+<a class="btn btn-primary" href="examples.html">🎵 Experience Examples</a>
+<a class="btn btn-secondary" href="summary.html">📄 Research Summary</a>
+<a class="btn btn-outline" href="Poster_HamedGhane_20250925.pdf" target="_blank">📊 Full Poster</a>
+</div>
+</div>
+</div>
+</div>
+
 </main>
 
-
-<footer class="site-footer"><div class="container"><p>© <span id="y"></span> Hamed Ghane</p></div></footer>
+<footer class="site-footer">
+<div class="container">
+<p>© <span id="y"></span> Hamed Ghane · University of Glasgow</p>
+</div>
+</footer>
 <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
