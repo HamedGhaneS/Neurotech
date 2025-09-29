@@ -19,66 +19,65 @@
 }
 
 .construction-notice h3 {
-color: #ffc107;
-margin: 0 0 12px;
-font-size: 1.3rem;
-display: flex;
-align-items: center;
-justify-content: center;
-gap: 8px;
+  color: #ffc107;
+  margin: 0 0 12px;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
 }
 
 .construction-notice p {
-color: var(–fg);
-margin: 0;
-font-size: 1rem;
-line-height: 1.5;
+  color: var(--fg);
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.5;
 }
 
 .construction-icon {
-font-size: 1.5rem;
-animation: rotate 2s linear infinite;
+  font-size: 1.5rem;
+  animation: rotate 2s linear infinite;
 }
 
 @keyframes pulse {
-0%, 100% { box-shadow: 0 0 20px rgba(255, 193, 7, 0.2); }
-50% { box-shadow: 0 0 30px rgba(255, 193, 7, 0.4); }
+  0%, 100% { box-shadow: 0 0 20px rgba(255, 193, 7, 0.2); }
+  50% { box-shadow: 0 0 30px rgba(255, 193, 7, 0.4); }
 }
 
 @keyframes rotate {
-from { transform: rotate(0deg); }
-to { transform: rotate(360deg); }
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 .status-badge {
-display: inline-block;
-background: rgba(255, 193, 7, 0.2);
-color: #ffc107;
-padding: 4px 12px;
-border-radius: 20px;
-font-size: 0.8rem;
-font-weight: 600;
-margin-left: 8px;
+  display: inline-block;
+  background: rgba(255, 193, 7, 0.2);
+  color: #ffc107;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-left: 8px;
 }
 
 .coming-soon-overlay {
-position: relative;
+  position: relative;
 }
 
 .coming-soon-overlay::after {
-content: ‘🚧 In Development’;
-position: absolute;
-top: 12px;
-right: 12px;
-background: rgba(255, 193, 7, 0.9);
-color: #000;
-padding: 4px 8px;
-border-radius: 12px;
-font-size: 0.7rem;
-font-weight: 600;
+  content: '🚧 In Development';
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(255, 193, 7, 0.9);
+  color: #000;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 600;
 }
 </style>
-
 </head>
 <body>
 <header class="site-header">
@@ -216,13 +215,14 @@ The Prosody-on-Demand research is fully available for review.
 <strong>Neurotechnologist • Control Engineer • AI Researcher</strong>
 </p>
 
-<div class="bio-container" id="bio-container">
+<div class="bio-layout" id="bio-container">
+<div class="bio-left">
 <div class="bio-image-wrapper" id="bio-image-wrapper">
 <img src="assets/hamed-profile.jpg" alt="Hamed Ghane" class="bio-image" id="bio-image" onerror="this.src='https://via.placeholder.com/300x300?text=Hamed+Ghane'">
 </div>
+</div>
 
-<div class="about-grid" id="bio-content">
-<div class="about-text">
+<div class="bio-right">
 <p style="font-size: 1.1rem; line-height: 1.7;">My name is <strong>Hamed</strong>, I am a neuroscientist with a PhD in Control Engineering. I am driven by understanding how the brain works and building intelligent systems that bridge neuroscience and artificial intelligence. Brain-computer interfaces have been the main focus of my research, combining real-time neural signal processing with adaptive control systems to create technologies that enhance human capabilities.</p>
 
 <p style="margin-top: 24px;">Currently, I am a Postdoctoral Researcher at the University of Glasgow, developing BCI systems using EEG, EMG, and ECG for sensorimotor decision-making. My work combines computational neuroscience with machine learning to create intelligent interfaces between mind and machine.</p>
@@ -244,24 +244,22 @@ The Prosody-on-Demand research is fully available for review.
 <span class="feature">Control Theory</span>
 <span class="feature">Neurotechnology</span>
 </div>
-</div>
 
-<div class="about-highlights">
-<h4>Academic Journey</h4>
-<ul>
-<li><strong>🎓 Ph.D. Control Engineering</strong><br>
+<h4 style="color: var(--accent); margin: 32px 0 16px;">Academic Journey</h4>
+<ul style="list-style: none; padding: 0;">
+<li style="margin-bottom: 16px;"><strong>🎓 Ph.D. Control Engineering</strong><br>
 <span style="font-size: 0.9rem; color: var(--muted);">Nonlinear Dynamics & System Optimization</span>
 </li>
-<li><strong>🧠 M.Sc. Brain & Cognition</strong><br>
+<li style="margin-bottom: 16px;"><strong>🧠 M.Sc. Brain & Cognition</strong><br>
 <span style="font-size: 0.9rem; color: var(--muted);">Computational approaches to understanding neural mechanisms</span>
 </li>
-<li><strong>🔬 Postdoctoral Research</strong><br>
+<li style="margin-bottom: 16px;"><strong>🔬 Postdoctoral Research</strong><br>
 <span style="font-size: 0.9rem; color: var(--muted);">University of Glasgow & University of Groningen</span>
 </li>
 </ul>
 
-<h4 style="margin-top: 24px;">Core Competencies</h4>
-<ul>
+<h4 style="color: var(--accent); margin: 32px 0 16px;">Core Competencies</h4>
+<ul style="list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 8px;">
 <li>🧠 Brain-Computer Interfaces</li>
 <li>⚡ Real-time Neural Processing</li>
 <li>🤖 AI & Machine Learning</li>
@@ -271,24 +269,30 @@ The Prosody-on-Demand research is fully available for review.
 </ul>
 </div>
 </div>
-</div>
 </section>
 
 <style>
-.bio-container {
-  position: relative;
+.bio-layout {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 60px;
   margin-top: 40px;
+  align-items: start;
+}
+
+.bio-left {
+  position: sticky;
+  top: 100px;
 }
 
 .bio-image-wrapper {
   text-align: center;
-  margin-bottom: 40px;
   transition: all 0.5s ease;
 }
 
 .bio-image {
-  width: 200px;
-  height: 200px;
+  width: 250px;
+  height: 250px;
   border-radius: 50%;
   object-fit: cover;
   border: 4px solid var(--accent);
@@ -297,40 +301,45 @@ The Prosody-on-Demand research is fully available for review.
 }
 
 .bio-image-wrapper.expanded .bio-image {
-  width: 300px;
-  height: 300px;
+  width: 320px;
+  height: 320px;
   border-radius: 20px;
   box-shadow: 0 12px 48px rgba(122, 162, 255, 0.5);
+  transform: scale(1.05);
 }
 
-.about-grid {
-  opacity: 1;
-  transition: all 0.5s ease;
+.bio-right {
+  width: 100%;
 }
 
-.bio-container.layout-change .about-grid {
-  display: block;
-  max-width: 100%;
+.bio-right p {
+  color: var(--fg);
+  line-height: 1.8;
 }
 
-.bio-container.layout-change .about-text {
-  max-width: 100%;
+.bio-right h4 {
+  color: var(--accent);
 }
 
-.bio-container.layout-change .about-highlights {
-  margin-top: 40px;
-  max-width: 100%;
-}
-
-@media (max-width: 768px) {
+@media (max-width: 968px) {
+  .bio-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .bio-left {
+    position: relative;
+    top: 0;
+  }
+  
   .bio-image {
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
   }
   
   .bio-image-wrapper.expanded .bio-image {
-    width: 200px;
-    height: 200px;
+    width: 250px;
+    height: 250px;
   }
 }
 </style>
@@ -385,31 +394,30 @@ document.getElementById('y').textContent = new Date().getFullYear();
 // Dynamic bio image scroll effect
 let bioExpanded = false;
 
-window.addEventListener(‘scroll’, function() {
-const bioSection = document.getElementById(‘about’);
-const bioImage = document.getElementById(‘bio-image-wrapper’);
-const bioContainer = document.getElementById(‘bio-container’);
-
-if (!bioSection || !bioImage) return;
-
-const sectionTop = bioSection.offsetTop;
-const sectionHeight = bioSection.offsetHeight;
-const scrollPosition = window.scrollY + window.innerHeight / 2;
-
-// Check if user is in the bio section
-const inBioSection = scrollPosition > sectionTop && scrollPosition < (sectionTop + sectionHeight);
-
-if (inBioSection && !bioExpanded) {
-bioImage.classList.add(‘expanded’);
-bioContainer.classList.add(‘layout-change’);
-bioExpanded = true;
-} else if (!inBioSection && bioExpanded) {
-bioImage.classList.remove(‘expanded’);
-bioContainer.classList.remove(‘layout-change’);
-bioExpanded = false;
-}
+window.addEventListener('scroll', function() {
+  const bioSection = document.getElementById('about');
+  const bioImage = document.getElementById('bio-image-wrapper');
+  const bioContainer = document.getElementById('bio-container');
+  
+  if (!bioSection || !bioImage) return;
+  
+  const sectionTop = bioSection.offsetTop;
+  const sectionHeight = bioSection.offsetHeight;
+  const scrollPosition = window.scrollY + window.innerHeight / 2;
+  
+  // Check if user is in the bio section
+  const inBioSection = scrollPosition > sectionTop && scrollPosition < (sectionTop + sectionHeight);
+  
+  if (inBioSection && !bioExpanded) {
+    bioImage.classList.add('expanded');
+    bioContainer.classList.add('layout-change');
+    bioExpanded = true;
+  } else if (!inBioSection && bioExpanded) {
+    bioImage.classList.remove('expanded');
+    bioContainer.classList.remove('layout-change');
+    bioExpanded = false;
+  }
 });
 </script>
-
 </body>
 </html>
