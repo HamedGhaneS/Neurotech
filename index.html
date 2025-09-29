@@ -216,7 +216,13 @@ The Prosody-on-Demand research is fully available for review.
 <p style="text-align: center; color: var(--accent); font-size: 1.2rem; margin-bottom: 40px;">
 <strong>Neurotechnologist • Control Engineer • AI Researcher</strong>
 </p>
-<div class="about-grid">
+
+<div class="bio-container" id="bio-container">
+<div class="bio-image-wrapper" id="bio-image-wrapper">
+<img src="assets/hamed-profile.jpg" alt="Hamed Ghane" class="bio-image" id="bio-image" onerror="this.src='https://via.placeholder.com/300x300?text=Hamed+Ghane'">
+</div>
+
+<div class="about-grid" id="bio-content">
 <div class="about-text">
 <p style="font-size: 1.1rem; line-height: 1.7;">My name is <strong>Hamed</strong>, I am a neuroscientist with a PhD in Control Engineering. I am driven by understanding how the brain works and building intelligent systems that bridge neuroscience and artificial intelligence. Brain-computer interfaces have been the main focus of my research, combining real-time neural signal processing with adaptive control systems to create technologies that enhance human capabilities.</p>
 
@@ -266,7 +272,69 @@ The Prosody-on-Demand research is fully available for review.
 </ul>
 </div>
 </div>
+</div>
 </section>
+
+<style>
+.bio-container {
+  position: relative;
+  margin-top: 40px;
+}
+
+.bio-image-wrapper {
+  text-align: center;
+  margin-bottom: 40px;
+  transition: all 0.5s ease;
+}
+
+.bio-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--accent);
+  box-shadow: 0 8px 32px rgba(122, 162, 255, 0.3);
+  transition: all 0.5s ease;
+}
+
+.bio-image-wrapper.expanded .bio-image {
+  width: 300px;
+  height: 300px;
+  border-radius: 20px;
+  box-shadow: 0 12px 48px rgba(122, 162, 255, 0.5);
+}
+
+.about-grid {
+  opacity: 1;
+  transition: all 0.5s ease;
+}
+
+.bio-container.layout-change .about-grid {
+  display: block;
+  max-width: 100%;
+}
+
+.bio-container.layout-change .about-text {
+  max-width: 100%;
+}
+
+.bio-container.layout-change .about-highlights {
+  margin-top: 40px;
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  .bio-image {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .bio-image-wrapper.expanded .bio-image {
+    width: 200px;
+    height: 200px;
+  }
+}
+</style>
 
 <section id="contact" class="container section contact-section">
 <h3>Get Involved</h3>
@@ -312,6 +380,37 @@ University of Glasgow</p>
 </p>
 </div>
 </footer>
-<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+<script>
+document.getElementById('y').textContent = new Date().getFullYear();
+
+// Dynamic bio image scroll effect
+let bioExpanded = false;
+
+window.addEventListener(‘scroll’, function() {
+const bioSection = document.getElementById(‘about’);
+const bioImage = document.getElementById(‘bio-image-wrapper’);
+const bioContainer = document.getElementById(‘bio-container’);
+
+if (!bioSection || !bioImage) return;
+
+const sectionTop = bioSection.offsetTop;
+const sectionHeight = bioSection.offsetHeight;
+const scrollPosition = window.scrollY + window.innerHeight / 2;
+
+// Check if user is in the bio section
+const inBioSection = scrollPosition > sectionTop && scrollPosition < (sectionTop + sectionHeight);
+
+if (inBioSection && !bioExpanded) {
+bioImage.classList.add(‘expanded’);
+bioContainer.classList.add(‘layout-change’);
+bioExpanded = true;
+} else if (!inBioSection && bioExpanded) {
+bioImage.classList.remove(‘expanded’);
+bioContainer.classList.remove(‘layout-change’);
+bioExpanded = false;
+}
+});
+</script>
+
 </body>
 </html>
