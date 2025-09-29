@@ -1,4 +1,5 @@
 <!doctype html>
+
 <html lang="en">
 <head>
 <meta charset="utf-8" />
@@ -19,65 +20,66 @@
 }
 
 .construction-notice h3 {
-  color: #ffc107;
-  margin: 0 0 12px;
-  font-size: 1.3rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
+color: #ffc107;
+margin: 0 0 12px;
+font-size: 1.3rem;
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 8px;
 }
 
 .construction-notice p {
-  color: var(--fg);
-  margin: 0;
-  font-size: 1rem;
-  line-height: 1.5;
+color: var(–fg);
+margin: 0;
+font-size: 1rem;
+line-height: 1.5;
 }
 
 .construction-icon {
-  font-size: 1.5rem;
-  animation: rotate 2s linear infinite;
+font-size: 1.5rem;
+animation: rotate 2s linear infinite;
 }
 
 @keyframes pulse {
-  0%, 100% { box-shadow: 0 0 20px rgba(255, 193, 7, 0.2); }
-  50% { box-shadow: 0 0 30px rgba(255, 193, 7, 0.4); }
+0%, 100% { box-shadow: 0 0 20px rgba(255, 193, 7, 0.2); }
+50% { box-shadow: 0 0 30px rgba(255, 193, 7, 0.4); }
 }
 
 @keyframes rotate {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+from { transform: rotate(0deg); }
+to { transform: rotate(360deg); }
 }
 
 .status-badge {
-  display: inline-block;
-  background: rgba(255, 193, 7, 0.2);
-  color: #ffc107;
-  padding: 4px 12px;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  margin-left: 8px;
+display: inline-block;
+background: rgba(255, 193, 7, 0.2);
+color: #ffc107;
+padding: 4px 12px;
+border-radius: 20px;
+font-size: 0.8rem;
+font-weight: 600;
+margin-left: 8px;
 }
 
 .coming-soon-overlay {
-  position: relative;
+position: relative;
 }
 
 .coming-soon-overlay::after {
-  content: '🚧 In Development';
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  background: rgba(255, 193, 7, 0.9);
-  color: #000;
-  padding: 4px 8px;
-  border-radius: 12px;
-  font-size: 0.7rem;
-  font-weight: 600;
+content: ‘🚧 In Development’;
+position: absolute;
+top: 12px;
+right: 12px;
+background: rgba(255, 193, 7, 0.9);
+color: #000;
+padding: 4px 8px;
+border-radius: 12px;
+font-size: 0.7rem;
+font-weight: 600;
 }
 </style>
+
 </head>
 <body>
 <header class="site-header">
@@ -213,7 +215,7 @@ The Prosody-on-Demand research is fully available for review.
 <h3>About the Research <span class="status-badge">Bio Updating</span></h3>
 <div class="about-grid">
 <div class="about-text">
-<p>Research Associate at the University of Glasgow, specializing in the intersection of neurotechnology, control engineering, and real-time systems. My work focuses on developing human-centered neurotechnology that enhances cognitive function through innovative audio-neural interfaces.</p>
+<p>Postdoctoral Researcher at the University of Glasgow, specializing in the intersection of neurotechnology, control engineering, and real-time systems. My work focuses on developing human-centered neurotechnology that enhances cognitive function through innovative audio-neural interfaces.</p>
 <p>The Prosody-on-Demand project represents a breakthrough in memory enhancement technology, combining AI-driven speech processing with neural feedback to create truly personalized learning experiences.</p>
 <p style="color: var(--muted); font-style: italic; margin-top: 24px;">
 📝 Additional research publications and project details will be added throughout the week.
@@ -232,28 +234,36 @@ The Prosody-on-Demand research is fully available for review.
 </section>
 
 <section id="contact" class="container section contact-section">
-<h3>Get Involved <span class="status-badge">Contact Info Expanding</span></h3>
+<h3>Get Involved</h3>
 <div class="contact-grid">
 <div class="contact-item">
 <h4>🤝 Collaboration</h4>
 <p>Interested in partnering on neurotechnology research? Let's discuss potential collaborations.</p>
-<p style="color: var(--muted); font-size: 0.9rem; margin-top: 12px;">
-Additional contact methods and collaboration details coming soon.
-</p>
+<a href="mailto:hmd.ghane.s@gmail.com" class="btn btn-outline" style="margin-top: 12px;">📧 Email Me</a>
 </div>
 <div class="contact-item">
-<h4>📧 Contact</h4>
-<p>University of Glasgow<br>Research Associate, Neurotech Lab</p>
-<p style="color: var(--muted); font-size: 0.9rem; margin-top: 12px;">
-Full contact information and office hours being updated.
+<h4>📧 Contact Details</h4>
+<p><strong>Hamed Ghane</strong><br>
+Postdoctoral Researcher<br>
+University of Glasgow</p>
+<p style="margin-top: 12px;">
+<a href="mailto:hmd.ghane.s@gmail.com" style="color: var(--accent); text-decoration: none;">hmd.ghane.s@gmail.com</a>
 </p>
+<div style="margin-top: 16px; display: flex; gap: 8px; flex-wrap: wrap;">
+<a href="https://www.linkedin.com/in/hamed-ghane/" target="_blank" rel="noopener" class="btn btn-outline">
+💼 LinkedIn
+</a>
+<a href="https://www.gla.ac.uk/schools/psychologyneuroscience/staff/hamedghanesasansaraei/" target="_blank" rel="noopener" class="btn btn-outline">
+🎓 Academic Profile
+</a>
+</div>
 </div>
 <div class="contact-item">
-<h4>📊 Data & Code</h4>
+<h4>📊 Research & Code</h4>
 <p>Open research practices - code and datasets available on GitHub.</p>
-<p style="color: var(--muted); font-size: 0.9rem; margin-top: 12px;">
-Additional repositories and datasets will be linked throughout the week.
-</p>
+<a href="https://github.com/HamedGhaneS" target="_blank" rel="noopener" class="btn btn-outline" style="margin-top: 12px;">
+💻 GitHub Profile
+</a>
 </div>
 </div>
 </section>
