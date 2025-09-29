@@ -1,4 +1,5 @@
 <!doctype html>
+
 <html lang="en">
 <head>
 <meta charset="utf-8" />
@@ -19,65 +20,66 @@
 }
 
 .construction-notice h3 {
-  color: #ffc107;
-  margin: 0 0 12px;
-  font-size: 1.3rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
+color: #ffc107;
+margin: 0 0 12px;
+font-size: 1.3rem;
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 8px;
 }
 
 .construction-notice p {
-  color: var(--fg);
-  margin: 0;
-  font-size: 1rem;
-  line-height: 1.5;
+color: var(–fg);
+margin: 0;
+font-size: 1rem;
+line-height: 1.5;
 }
 
 .construction-icon {
-  font-size: 1.5rem;
-  animation: rotate 2s linear infinite;
+font-size: 1.5rem;
+animation: rotate 2s linear infinite;
 }
 
 @keyframes pulse {
-  0%, 100% { box-shadow: 0 0 20px rgba(255, 193, 7, 0.2); }
-  50% { box-shadow: 0 0 30px rgba(255, 193, 7, 0.4); }
+0%, 100% { box-shadow: 0 0 20px rgba(255, 193, 7, 0.2); }
+50% { box-shadow: 0 0 30px rgba(255, 193, 7, 0.4); }
 }
 
 @keyframes rotate {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+from { transform: rotate(0deg); }
+to { transform: rotate(360deg); }
 }
 
 .status-badge {
-  display: inline-block;
-  background: rgba(255, 193, 7, 0.2);
-  color: #ffc107;
-  padding: 4px 12px;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  margin-left: 8px;
+display: inline-block;
+background: rgba(255, 193, 7, 0.2);
+color: #ffc107;
+padding: 4px 12px;
+border-radius: 20px;
+font-size: 0.8rem;
+font-weight: 600;
+margin-left: 8px;
 }
 
 .coming-soon-overlay {
-  position: relative;
+position: relative;
 }
 
 .coming-soon-overlay::after {
-  content: '🚧 In Development';
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  background: rgba(255, 193, 7, 0.9);
-  color: #000;
-  padding: 4px 8px;
-  border-radius: 12px;
-  font-size: 0.7rem;
-  font-weight: 600;
+content: ‘🚧 In Development’;
+position: absolute;
+top: 12px;
+right: 12px;
+background: rgba(255, 193, 7, 0.9);
+color: #000;
+padding: 4px 8px;
+border-radius: 12px;
+font-size: 0.7rem;
+font-weight: 600;
 }
 </style>
+
 </head>
 <body>
 <header class="site-header">
@@ -215,10 +217,23 @@ The Prosody-on-Demand research is fully available for review.
 <strong>Neurotechnologist • Control Engineer • AI Researcher</strong>
 </p>
 
-<div class="bio-layout" id="bio-container">
+<div class="bio-layout">
 <div class="bio-left">
-<div class="bio-image-wrapper" id="bio-image-wrapper">
-<img src="assets/hamed-profile.jpg" alt="Hamed Ghane" class="bio-image" id="bio-image" onerror="this.src='https://via.placeholder.com/300x300?text=Hamed+Ghane'">
+<div class="bio-image-container">
+<div class="skill-orbit" id="skill-orbit">
+<div class="skill-symbol skill-control" title="Control Engineering">
+<span style="font-size: 2rem;">⚙️</span>
+</div>
+<div class="skill-symbol skill-ai" title="AI & Mathematics">
+<span style="font-size: 2rem;">🤖</span>
+</div>
+<div class="skill-symbol skill-neuro" title="Neuroscience">
+<span style="font-size: 2rem;">🧠</span>
+</div>
+</div>
+<div class="bio-image-wrapper">
+<img src="assets/hamed-profile.jpg" alt="Hamed Ghane" class="bio-image" onerror="this.src='https://via.placeholder.com/300x300?text=Hamed+Ghane'">
+</div>
 </div>
 </div>
 
@@ -273,21 +288,36 @@ The Prosody-on-Demand research is fully available for review.
 
 <style>
 .bio-layout {
-  display: grid;
-  grid-template-columns: 350px 1fr;
+  display: flex;
   gap: 60px;
   margin-top: 40px;
-  align-items: start;
+  align-items: flex-start;
 }
 
 .bio-left {
+  flex: 0 0 350px;
   position: sticky;
   top: 100px;
 }
 
+.bio-right {
+  flex: 1;
+  min-width: 0;
+}
+
+.bio-image-container {
+  position: relative;
+  width: 320px;
+  height: 320px;
+  margin: 0 auto;
+}
+
 .bio-image-wrapper {
-  text-align: center;
-  transition: all 0.5s ease;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
 }
 
 .bio-image {
@@ -300,16 +330,58 @@ The Prosody-on-Demand research is fully available for review.
   transition: all 0.5s ease;
 }
 
-.bio-image-wrapper.expanded .bio-image {
-  width: 320px;
-  height: 320px;
-  border-radius: 20px;
-  box-shadow: 0 12px 48px rgba(122, 162, 255, 0.5);
-  transform: scale(1.05);
+.skill-orbit {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease;
 }
 
-.bio-right {
-  width: 100%;
+.skill-orbit.active {
+  opacity: 1;
+}
+
+.skill-symbol {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--card);
+  border: 3px solid var(--accent);
+  border-radius: 50%;
+  box-shadow: 0 4px 16px rgba(122, 162, 255, 0.4);
+  transition: all 0.3s ease;
+}
+
+.skill-symbol.vibrating {
+  animation: vibrate 0.5s ease-in-out infinite;
+}
+
+.skill-control {
+  top: 10%;
+  right: 5%;
+}
+
+.skill-ai {
+  bottom: 15%;
+  right: 0%;
+}
+
+.skill-neuro {
+  top: 45%;
+  left: -5%;
+}
+
+@keyframes vibrate {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(-3px, 3px) rotate(-5deg); }
+  50% { transform: translate(3px, -3px) rotate(5deg); }
+  75% { transform: translate(-3px, -3px) rotate(-5deg); }
 }
 
 .bio-right p {
@@ -323,13 +395,20 @@ The Prosody-on-Demand research is fully available for review.
 
 @media (max-width: 968px) {
   .bio-layout {
-    grid-template-columns: 1fr;
+    flex-direction: column;
     gap: 40px;
   }
   
   .bio-left {
+    flex: none;
+    width: 100%;
     position: relative;
     top: 0;
+  }
+  
+  .bio-image-container {
+    width: 280px;
+    height: 280px;
   }
   
   .bio-image {
@@ -337,9 +416,13 @@ The Prosody-on-Demand research is fully available for review.
     height: 200px;
   }
   
-  .bio-image-wrapper.expanded .bio-image {
-    width: 250px;
-    height: 250px;
+  .skill-symbol {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .skill-symbol span {
+    font-size: 1.5rem !important;
   }
 }
 </style>
@@ -391,33 +474,53 @@ University of Glasgow</p>
 <script>
 document.getElementById('y').textContent = new Date().getFullYear();
 
-// Dynamic bio image scroll effect
-let bioExpanded = false;
+// Skill symbols scroll animation
+let symbolsActivated = false;
 
-window.addEventListener('scroll', function() {
-  const bioSection = document.getElementById('about');
-  const bioImage = document.getElementById('bio-image-wrapper');
-  const bioContainer = document.getElementById('bio-container');
-  
-  if (!bioSection || !bioImage) return;
-  
-  const sectionTop = bioSection.offsetTop;
-  const sectionHeight = bioSection.offsetHeight;
-  const scrollPosition = window.scrollY + window.innerHeight / 2;
-  
-  // Check if user is in the bio section
-  const inBioSection = scrollPosition > sectionTop && scrollPosition < (sectionTop + sectionHeight);
-  
-  if (inBioSection && !bioExpanded) {
-    bioImage.classList.add('expanded');
-    bioContainer.classList.add('layout-change');
-    bioExpanded = true;
-  } else if (!inBioSection && bioExpanded) {
-    bioImage.classList.remove('expanded');
-    bioContainer.classList.remove('layout-change');
-    bioExpanded = false;
-  }
+window.addEventListener(‘scroll’, function() {
+const bioSection = document.getElementById(‘about’);
+const skillOrbit = document.getElementById(‘skill-orbit’);
+
+if (!bioSection || !skillOrbit) return;
+
+const sectionTop = bioSection.offsetTop;
+const sectionHeight = bioSection.offsetHeight;
+const scrollPosition = window.scrollY + window.innerHeight / 2;
+
+// Check if user is viewing the bio section
+const inBioSection = scrollPosition > sectionTop && scrollPosition < (sectionTop + sectionHeight);
+
+if (inBioSection && !symbolsActivated) {
+// Activate orbit
+skillOrbit.classList.add(‘active’);
+
+```
+// Add vibrating animation to each symbol with staggered delay
+setTimeout(() => {
+  document.querySelector('.skill-control').classList.add('vibrating');
+}, 200);
+
+setTimeout(() => {
+  document.querySelector('.skill-ai').classList.add('vibrating');
+}, 400);
+
+setTimeout(() => {
+  document.querySelector('.skill-neuro').classList.add('vibrating');
+}, 600);
+
+symbolsActivated = true;
+```
+
+} else if (!inBioSection && symbolsActivated) {
+// Deactivate when scrolling away
+skillOrbit.classList.remove(‘active’);
+document.querySelectorAll(’.skill-symbol’).forEach(symbol => {
+symbol.classList.remove(‘vibrating’);
+});
+symbolsActivated = false;
+}
 });
 </script>
+
 </body>
 </html>
