@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Agency-Safe HMIs - Ethical Boundaries in Neurotechnology</title>
+<link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+<header class="site-header">
+<div class="container header-wrap">
+<div class="brand">
+<a href="../" class="btn btn-secondary">← Home</a>
+<div>
+<h1>Agency-Safe HMIs</h1>
+<p class="tag">Ethics × Neuroscience × Law</p>
+</div>
+</div>
+<nav class="nav">
+<a href="#overview">Overview</a>
+<a href="#experiments">Experiments</a>
+<a href="#implications">Implications</a>
+</nav>
+</div>
+</header>
+
+<main>
+<section class="hero hero--prosody">
+<div class="container">
+<div class="hero-content">
+<p class="kicker">Ethical Boundaries in Ultra-Fast Neurotechnology</p>
+<h2 class="hero-title">Where Does Human Agency End?</h2>
+<p class="hero-sub lede">Establishing timing thresholds to preserve human sense of agency, autonomy, and legal responsibility in brain-computer interface systems that can act before you do.</p>
+<div class="hero-stats">
+<div class="stat">
+<span class="stat-number">SoA Window</span>
+<span class="stat-label">Critical timing threshold</span>
+</div>
+<div class="stat">
+<span class="stat-number">Ethics + Law</span>
+<span class="stat-label">Interdisciplinary approach</span>
+</div>
+<div class="stat">
+<span class="stat-number">Real-world</span>
+<span class="stat-label">Design guidelines</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="overview" class="container section">
+<h2>The Problem</h2>
+<div class="note">
+<strong>Critical Question:</strong> When brain-computer interfaces can detect intentions and initiate actions before you physically act, who is responsible? Where does human agency end and machine autonomy begin?
+</div>
+
+<div class="columns">
+<div class="box">
+<h4>Why Now?</h4>
+<p>We've entered an era of neurotechnology and ultra-fast HMIs where machines can act almost as soon as our minds lean toward action. Like it or not, this nudges us toward an extended self.</p>
+<p>To maintain autonomy and trust, we need explicit, straightforward protocols that clearly delineate the boundary between human responsibility and machine responsibility, both legally and ethically.</p>
+</div>
+
+<div class="box">
+<h4>SoA-Building Window</h4>
+<p>When we act, the feeling "I did that" doesn't pop up all at once. It builds:</p>
+<p style="text-align: center; font-weight: 600; color: var(--accent);">intend → prepare → (SoA builds — can still cancel) → commit → act</p>
+<p>That brief SoA-building window—even at the very last moment—lets the brain check: "Am I still choosing this?" Keeping that option alive is what makes the action feel truly ours.</p>
+</div>
+
+<div class="box">
+<h4>The Neurotech Problem</h4>
+<p>Some of today's fast HMIs can start outcomes too early, before this window does its job. Then people report weaker agency; autonomy, consent, and responsibility get shaky—and disputes become harder to resolve.</p>
+<p style="font-weight: 600; color: var(--accent);">We need a clear, testable timing rule so builders and lawyers can draw the human/machine line.</p>
+</div>
+</div>
+</section>
+
+<section id="experiments" class="container section" style="background: rgba(122,162,255,0.05); padding: 60px 24px; border-radius: 20px;">
+<h2>Research Approach</h2>
+
+<div style="background: var(--card); padding: 32px; border-radius: 16px; border-left: 4px solid var(--accent); margin-bottom: 40px;">
+<h3 style="color: var(--accent); margin-top: 0;">Hypothesis & Aim</h3>
+<p><strong>Hypothesis:</strong> If an outcome is started too early after intention detection, later sense of agency drops; there exists an earliest safe time that preserves SoA.</p>
+<p><strong>Aim:</strong> Estimate this SoA-building window and turn it into a simple design rule and timing log.</p>
+</div>
+
+<h3>Experiment 1: Finding the Critical Threshold</h3>
+<div class="columns" style="margin-bottom: 40px;">
+<div class="box">
+<h4>Design</h4>
+<ul>
+<li>Detect early intention in real-time (e.g., keypress task)</li>
+<li>Start a brief sound before the action at different times across trials</li>
+<li>After each trial, ask "How much did it feel like you did that?"</li>
+<li>Log three times: intention detected, outcome started, action performed</li>
+</ul>
+</div>
+
+<div class="box">
+<h4>Expected Outcome</h4>
+<p>From timing vs. ratings, find the earliest safe time → this estimates the SoA-building window.</p>
+<p style="margin-top: 16px; color: var(--accent); font-weight: 600;">This threshold defines where human agency is preserved vs. compromised.</p>
+</div>
+</div>
+
+<div style="text-align: center; margin: 40px 0;">
+<img src="../assets/experiment1-diagram.png" alt="Experiment 1 Design" style="max-width: 100%; height: auto; border-radius: 12px; border: 2px solid var(--accent);" onerror="this.style.display='none'">
+</div>
+
+<h3>Experiment 2: Temporal Recalibration</h3>
+<div class="columns">
+<div class="box">
+<h4>Hypothesis</h4>
+<p>When participants exhibit a SoA for outcomes preceding their actions, it suggests that temporal recalibration has realigned the perceived timing of the action and outcome.</p>
+<p>This realignment ensures the preservation of the causal relationship between one's action and subsequent outcome.</p>
+</div>
+
+<div class="box">
+<h4>Method</h4>
+<ul>
+<li>Detect intention based on specific HMI protocol</li>
+<li>Initiate outcome before action (after threshold from Exp. 1)</li>
+<li>Measure perceived time of outcome and action</li>
+<li>Investigate if brains recalibrate timing to preserve causality</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section id="implications" class="container section">
+<h2>Research Implications</h2>
+
+<div class="columns">
+<div class="box">
+<h4>1. Temporal Convergence of SoA and JoA</h4>
+<p>Traditionally, the sense of agency (SoA) and judgment of agency (JoA) occur at distinct times. SoA is an immediate feeling tied to actions, while JoA is a reflective assessment of control over outcomes.</p>
+<p>Our experimental design, where the outcome is initiated before the action, offers a unique setting to explore their potential overlap—challenging traditional views of these processes being separate in time.</p>
+</div>
+
+<div class="box">
+<h4>2. Operational Thresholds</h4>
+<p>Our experiments aim to identify a specific time threshold. Initiating outcomes or actions before this threshold might compromise the user's SoA over the outcome or action.</p>
+<p>This has potential legal and ethical ramifications and can be detrimental to user experience. A diminished SoA can lead to user frustration and feelings of detachment or loss of control.</p>
+</div>
+</div>
+
+<div style="background: linear-gradient(135deg, rgba(255, 193, 7, 0.1), rgba(255, 152, 0, 0.1)); padding: 40px; border-radius: 16px; border: 2px solid #ffc107; margin-top: 40px;">
+<h3 style="color: #ffc107; margin-top: 0;">What Changes for Law & Design</h3>
+<div style="display: grid; gap: 24px;">
+<div>
+<strong style="color: var(--fg);">Design Rule:</strong>
+<p style="margin: 8px 0 0;">Don't start action earlier than the SoA-building window (or always keep hold-to-commit/confirm mechanisms).</p>
+</div>
+<div>
+<strong style="color: var(--fg);">Responsibility:</strong>
+<p style="margin: 8px 0 0;">If an action starts earlier than the window, responsibility leans toward the system, not the user.</p>
+</div>
+<div>
+<strong style="color: var(--fg);">Consent:</strong>
+<p style="margin: 8px 0 0;">Tell users the device waits long enough for agency to form; flag modes that shorten the wait.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="container section" style="background: rgba(122,162,255,0.05); padding: 60px 24px; border-radius: 20px;">
+<h2>Outputs & Collaboration</h2>
+
+<div class="columns">
+<div class="box">
+<h4>Deliverables</h4>
+<ul>
+<li>A practical time range (per task/device)</li>
+<li>One-page builder checklist</li>
+<li>Timing log template</li>
+<li>Short policy note for regulators</li>
+<li>Design guidelines for agency-preserving HMIs</li>
+</ul>
+</div>
+
+<div class="box">
+<h4>Collaboration Opportunities</h4>
+<p>Open to legal/BCI collaborators to refine standards and deployment.</p>
+<p style="margin-top: 16px;">This research bridges neuroscience, control engineering, ethics, and law to ensure neurotechnology enhances rather than diminishes human autonomy.</p>
+</div>
+</div>
+
+<div style="text-align: center; margin-top: 40px;">
+<p style="font-size: 1.2rem; color: var(--accent); font-weight: 600;">"Preserving the user's SoA should be paramount, even if it means imposing limits on the operational speed of these technologies."</p>
+</div>
+</section>
+
+<section class="container section">
+<h2>Key Concepts</h2>
+<div style="display: grid; gap: 16px;">
+<div class="example">
+<strong>Sense of Agency (SoA):</strong> The immediate feeling that "I am causing this action/outcome"
+</div>
+<div class="example">
+<strong>Judgment of Agency (JoA):</strong> The reflective assessment of control over outcomes
+</div>
+<div class="example">
+<strong>SoA-Building Window:</strong> The critical time period during which the brain forms the sense of agency, including the ability to cancel
+</div>
+<div class="example">
+<strong>Temporal Recalibration:</strong> The brain's adjustment of perceived timing to maintain causal relationships between actions and outcomes
+</div>
+<div class="example">
+<strong>Agency Threshold:</strong> The minimum time after intention detection required to preserve genuine human agency
+</div>
+</div>
+</section>
+</main>
+
+<footer class="site-footer">
+<div class="container">
+<p>© <span id="y"></span> Hamed Ghane · University of Glasgow</p>
+</div>
+</footer>
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
