@@ -75,6 +75,66 @@
     margin-top: 40px;
 }
 
+.introduction-section {
+    background: linear-gradient(135deg, rgba(122, 162, 255, 0.05), rgba(122, 162, 255, 0.02));
+    padding: 60px 24px;
+    border-radius: 20px;
+    margin-bottom: 40px;
+}
+
+.voluntary-action-diagram {
+    text-align: center;
+    margin: 40px 0;
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.voluntary-action-diagram img {
+    max-width: 600px;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.voluntary-action-diagram figcaption {
+    margin-top: 16px;
+    font-style: italic;
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+
+.intro-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.intro-content h3 {
+    color: var(--accent);
+    margin-top: 32px;
+    margin-bottom: 16px;
+}
+
+.intro-content p {
+    line-height: 1.8;
+    margin-bottom: 16px;
+}
+
+.citation-box {
+    background: rgba(122, 162, 255, 0.1);
+    border-left: 4px solid var(--accent);
+    padding: 20px;
+    margin: 24px 0;
+    border-radius: 8px;
+}
+
+.citation-box p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--fg);
+}
+
 @media (max-width: 968px) {
     .three-box-layout {
         grid-template-columns: 1fr;
@@ -82,6 +142,10 @@
     
     .logo-container img {
         max-width: 300px;
+    }
+    
+    .voluntary-action-diagram img {
+        max-width: 100%;
     }
 }
 
@@ -109,6 +173,7 @@
 </div>
 </div>
 <nav class="nav">
+<a href="#introduction">Introduction</a>
 <a href="#overview">Overview</a>
 <a href="#experiments">Experiments</a>
 <a href="#implications">Implications</a>
@@ -144,6 +209,46 @@
 </div>
 </div>
 </div>
+</div>
+</section>
+
+<section id="introduction" class="introduction-section">
+<div class="container intro-content">
+<h2>Introduction</h2>
+<h3>Voluntary Action and Human Agency: Bridging Philosophy, Neuroscience, and Human-Brain Interface</h3>
+
+<p>Throughout history, the nature of human action and our abilities as agents have been central themes in philosophy. The concept of agency is intrinsically linked to the idea of human autonomy and the extent to which individuals can exert control over their actions. This fundamental inquiry, dating back to the early days of philosophical thought, has driven investigations into human consciousness and self-awareness.</p>
+
+<p>Leibniz's "Theodicy" exemplifies this line of inquiry, posing the problem of necessity and questioning whether humans are truly free agents or merely subject to the determinism of a pre-established order. This understanding of agency presupposes individuals' ability to identify themselves as agents capable of initiating and controlling actions. Such self-awareness is fundamental to human nature, permitting purposeful behavior and decision-making that reflects individuals' intentions, desires, and beliefs.</p>
+
+<div class="voluntary-action-diagram">
+<figure>
+<img src="voluntary-action-diagram.png" alt="Subjective components of a voluntary action" />
+<figcaption>Subjective components of a voluntary action: Intention (prospective, pre-action) and Agency (retrospective, post-action)</figcaption>
+</figure>
+</div>
+
+<p>Transitioning from traditional philosophical debates into the realm of contemporary neuroscience research, voluntary action is depicted as entailing two distinct subjective experiences: <strong>intention</strong> and the <strong>sense of agency (SoA)</strong>. The concept of intention primarily refers to the cognitive processes underlying the planning and initiation of actions. It enters into the vast and often contested discussion about human freedom in decision-making and is closely tied to the concept of 'free will', a term we consciously avoid here to prevent getting entangled in complex philosophical debates. While intention is typically probed via introspective methods, it has been empirically investigated through various experimental designs as well.</p>
+
+<p>Contrarily, SoA deals with the subjective experience of controlling one's actions and perceiving oneself as the author of those actions. Unlike intention, the SoA is often studied retrospectively, examining how individuals perceive their actions after they have occurred. This distinction helps us better channel our research efforts to explore the unique aspects of each concept and ensure that our investigations remain grounded within their respective theoretical frameworks.</p>
+
+<p>Focusing on SoA, our research aims to delve deeper into the subjective experience associated with the execution of a voluntary action. The exploration of SoA holds promise in illuminating the human condition, our freedom, our responsibilities, and our control over actions. Probing the neural and cognitive mechanisms underpinning SoA, we aspire to demystify the processes enabling us to experience ourselves as agents.</p>
+
+<h3>The Role of SoA in Ethics and Law</h3>
+
+<p>The SoA also takes center stage in the realms of ethics and law, particularly in the context of emerging technologies like brain-computer interfaces (BCIs). Deciphering responsibility for actions performed through these devices raises urgent questions. These investigations collectively highlight SoA's potential to bolster human performance while grappling with the ethical complexities spurred by technological advancement.</p>
+
+<div class="citation-box">
+<p><strong>Theoretical Foundation:</strong> This research builds upon concepts from: Ghane, H. (2023). <em>The Point of No Return in Action Cancellation: Deciphering Its Influence on the Human Sense of Agency via Real-Time Brain-Computer Interfaces</em>. Master's Thesis, Pompeu Fabra University. <a href="https://www.linkedin.com/in/hamedghane/overlay/1635533147565/single-media-viewer/?profileId=ACoAAAf4QWwBOmclrO-8jj8-F10oGPQ5g223CDk" target="_blank" rel="noopener">View Thesis</a></p>
+</div>
+
+<h3>Narrowing the Concept of SoA</h3>
+
+<p>Our investigation of SoA is more specifically oriented. Whereas some definitions interpret SoA as a broad subjective feeling of capability to act (or self-efficacy), we take a more restricted approach. We center our exploration on the <strong>experiential component of SoA</strong>, which emerges before, during, and after an actual muscular movement. Therefore, throughout this work, SoA refers to the subjective experience related to the execution of a particular motor action.</p>
+
+<p>Actions form the core of our everyday experiences and are fundamental for achieving our goals. Human actions can generally be divided into two categories: stimulus-dependent reactions and stimulus-independent voluntary actions. Reactions are direct responses to external stimuli, while voluntary actions are internally initiated, uninfluenced by external stimuli, and accompanied by unique subjective experiences like the sensation of personal choice.</p>
+
+<p>For this work, we adopt a pragmatic criterion: we deem an action voluntary if no apparent, discernible external stimulus perceived by an average human triggers the action. This approach provides a working definition of voluntary actions, enabling us to investigate SoA in a more structured and focused manner.</p>
 </div>
 </section>
 
