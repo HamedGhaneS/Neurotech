@@ -1,12 +1,47 @@
-<div class="hero-actions">
-<a class="btn btn-primary" href="Agency-Safe-HMIs-Research-Plan.pdf" target="_blank" rel="noopener">📄 Download Research Plan (PDF)</a>
-</div><!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Agency-Safe HMIs - Ethical Boundaries in Neurotechnology</title>
 <link rel="stylesheet" href="../assets/style.css" />
+<style>
+/* Custom styles for this page */
+.logo-container {
+    text-align: center;
+    padding: 40px 0 20px;
+}
+
+.logo-container img {
+    max-width: 200px;
+    height: auto;
+}
+
+.three-box-layout {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1.2fr;
+    gap: 24px;
+    margin-top: 40px;
+}
+
+@media (max-width: 968px) {
+    .three-box-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+.box-why-now {
+    font-size: 0.95rem;
+}
+
+.box-soa-window {
+    /* This box gets more space from grid-template-columns above */
+}
+
+.box-neurotech-problem {
+    /* Normal width */
+}
+</style>
 </head>
 <body>
 <header class="site-header">
@@ -29,10 +64,16 @@
 <main>
 <section class="hero hero--prosody">
 <div class="container">
+<div class="logo-container">
+<img src="logo.png" alt="Agency-Safe HMIs Logo" />
+</div>
 <div class="hero-content">
 <p class="kicker">Ethical Boundaries in Ultra-Fast Neurotechnology</p>
 <h2 class="hero-title">Where Does Human Agency End?</h2>
 <p class="hero-sub lede">Establishing timing thresholds to preserve human sense of agency, autonomy, and legal responsibility in brain-computer interface systems that can act before you do.</p>
+<div class="hero-actions">
+<a class="btn btn-primary" href="Agency-Safe-HMIs-Research-Plan.pdf" target="_blank" rel="noopener">📄 Download Research Plan (PDF)</a>
+</div>
 <div class="hero-stats">
 <div class="stat">
 <span class="stat-number">SoA Window</span>
@@ -57,15 +98,14 @@
 <strong>Critical Question:</strong> When brain-computer interfaces can detect intentions and initiate actions before you physically act, who is responsible? Where does human agency end and machine autonomy begin?
 </div>
 
-<div class="columns">
-<div class="box">
+<div class="three-box-layout">
+<div class="box box-why-now">
 <h4>Why Now?</h4>
 <p>We've entered an era of neurotechnology and ultra-fast HMIs where machines can act almost as soon as our minds lean toward action. Like it or not, this nudges us toward an extended self.</p>
 <p>To maintain autonomy and trust, we need explicit, straightforward protocols that clearly delineate the boundary between human responsibility and machine responsibility, both legally and ethically.</p>
 </div>
 
-<div class="columns">
-<div class="box">
+<div class="box box-soa-window">
 <h4>SoA-Building Window</h4>
 <p>When we act, the feeling "I did that" doesn't pop up all at once. It builds:</p>
 <p style="text-align: center; font-weight: 600; color: var(--accent);">intend → prepare → (SoA builds — can still cancel) → commit → act</p>
@@ -75,7 +115,7 @@
 </div>
 </div>
 
-<div class="box">
+<div class="box box-neurotech-problem">
 <h4>The Neurotech Problem</h4>
 <p>Some of today's fast HMIs can start outcomes too early, before this window does its job. Then people report weaker agency; autonomy, consent, and responsibility get shaky—and disputes become harder to resolve.</p>
 <p style="font-weight: 600; color: var(--accent);">We need a clear, testable timing rule so builders and lawyers can draw the human/machine line.</p>
