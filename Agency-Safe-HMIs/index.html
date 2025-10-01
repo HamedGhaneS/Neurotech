@@ -10,11 +10,62 @@
 .logo-container {
     text-align: center;
     padding: 40px 0 20px;
+    perspective: 1000px;
 }
 
 .logo-container img {
-    max-width: 200px;
+    max-width: 450px;
+    width: 100%;
     height: auto;
+    max-height: 300px;
+    object-fit: contain;
+    animation: logoEntrance 1.5s ease-out, logoPulse 3s ease-in-out 1.5s infinite;
+    transform-style: preserve-3d;
+    filter: drop-shadow(0 10px 30px rgba(122, 162, 255, 0.3));
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.logo-container img:hover {
+    transform: scale(1.05) translateY(-5px);
+    filter: drop-shadow(0 15px 40px rgba(122, 162, 255, 0.5));
+    animation: logoHover 0.6s ease-in-out;
+}
+
+@keyframes logoEntrance {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px) scale(0.8);
+    }
+    50% {
+        opacity: 0.8;
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes logoPulse {
+    0%, 100% {
+        transform: scale(1);
+        filter: drop-shadow(0 10px 30px rgba(122, 162, 255, 0.3));
+    }
+    50% {
+        transform: scale(1.02);
+        filter: drop-shadow(0 12px 35px rgba(122, 162, 255, 0.4));
+    }
+}
+
+@keyframes logoHover {
+    0%, 100% {
+        transform: scale(1.05) translateY(-5px) rotate(0deg);
+    }
+    25% {
+        transform: scale(1.06) translateY(-7px) rotate(1deg);
+    }
+    75% {
+        transform: scale(1.06) translateY(-7px) rotate(-1deg);
+    }
 }
 
 .three-box-layout {
@@ -27,6 +78,10 @@
 @media (max-width: 968px) {
     .three-box-layout {
         grid-template-columns: 1fr;
+    }
+    
+    .logo-container img {
+        max-width: 300px;
     }
 }
 
