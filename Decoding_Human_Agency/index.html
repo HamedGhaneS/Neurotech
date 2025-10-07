@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Decoding Human Agency — Point of No Return</title>
   <link rel="stylesheet" href="../assets/style.css" />
-  <meta name="description" content="Decoding the 'point of no return' — timing thresholds for human sense of agency using closed-loop EEG/EMG experiments." />
+  <meta name="description" content="Decoding the 'Point of No Return' — behavioural & neural timing thresholds for the human sense of agency using real-time EEG/EMG closed-loop experiments." />
 </head>
 <body>
   <header class="site-header">
@@ -13,21 +13,23 @@
       <a href="../" class="btn btn-secondary">← Home</a>
       <div>
         <h1>Decoding Human Agency</h1>
-        <p class="tag">Exploring the "Point of No Return" — timing thresholds for human agency with closed-loop EEG/EMG experiments</p>
+        <p class="tag">Exploring the “Point of No Return” — when voluntary actions become irreversible and how that shapes subjective agency.</p>
       </div>
     </div>
   </header>
 
   <main class="container">
+    <!-- HERO -->
     <section class="project-hero">
       <div class="hero-card">
         <div class="card-icon">🧭</div>
-        <h2>Project summary</h2>
+        <h2>Snapshot</h2>
         <p>
-          We investigate the minimal temporal window in which voluntary actions remain controllable —
-          the behavioural and neural "point of no return". Using low-latency EMG onset detection,
-          Random Dot Motion tasks, and closed-loop EEG/EMG control, we quantify when actions become
-          irreversible and how that maps to neural signatures.
+          We measure the minimal temporal window in which voluntary actions remain
+          subjectively controllable — the “Point of No Return” — using low-latency EMG
+          onset detectors, Random Dot Motion tasks, and closed-loop EEG/EMG control.
+          The project combines real-time classification, tight timing validation, and
+          behavioural SoA reports to map how action timing shapes perceived control.
         </p>
 
         <div class="tags">
@@ -35,48 +37,114 @@
           <span class="tag">EMG</span>
           <span class="tag">Decision-making</span>
           <span class="tag">Closed-loop</span>
-          <span class="tag">Low latency</span>
+          <span class="tag">Low-latency</span>
         </div>
 
-        <p class="status"><strong>Status:</strong> Placeholder — project page and code coming soon.</p>
+        <p class="status"><strong>Status:</strong> Placeholder — project page and code to be published here. (Preparatory stage: data collection & classifier training completed.)</p>
+
+        <div class="hero-ctas">
+          <a class="btn" href="#methods">Methods</a>
+          <a class="btn btn-outline" href="#results">Key results</a>
+          <a class="btn" href="Decoding_Human_Agency.pdf" download>Download (full document)</a>
+        </div>
       </div>
     </section>
 
-    <section class="project-details">
-      <h3>Goals</h3>
+    <!-- DETAILS -->
+    <section id="overview" class="project-details">
+      <h3>Project goals</h3>
       <ul>
-        <li>Define behavioural timing thresholds for action veto (point of no return).</li>
-        <li>Provide reproducible low-latency detectors (RealTimeOnsetDetector) and configs.</li>
-        <li>Publish experiment code (PsychoPy + LSL), timing validation scripts, and example data.</li>
+        <li>Characterise the temporal threshold where actions become irreversible (Point of No Return).</li>
+        <li>Provide reproducible low-latency detectors (RealTimeOnsetDetector) and example configs.</li>
+        <li>Publish PsychoPy + LSL task scripts, timing validation tools (photodiode / TTL / LSL logs) and sample data.</li>
       </ul>
 
-      <h3>Methods & components</h3>
-      <ul>
-        <li>Random Dot Motion (RDM) perceptual decision tasks with closed-loop evidence termination.</li>
-        <li>High-precision EMG onset detection (sub-10 ms latency target) and latency benchmarking.</li>
-        <li>Timing validation using photodiode / LSL logs and parallel-port stamps.</li>
-        <li>Real-time data stream: PsychoPy ↔ LSL ↔ logging & analysis (Python).</li>
-      </ul>
+      <h3 id="methods">Methods — short</h3>
+      <p>
+        The pipeline uses a preparatory data collection stage to train subject-specific classifiers (sliding 1000 ms windows updated every 20 ms, downsampled to temporal features).
+        A regularized LDA (automatic shrinkage) classifier labels buffers as <em>Idle</em> or <em>Intention</em>. In the real-time stage the classifier output triggers outcome timing manipulations and post-trial explicit SoA ratings.
+      </p>
 
-      <h3>Resources & files to add</h3>
+      <h3>Key components</h3>
       <ul>
-        <li>`RealTimeOnsetDetector` implementation and example config</li>
-        <li>PsychoPy task scripts and stimulus assets</li>
-        <li>Timing validation scripts and example logs</li>
-        <li>Short README with reproduction steps and expected latency numbers</li>
-      </ul>
-
-      <h3>Quick links</h3>
-      <ul>
-        <li><a href="../Agency-Safe-HMIs/">Related: Agency-Safe-HMIs (timing & ethics)</a></li>
-        <li><a href="../Prosody_on_Demand/">Prosody-on-Demand</a></li>
-        <li><a href="../assets/">Project assets</a></li>
+        <li>17 EEG channels targeting premotor & motor cortex (10-20 montage).</li>
+        <li>EMG onset detection and TCP/IP + TTL timestamping for precise event marking.</li>
+        <li>Feature extraction: baseline correction + 100 ms downsample windows → 10 temporal features/channel → concatenation → classifier input.</li>
+        <li>Timing validation: photodiode, LSL logs, parallel port stamps for end-to-end latency checks.</li>
       </ul>
     </section>
 
+    <!-- RESULTS -->
+    <section id="results" class="project-results">
+      <h3>Preparatory stage — selected findings</h3>
+      <p>Data were collected and subject-specific classifiers were trained and cross-validated.</p>
+
+      <div class="results-grid">
+        <div class="result-card">
+          <h4>Participants</h4>
+          <p>5 participants (age 22–29).</p>
+        </div>
+
+        <div class="result-card">
+          <h4>Classifier performance</h4>
+          <ul>
+            <li>Mean cross-validation accuracy per participant: 0.87 – 0.93 (LDA/RLDA).</li>
+            <li>Training times per participant: ~62–71 sec (automated gamma selection).</li>
+          </ul>
+        </div>
+
+        <div class="result-card">
+          <h4>Timing & resolution</h4>
+          <p>TCP/IP event delay < 26 ms (500 Hz EEG → <13 samples); sliding window 20 ms steps → effective temporal resolution &lt; 40 ms for detection tasks.</p>
+        </div>
+      </div>
+
+      <p class="note">
+        These preparatory results show reliable classification for imminent action detection and justify moving to a real-time experiment where outcomes are varied relative to the detected point of no return.
+      </p>
+    </section>
+
+    <!-- TIMELINE -->
+    <section class="project-timeline">
+      <h3>Planned timeline</h3>
+      <ol>
+        <li>Consolidate & publish preparatory scripts (RealTimeOnsetDetector, trainer, example data).</li>
+        <li>Implement a simulated real-time runner & benchmark earliest reliable detection time (offline simulation).</li>
+        <li>Real-time experiment: deploy participant-specific classifier, trigger outcomes at controlled offsets (−250 ms → +250 ms), collect explicit SoA ratings.</li>
+        <li>Timing validation & reproducibility package (photodiode tests, LSL logs, example latencies).</li>
+      </ol>
+    </section>
+
+    <!-- RESOURCES -->
+    <section class="project-resources">
+      <h3>Resources & files to add</h3>
+      <ul>
+        <li><strong>RealTimeOnsetDetector</strong> (Python) + example `config.py`</li>
+        <li>PsychoPy task scripts (preparatory + real-time controllers)</li>
+        <li>Timing validation scripts & example photodiode / TTL / LSL logs</li>
+        <li>Sample dataset for reproducibility (preparatory stage)</li>
+        <li>Figures: electrode montage, timeline charts, classifier ROC/time-to-detection plots</li>
+      </ul>
+
+      <p class="small">Tip: add the full PDF to <code>Decoding_Human_Agency/Decoding_Human_Agency.pdf</code> so visitors can download the complete methods & appendices.</p>
+    </section>
+
+    <!-- FIGURES / LINKS -->
+    <section class="project-figures">
+      <h3>Figures & visual assets</h3>
+      <p>Suggested thumbnails (place in <code>Decoding_Human_Agency/assets/</code> and reference here):</p>
+      <ul>
+        <li>electrode_montage.png — EEG layout</li>
+        <li>timeline_experiment.png — trial timeline</li>
+        <li>flow_stages.png — preparatory → real-time pipeline</li>
+      </ul>
+    </section>
+
+    <!-- CONTACT -->
     <section class="contact">
       <h3>Contact</h3>
-      <p>Hamed Ghane — University of Glasgow. <br/>Code & documentation will be posted here as the project develops.</p>
+      <p>Hamed Ghane — University of Glasgow. Code & documentation will be posted here as the project develops.</p>
+      <p><a class="btn" href="../">Back to projects</a></p>
     </section>
   </main>
 
