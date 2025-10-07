@@ -1,155 +1,354 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Decoding Human Agency — Point of No Return</title>
-  <link rel="stylesheet" href="../assets/style.css" />
-  <meta name="description" content="Decoding the 'Point of No Return' — behavioural & neural timing thresholds for the human sense of agency using real-time EEG/EMG closed-loop experiments." />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Decoding Human Agency: The Point of No Return in Action Cancellation</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<meta name="description" content="Investigating how the 'point of no return' in voluntary action influences our sense of agency through real-time Brain-Computer Interfaces." />
+<style>
+.experiment-image {
+    text-align: center;
+    margin: 40px 0;
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.experiment-image img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.experiment-image.wide img {
+    max-width: 900px;
+}
+
+.experiment-image.medium img {
+    max-width: 700px;
+}
+
+.experiment-image.small img {
+    max-width: 500px;
+}
+
+.experiment-image figcaption {
+    margin-top: 16px;
+    font-style: italic;
+    color: var(--muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.thesis-highlight {
+    background: linear-gradient(135deg, rgba(122, 162, 255, 0.1), rgba(122, 162, 255, 0.05));
+    border-left: 4px solid var(--accent);
+    padding: 24px;
+    margin: 32px 0;
+    border-radius: 8px;
+}
+
+.stage-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 16px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-right: 8px;
+}
+
+.stage-badge.completed {
+    background: #4caf50;
+    color: white;
+}
+
+.stage-badge.planned {
+    background: #ff9800;
+    color: white;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    margin: 40px 0;
+}
+
+.image-grid .experiment-image {
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .image-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-wrap">
-      <a href="../" class="btn btn-secondary">← Home</a>
-      <div>
-        <h1>Decoding Human Agency</h1>
-        <p class="tag">Exploring the “Point of No Return” — when voluntary actions become irreversible and how that shapes subjective agency.</p>
-      </div>
-    </div>
-  </header>
+<header class="site-header">
+<div class="container header-wrap">
+<div class="brand">
+<a href="../" class="btn btn-secondary">← Home</a>
+<div>
+<h1>Decoding Human Agency</h1>
+<p class="tag">Neuroscience × BCI × Machine Learning</p>
+</div>
+</div>
+<nav class="nav">
+<a href="#overview">Overview</a>
+<a href="#hypothesis">Hypothesis</a>
+<a href="#method">Method</a>
+<a href="#results">Results</a>
+</nav>
+</div>
+</header>
 
-  <main class="container">
-    <!-- HERO -->
-    <section class="project-hero">
-      <div class="hero-card">
-        <div class="card-icon">🧭</div>
-        <h2>Snapshot</h2>
-        <p>
-          We measure the minimal temporal window in which voluntary actions remain
-          subjectively controllable — the “Point of No Return” — using low-latency EMG
-          onset detectors, Random Dot Motion tasks, and closed-loop EEG/EMG control.
-          The project combines real-time classification, tight timing validation, and
-          behavioural SoA reports to map how action timing shapes perceived control.
-        </p>
+<main>
+<section class="hero hero--prosody">
+<div class="container">
+<div class="hero-content">
+<p class="kicker">🧠 Master's Thesis · Pompeu Fabra University</p>
+<h2 class="hero-title">The Point of No Return in Action Cancellation</h2>
+<p class="hero-sub lede">When you decide to move, there's a critical moment—about 200ms before the action—when it becomes impossible to cancel. This research explores how that "point of no return" shapes your feeling of control.</p>
+<div class="hero-stats">
+<div class="stat">
+<span class="stat-number">~200ms</span>
+<span class="stat-label">Point of No Return</span>
+</div>
+<div class="stat">
+<span class="stat-number">90%+</span>
+<span class="stat-label">Detection Accuracy</span>
+</div>
+<div class="stat">
+<span class="stat-number">Real-time</span>
+<span class="stat-label">EEG-based BCI</span>
+</div>
+</div>
+<div class="hero-actions">
+<a class="btn btn-primary" href="Thesis_HamedGhane_2023.pdf" target="_blank">📄 Read Full Thesis</a>
+</div>
+</div>
+</div>
+</section>
 
-        <div class="tags">
-          <span class="tag">EEG</span>
-          <span class="tag">EMG</span>
-          <span class="tag">Decision-making</span>
-          <span class="tag">Closed-loop</span>
-          <span class="tag">Low-latency</span>
-        </div>
+<section id="overview" class="container section">
+<h2>The Big Idea</h2>
+<div class="note">
+<strong>Core Question:</strong> When does your brain consider an action "yours"? Is it when you physically move, or earlier—when you can no longer stop?
+</div>
 
-        <p class="status"><strong>Status:</strong> Placeholder — project page and code to be published here. (Preparatory stage: data collection & classifier training completed.)</p>
+<div class="columns">
+<div class="box">
+<h4>🧠 Sense of Agency (SoA)</h4>
+<p>The feeling "I did that"—the subjective experience of controlling your actions. It's what makes voluntary movement feel different from a reflex.</p>
+</div>
 
-        <div class="hero-ctas">
-          <a class="btn" href="#methods">Methods</a>
-          <a class="btn btn-outline" href="#results">Key results</a>
-          <a class="btn" href="Decoding_Human_Agency.pdf" download>Download (full document)</a>
-        </div>
-      </div>
-    </section>
+<div class="box">
+<h4>⏱️ Point of No Return</h4>
+<p>Research shows there's a critical moment ~200ms before you act when canceling becomes impossible. Your brain has committed, even if your finger hasn't moved yet.</p>
+</div>
 
-    <!-- DETAILS -->
-    <section id="overview" class="project-details">
-      <h3>Project goals</h3>
-      <ul>
-        <li>Characterise the temporal threshold where actions become irreversible (Point of No Return).</li>
-        <li>Provide reproducible low-latency detectors (RealTimeOnsetDetector) and example configs.</li>
-        <li>Publish PsychoPy + LSL task scripts, timing validation tools (photodiode / TTL / LSL logs) and sample data.</li>
-      </ul>
+<div class="box">
+<h4>🔗 The Connection</h4>
+<p>Does crossing this "point of no return" shape how much control you feel afterward? That's what this research investigates.</p>
+</div>
+</div>
 
-      <h3 id="methods">Methods — short</h3>
-      <p>
-        The pipeline uses a preparatory data collection stage to train subject-specific classifiers (sliding 1000 ms windows updated every 20 ms, downsampled to temporal features).
-        A regularized LDA (automatic shrinkage) classifier labels buffers as <em>Idle</em> or <em>Intention</em>. In the real-time stage the classifier output triggers outcome timing manipulations and post-trial explicit SoA ratings.
-      </p>
+<div class="experiment-image wide">
+<figure>
+<img src="voluntary-action-components.png" alt="Voluntary action components: Intention and Agency" />
+<figcaption>Voluntary action consists of two subjective experiences: <strong>Intention</strong> (prospective, pre-action) and <strong>Agency</strong> (retrospective, post-action). This research focuses on how the timing of outcomes affects the sense of agency.</figcaption>
+</figure>
+</div>
+</section>
 
-      <h3>Key components</h3>
-      <ul>
-        <li>17 EEG channels targeting premotor & motor cortex (10-20 montage).</li>
-        <li>EMG onset detection and TCP/IP + TTL timestamping for precise event marking.</li>
-        <li>Feature extraction: baseline correction + 100 ms downsample windows → 10 temporal features/channel → concatenation → classifier input.</li>
-        <li>Timing validation: photodiode, LSL logs, parallel port stamps for end-to-end latency checks.</li>
-      </ul>
-    </section>
+<section id="hypothesis" class="container section" style="background: rgba(122,162,255,0.05); padding: 60px 24px; border-radius: 20px;">
+<h2>Hypothesis</h2>
 
-    <!-- RESULTS -->
-    <section id="results" class="project-results">
-      <h3>Preparatory stage — selected findings</h3>
-      <p>Data were collected and subject-specific classifiers were trained and cross-validated.</p>
+<div class="thesis-highlight">
+<h3>Main Prediction</h3>
+<p style="font-size: 1.1rem; line-height: 1.8;">Once you pass the "point of no return," your brain treats the action as <strong>already initiated</strong>—even before you physically move. This means if an outcome happens within that ~200ms window, you'll still feel strong agency. But if the outcome comes <em>before</em> that point, your sense of control drops.</p>
+</div>
 
-      <div class="results-grid">
-        <div class="result-card">
-          <h4>Participants</h4>
-          <p>5 participants (age 22–29).</p>
-        </div>
+<div class="experiment-image medium">
+<figure>
+<img src="hypothesis-timeline.png" alt="Timeline showing hypothesis about point of no return" />
+<figcaption><strong>Experimental hypothesis timeline:</strong> The outcome (sound) can be triggered at different times after intention detection. When it occurs after the "point of no return" but before physical action, we predict participants will still report strong sense of agency.</figcaption>
+</figure>
+</div>
 
-        <div class="result-card">
-          <h4>Classifier performance</h4>
-          <ul>
-            <li>Mean cross-validation accuracy per participant: 0.87 – 0.93 (LDA/RLDA).</li>
-            <li>Training times per participant: ~62–71 sec (automated gamma selection).</li>
-          </ul>
-        </div>
+<div class="columns">
+<div class="box">
+<h4>🎯 Testing the Idea</h4>
+<p>Use a Brain-Computer Interface to detect when someone intends to act, then trigger an outcome at different times. Measure how much control they feel in each case.</p>
+</div>
 
-        <div class="result-card">
-          <h4>Timing & resolution</h4>
-          <p>TCP/IP event delay < 26 ms (500 Hz EEG → <13 samples); sliding window 20 ms steps → effective temporal resolution &lt; 40 ms for detection tasks.</p>
-        </div>
-      </div>
+<div class="box">
+<h4>💡 Why It Matters</h4>
+<p>Understanding this helps us design better BCIs, prosthetics, and human-machine systems where timing affects whether users feel in control—or feel the system is controlling them.</p>
+</div>
+</div>
+</section>
 
-      <p class="note">
-        These preparatory results show reliable classification for imminent action detection and justify moving to a real-time experiment where outcomes are varied relative to the detected point of no return.
-      </p>
-    </section>
+<section id="method" class="container section">
+<h2>Approach</h2>
 
-    <!-- TIMELINE -->
-    <section class="project-timeline">
-      <h3>Planned timeline</h3>
-      <ol>
-        <li>Consolidate & publish preparatory scripts (RealTimeOnsetDetector, trainer, example data).</li>
-        <li>Implement a simulated real-time runner & benchmark earliest reliable detection time (offline simulation).</li>
-        <li>Real-time experiment: deploy participant-specific classifier, trigger outcomes at controlled offsets (−250 ms → +250 ms), collect explicit SoA ratings.</li>
-        <li>Timing validation & reproducibility package (photodiode tests, LSL logs, example latencies).</li>
-      </ol>
-    </section>
+<div class="note">
+<strong>Two-Stage Design:</strong> <span class="stage-badge completed">Completed</span> Train AI to detect intentions · <span class="stage-badge planned">Planned</span> Test agency at different timings
+</div>
 
-    <!-- RESOURCES -->
-    <section class="project-resources">
-      <h3>Resources & files to add</h3>
-      <ul>
-        <li><strong>RealTimeOnsetDetector</strong> (Python) + example `config.py`</li>
-        <li>PsychoPy task scripts (preparatory + real-time controllers)</li>
-        <li>Timing validation scripts & example photodiode / TTL / LSL logs</li>
-        <li>Sample dataset for reproducibility (preparatory stage)</li>
-        <li>Figures: electrode montage, timeline charts, classifier ROC/time-to-detection plots</li>
-      </ul>
+<div class="experiment-image small">
+<figure>
+<img src="participant-setup.png" alt="Participant wearing EEG cap and ready to press button" />
+<figcaption><strong>Experimental setup:</strong> Participant wearing EEG cap, fixating on screen, with hand resting on button box. The box contains both the button and speaker to create natural action-outcome pairing.</figcaption>
+</figure>
+</div>
 
-      <p class="small">Tip: add the full PDF to <code>Decoding_Human_Agency/Decoding_Human_Agency.pdf</code> so visitors can download the complete methods & appendices.</p>
-    </section>
+<div class="columns">
+<div class="card">
+<div class="card-header">
+<h4>Stage 1: Train the System ✅</h4>
+</div>
+<p class="card-description">Record EEG while people press a button whenever they want. Use machine learning to detect the "pre-movement" brain pattern that predicts an action is coming.</p>
+<div class="card-features">
+<span class="feature">EEG Recording</span>
+<span class="feature">Machine Learning</span>
+<span class="feature">90%+ Accuracy</span>
+</div>
+</div>
 
-    <!-- FIGURES / LINKS -->
-    <section class="project-figures">
-      <h3>Figures & visual assets</h3>
-      <p>Suggested thumbnails (place in <code>Decoding_Human_Agency/assets/</code> and reference here):</p>
-      <ul>
-        <li>electrode_montage.png — EEG layout</li>
-        <li>timeline_experiment.png — trial timeline</li>
-        <li>flow_stages.png — preparatory → real-time pipeline</li>
-      </ul>
-    </section>
+<div class="card">
+<div class="card-header">
+<h4>Stage 2: Test Agency (Planned)</h4>
+</div>
+<p class="card-description">Use the trained system in real-time. When it detects intention, trigger a sound at varying times before the actual button press. Ask: "How much did you feel you caused that sound?"</p>
+<div class="card-features">
+<span class="feature">Real-time Detection</span>
+<span class="feature">Variable Timing</span>
+<span class="feature">Agency Ratings</span>
+</div>
+</div>
+</div>
 
-    <!-- CONTACT -->
-    <section class="contact">
-      <h3>Contact</h3>
-      <p>Hamed Ghane — University of Glasgow. Code & documentation will be posted here as the project develops.</p>
-      <p><a class="btn" href="../">Back to projects</a></p>
-    </section>
-  </main>
+<h3 style="margin-top: 60px;">Stage 1: Data Collection & Training</h3>
+<div class="experiment-image wide">
+<figure>
+<img src="preparatory-timeline.png" alt="Timeline of preparatory stage experiment" />
+<figcaption><strong>Preparatory stage protocol:</strong> Participants perform self-paced button presses across multiple trials. Each press triggers a synchronous sound. EEG data is collected to train subject-specific classifiers.</figcaption>
+</figure>
+</div>
 
-  <footer class="site-footer">
-    <div class="container">© Hamed Ghane — University of Glasgow</div>
-  </footer>
+<h3 style="margin-top: 60px;">How the Classifier Works</h3>
+<div class="image-grid">
+<div class="experiment-image">
+<figure>
+<img src="feature-extraction.png" alt="Feature extraction process from EEG data" />
+<figcaption><strong>Feature extraction:</strong> EEG data is segmented into 1000ms windows, baseline corrected, and downsampled into 100ms averages to create feature vectors.</figcaption>
+</figure>
+</div>
+
+<div class="experiment-image">
+<figure>
+<img src="feature-concatenation.png" alt="Feature concatenation across channels" />
+<figcaption><strong>Multi-channel integration:</strong> Features from all EEG channels are concatenated into a single feature vector fed to the classifier.</figcaption>
+</figure>
+</div>
+</div>
+
+<h3 style="margin-top: 60px;">Stage 2: Real-Time Experiment (Planned)</h3>
+<div class="experiment-image wide">
+<figure>
+<img src="realtime-timeline.png" alt="Timeline of real-time experiment with variable outcome timing" />
+<figcaption><strong>Real-time experimental protocol:</strong> The trained classifier continuously monitors EEG activity. Upon detecting intention, the outcome (sound) is triggered at varying delays. After each trial, participants rate their sense of agency.</figcaption>
+</figure>
+</div>
+
+<div style="background: white; padding: 32px; border-radius: 16px; margin-top: 40px; box-shadow: var(--shadow-card);">
+<h3>Technical Summary</h3>
+<ul>
+<li><strong>Brain signals:</strong> EEG from motor areas of the brain</li>
+<li><strong>AI method:</strong> Regularized Linear Discriminant Analysis (RLDA)</li>
+<li><strong>Speed:</strong> 20ms updates (fast enough to catch the ~200ms window)</li>
+<li><strong>Personalization:</strong> Each person gets their own trained classifier</li>
+</ul>
+</div>
+</section>
+
+<section id="results" class="container section">
+<h2>Results (Stage 1)</h2>
+
+<div class="columns">
+<div class="box">
+<h4>🎯 High Accuracy</h4>
+<p style="font-size: 1.1rem; font-weight: 600; color: var(--accent);">Average: 90.7% correct detection</p>
+<p style="margin-top: 12px;">The system successfully learned to predict when someone was about to press a button, just from their brain activity—before they moved.</p>
+</div>
+
+<div class="box">
+<h4>⚡ Fast Enough for Real-Time</h4>
+<p>Classifier updates every 20ms, making it feasible to detect intentions and trigger outcomes within the critical ~200ms window.</p>
+</div>
+
+<div class="box">
+<h4>✅ Ready for Stage 2</h4>
+<p>5 participants trained successfully. System validated for real-time operation. Next step: test the agency hypothesis with variable outcome timing.</p>
+</div>
+</div>
+
+<div class="experiment-image medium">
+<figure>
+<img src="classification-results.png" alt="Classification accuracy across participants" />
+<figcaption><strong>Classification performance:</strong> All five participants achieved over 87% accuracy in distinguishing between 'Idle' and 'Pre-movement' states, with an average of 90.7% using leave-one-out cross-validation.</figcaption>
+</figure>
+</div>
+
+<div style="background: linear-gradient(135deg, rgba(76, 175, 80, 0.1), rgba(76, 175, 80, 0.05)); padding: 32px; border-radius: 16px; margin-top: 40px; border-left: 4px solid #4caf50;">
+<h3 style="color: #4caf50; margin-top: 0;">✅ Proof of Concept Successful</h3>
+<p>We can reliably detect intention before action using non-invasive EEG and machine learning. The system is ready to test how timing affects sense of agency.</p>
+</div>
+</section>
+
+<section class="container section" style="background: rgba(122,162,255,0.05); padding: 60px 24px; border-radius: 20px;">
+<h2>Why This Matters</h2>
+
+<div class="columns">
+<div class="box">
+<h4>🤖 Better BCIs</h4>
+<p>Brain-computer interfaces that act too fast might make users feel out of control. Understanding agency timing helps design systems that feel natural.</p>
+</div>
+
+<div class="box">
+<h4>🧠 Understanding Agency</h4>
+<p>Provides evidence that the "point of no return" isn't just about action cancellation—it may be the moment when your brain marks an action as "mine."</p>
+</div>
+
+<div class="box">
+<h4>⚖️ Ethics & Responsibility</h4>
+<p>Who's responsible when a BCI acts on detected intentions? Understanding agency timing is crucial for legal and ethical frameworks.</p>
+</div>
+</div>
+</section>
+
+<section class="container section">
+<div style="text-align: center; max-width: 800px; margin: 0 auto;">
+<h3>Master's Thesis</h3>
+<p><strong>Hamed Ghane</strong> · Supervised by Prof. Salvador Soto Faraco</p>
+<p>MSc Brain and Cognition · Pompeu Fabra University · July 2023</p>
+<div style="margin-top: 32px;">
+<a class="btn btn-primary" href="Thesis_HamedGhane_2023.pdf" target="_blank">📄 Read Complete Thesis</a>
+</div>
+</div>
+</section>
+</main>
+
+<footer class="site-footer">
+<div class="container">
+<p>© 2023 Hamed Ghane · Pompeu Fabra University</p>
+</div>
+</footer>
 </body>
 </html>
