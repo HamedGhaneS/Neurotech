@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Decoding Human Agency — Point of No Return</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+  <meta name="description" content="Decoding the 'point of no return' — timing thresholds for human sense of agency using closed-loop EEG/EMG experiments." />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-wrap">
+      <a href="../" class="btn btn-secondary">← Home</a>
+      <div>
+        <h1>Decoding Human Agency</h1>
+        <p class="tag">Exploring the "Point of No Return" — timing thresholds for human agency with closed-loop EEG/EMG experiments</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="project-hero">
+      <div class="hero-card">
+        <div class="card-icon">🧭</div>
+        <h2>Project summary</h2>
+        <p>
+          We investigate the minimal temporal window in which voluntary actions remain controllable —
+          the behavioural and neural "point of no return". Using low-latency EMG onset detection,
+          Random Dot Motion tasks, and closed-loop EEG/EMG control, we quantify when actions become
+          irreversible and how that maps to neural signatures.
+        </p>
+
+        <div class="tags">
+          <span class="tag">EEG</span>
+          <span class="tag">EMG</span>
+          <span class="tag">Decision-making</span>
+          <span class="tag">Closed-loop</span>
+          <span class="tag">Low latency</span>
+        </div>
+
+        <p class="status"><strong>Status:</strong> Placeholder — project page and code coming soon.</p>
+      </div>
+    </section>
+
+    <section class="project-details">
+      <h3>Goals</h3>
+      <ul>
+        <li>Define behavioural timing thresholds for action veto (point of no return).</li>
+        <li>Provide reproducible low-latency detectors (RealTimeOnsetDetector) and configs.</li>
+        <li>Publish experiment code (PsychoPy + LSL), timing validation scripts, and example data.</li>
+      </ul>
+
+      <h3>Methods & components</h3>
+      <ul>
+        <li>Random Dot Motion (RDM) perceptual decision tasks with closed-loop evidence termination.</li>
+        <li>High-precision EMG onset detection (sub-10 ms latency target) and latency benchmarking.</li>
+        <li>Timing validation using photodiode / LSL logs and parallel-port stamps.</li>
+        <li>Real-time data stream: PsychoPy ↔ LSL ↔ logging & analysis (Python).</li>
+      </ul>
+
+      <h3>Resources & files to add</h3>
+      <ul>
+        <li>`RealTimeOnsetDetector` implementation and example config</li>
+        <li>PsychoPy task scripts and stimulus assets</li>
+        <li>Timing validation scripts and example logs</li>
+        <li>Short README with reproduction steps and expected latency numbers</li>
+      </ul>
+
+      <h3>Quick links</h3>
+      <ul>
+        <li><a href="../Agency-Safe-HMIs/">Related: Agency-Safe-HMIs (timing & ethics)</a></li>
+        <li><a href="../Prosody_on_Demand/">Prosody-on-Demand</a></li>
+        <li><a href="../assets/">Project assets</a></li>
+      </ul>
+    </section>
+
+    <section class="contact">
+      <h3>Contact</h3>
+      <p>Hamed Ghane — University of Glasgow. <br/>Code & documentation will be posted here as the project develops.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">© Hamed Ghane — University of Glasgow</div>
+  </footer>
+</body>
+</html>
