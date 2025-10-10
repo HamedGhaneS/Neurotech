@@ -1,571 +1,282 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Decoding Human Agency - Neurotech Research</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>When Does Your Brain Say "I Did That"?</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<meta name="description" content="There's a critical moment before you move when your brain commits to action. Can we detect it? And does it shape your feeling of control?" />
+<style>
+.experiment-image {
+    text-align: center;
+    margin: 40px 0;
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: #2c3e50;
-            background: #f8f9fa;
-        }
+.experiment-image img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
 
-        .navbar {
-            background: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            padding: 1rem 0;
-        }
+.experiment-image.wide img {
+    max-width: 900px;
+}
 
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+.experiment-image.medium img {
+    max-width: 700px;
+}
 
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #3498db;
-        }
+.experiment-image.small img {
+    max-width: 500px;
+}
 
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
+.experiment-image figcaption {
+    margin-top: 16px;
+    font-style: italic;
+    color: var(--muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
 
-        .nav-link {
-            color: #2c3e50;
-            text-decoration: none;
-            padding: 8px 16px;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-weight: 500;
-        }
-        
-        .nav-link:hover {
-            background: rgba(52, 152, 219, 0.1);
-            color: #3498db;
-        }
-        
-        .nav-link.active {
-            background: #3498db;
-            color: white;
-        }
-        
-        .nav-icon {
-            font-size: 1.2em;
-        }
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    margin: 40px 0;
+}
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
+.image-grid .experiment-image {
+    margin: 0;
+}
 
-        .hero {
-            padding: 4rem 0;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            margin-bottom: 3rem;
-        }
-
-        .hero--prosody {
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-        }
-
-        .hero-content {
-            text-align: center;
-        }
-
-        .hero-title {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
-
-        .hero-sub {
-            font-size: 1.25rem;
-            opacity: 0.95;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .lede {
-            font-size: 1.2rem;
-            line-height: 1.8;
-            margin-bottom: 2rem;
-        }
-
-        section {
-            margin-bottom: 4rem;
-        }
-
-        h2 {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-            color: #2c3e50;
-        }
-
-        h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: #34495e;
-        }
-
-        .card {
-            background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            margin-bottom: 2rem;
-        }
-
-        .timeline {
-            position: relative;
-            padding-left: 2rem;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 3px;
-            background: linear-gradient(to bottom, #3498db, #9b59b6);
-        }
-
-        .timeline-item {
-            position: relative;
-            margin-bottom: 2rem;
-            padding-left: 2rem;
-        }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -2.5rem;
-            top: 0;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background: #3498db;
-            border: 3px solid white;
-            box-shadow: 0 0 0 3px #3498db;
-        }
-
-        .status-badge {
-            display: inline-block;
-            padding: 0.25rem 0.75rem;
-            border-radius: 20px;
-            font-size: 0.875rem;
-            font-weight: 600;
-            margin-left: 0.5rem;
-        }
-
-        .status-badge.planned {
-            background: #e3f2fd;
-            color: #1976d2;
-        }
-
-        .status-badge.in-progress {
-            background: #fff3e0;
-            color: #f57c00;
-        }
-
-        .status-badge.completed {
-            background: #e8f5e9;
-            color: #388e3c;
-        }
-
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .feature-card {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 12px rgba(0,0,0,0.15);
-        }
-
-        .feature-image {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 8px;
-            margin-bottom: 1rem;
-        }
-
-        .quote-card {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 2rem;
-            border-radius: 12px;
-            margin: 2rem 0;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-        }
-
-        .quote-image {
-            width: 100%;
-            max-height: 300px;
-            object-fit: contain;
-            border-radius: 8px;
-            margin-bottom: 1.5rem;
-            background: rgba(255,255,255,0.1);
-            padding: 1rem;
-        }
-
-        .quote-text {
-            font-size: 1.5rem;
-            font-style: italic;
-            line-height: 1.8;
-            margin-bottom: 1rem;
-            text-align: center;
-        }
-
-        .quote-attribution {
-            text-align: right;
-            font-size: 1.1rem;
-            opacity: 0.9;
-        }
-
-        ul {
-            list-style-position: inside;
-            margin-bottom: 1rem;
-        }
-
-        li {
-            margin-bottom: 0.5rem;
-        }
-
-        strong {
-            color: #2c3e50;
-        }
-
-        a {
-            color: #3498db;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .hero-title {
-                font-size: 2rem;
-            }
-
-            .feature-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+@media (max-width: 768px) {
+    .image-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo">🧠 Neurotech Research</div>
-            <ul class="nav-links">
-                <li><a href="../index.html" class="nav-link"><span class="nav-icon">🏠</span> Home</a></li>
-                <li><a href="#overview" class="nav-link active"><span class="nav-icon">📊</span> Overview</a></li>
-                <li><a href="#philosophy" class="nav-link"><span class="nav-icon">🤔</span> Philosophy</a></li>
-                <li><a href="#experiment" class="nav-link"><span class="nav-icon">🔬</span> Experiment</a></li>
-                <li><a href="#roadmap" class="nav-link"><span class="nav-icon">🗺️</span> Roadmap</a></li>
-            </ul>
-        </div>
-    </nav>
+<header class="site-header">
+<div class="container header-wrap">
+<div class="brand">
+<a href="../" class="btn btn-secondary">← Home</a>
+<div>
+<h1>Decoding Human Agency</h1>
+<p class="tag">When Does Your Brain Commit to Action?</p>
+</div>
+</div>
+</div>
+</header>
 
-    <section class="hero hero--prosody">
-        <div class="container">
-            <div class="hero-content" style="text-align: center;">
-                <h2 class="hero-title" style="font-size: 3rem; margin-bottom: 24px;">🧠 ⏱️ ✋</h2>
-                <h2 class="hero-title" style="color: #2c3e50;">Do You Really Control Your Actions?</h2>
-                <p class="hero-sub lede" style="color: #34495e; font-weight: 500;">One of the most provocative experiments in neuroscience—the Libet experiment—showed that your brain activity predicts your decisions <em>before</em> you're consciously aware of them. Does this mean free will is an illusion? Or is there more to the story?</p>
-            </div>
-        </div>
-    </section>
+<main>
+<section class="hero hero--prosody">
+<div class="container">
+<div class="hero-content" style="text-align: center;">
+<h2 class="hero-title" style="font-size: 3rem; margin-bottom: 24px;">🧠 ⏱️ ✋</h2>
+<h2 class="hero-title" style="color: #1a1a1a; font-weight: 700;">Do You Really Control Your Actions?</h2>
+<p class="hero-sub lede" style="color: #2c2c2c; font-weight: 500;">One of the most provocative experiments in neuroscience—the Libet experiment—showed that your brain activity predicts your decisions <em>before</em> you're consciously aware of them. Does this mean free will is an illusion? Or is there more to the story?</p>
+</div>
+</div>
+</section>
 
-    <main class="container">
-        <section id="overview">
-            <h2>🎯 Project Overview</h2>
-            <div class="card">
-                <p class="lede">
-                    This research project investigates the neural basis of human agency and voluntary action through real-time brain-computer interfaces. We're building on decades of neuroscientific research—from the famous Libet experiments to modern BCI technology—to understand when and how conscious intention relates to action.
-                </p>
-                <h3>Core Research Questions</h3>
-                <ul>
-                    <li><strong>Timing of Awareness:</strong> When does conscious awareness of intention actually occur relative to neural preparation for action?</li>
-                    <li><strong>Sense of Agency:</strong> What neural signatures distinguish voluntary from involuntary actions?</li>
-                    <li><strong>Veto Power:</strong> Can we detect and measure the "free won't"—the ability to cancel prepared actions?</li>
-                    <li><strong>Real-time Modulation:</strong> How does feedback about brain states affect subsequent decision-making and agency?</li>
-                </ul>
-            </div>
-        </section>
+<section class="container section" style="background: rgba(255,107,107,0.05); padding: 40px 24px; border-radius: 20px; margin-top: -40px;">
+<div style="max-width: 900px; margin: 0 auto;">
+<div style="display: grid; grid-template-columns: 1fr 2fr; gap: 32px; align-items: center;">
+<div style="text-align: center;">
+<img src="leibniz-quote.png" alt="Leibniz on the great mysteries" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" />
+</div>
+<div>
+<blockquote style="font-style: italic; font-size: 1.15rem; line-height: 1.8; border-left: 4px solid #ff6b6b; padding-left: 20px; margin: 0;">
+"We must investigate two great mysteries, which might be called the <strong>sphinxes of the science</strong>, and which are deep enough to tax our intelligence to its utmost."
+</blockquote>
+<p style="text-align: right; margin-top: 12px; color: #666;">— Gottfried Wilhelm Leibniz</p>
+</div>
+</div>
+<div style="margin-top: 32px; padding: 24px; background: white; border-radius: 8px;">
+<h3 style="margin-top: 0;">Leibniz's Two Great Mysteries:</h3>
+<ol style="line-height: 2; font-size: 1.05rem;">
+<li><strong>The Composition of the Continuum</strong> — How does the continuous emerge from the discrete? How can indivisible points form extended space?</li>
+<li><strong>Freedom and Necessity</strong> — How can human actions be free when everything in nature follows deterministic laws?</li>
+</ol>
+<p style="margin-top: 20px; line-height: 1.8; font-size: 1.05rem;">
+<strong>Our Focus:</strong> This research addresses the <strong>second sphinx</strong>—the profound mystery of free will and human agency. <em>When exactly does an action become "yours"? At what moment does necessity give way to agency?</em>
+</p>
+</div>
+</div>
+</section>
 
-        <section id="philosophy">
-            <h2>🤔 Philosophical Context: The Free Will Debate</h2>
-            <div class="card">
-                <h3>Historical Background</h3>
-                <p>
-                    The question of free will has puzzled philosophers for millennia. Gottfried Wilhelm Leibniz, in his philosophical writings, identified what he called the "two great mysteries" or "sphinxes" of science:
-                </p>
+<section class="container section">
+<h2>The Libet Experiment: When Do You Decide?</h2>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start; margin: 32px 0;">
+<div>
+<img src="libet-timeline.png" alt="Timeline of brain activity and conscious awareness" style="max-width: 100%; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);" />
+</div>
+<div>
+<p style="line-height: 1.8;">In the 1980s, Benjamin Libet made a startling discovery: when you freely decide to move your finger, your brain shows activity (called "readiness potential") about <strong>350ms before you consciously feel the urge to move</strong>.</p>
+<p style="line-height: 1.8; margin-top: 16px;">This sparked decades of debate: If your brain "decides" before you're aware, are you really in control?</p>
+</div>
+</div>
 
-                <div class="quote-card">
-                    <img src="images/leibniz-quote.png" alt="Leibniz quote about two great mysteries" class="quote-image">
-                    <blockquote class="quote-text">
-                        "We must investigate two great mysteries, which might be called the <strong>sphinxes of the science</strong>, and which are deep enough to tax our intelligence to its utmost."
-                    </blockquote>
-                    <p class="quote-attribution">— Gottfried Wilhelm Leibniz</p>
-                    
-                    <div style="margin-top: 24px; padding: 20px; background: #f8f9fa; border-left: 4px solid #3498db; border-radius: 4px;">
-                        <h4 style="color: #2c3e50; margin-top: 0;">The Two Great Sphinxes:</h4>
-                        <ol style="color: #34495e; line-height: 1.8;">
-                            <li><strong>The Problem of Necessity and Contingency:</strong> How can events be both necessary (following natural laws) and contingent (able to happen differently)?</li>
-                            <li><strong>The Problem of Free Will:</strong> How can human actions be both free and determined by prior causes?</li>
-                        </ol>
-                        <p style="margin-top: 16px; color: #2c3e50; font-weight: 500;">
-                            <strong>Our Focus:</strong> This research addresses the second sphinx—the mystery of free will and human agency.
-                        </p>
-                    </div>
-                </div>
+<div style="text-align: center; margin: 40px 0;">
+<img src="brain-control.png" alt="The paradox of control" style="max-width: 600px; width: 100%; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);" />
+<p style="margin-top: 16px; font-style: italic; color: #666;">The free will debate continues: When does an action become "yours"?</p>
+</div>
+</section>
 
-                <p style="margin-top: 2rem;">
-                    These questions remained purely philosophical until modern neuroscience provided tools to investigate them empirically. The landmark experiments by Benjamin Libet in the 1980s brought these ancient questions into the laboratory.
-                </p>
-            </div>
+<section class="container section" style="background: linear-gradient(135deg, rgba(122, 162, 255, 0.1), rgba(122, 162, 255, 0.05)); padding: 40px 24px; border-radius: 20px;">
+<h2>But Wait—There's Another Critical Moment</h2>
+<p class="hero-sub lede" style="text-align: center; max-width: 900px; margin: 0 auto;">Try this: Decide to move your finger, but at the last moment, try to stop. There's a point—about <strong>200 milliseconds</strong> before you move—when it's too late to cancel. Your brain has already committed. <strong>What if we could detect that exact moment?</strong> And what if that moment is when you start feeling "I did that"?</p>
+</section>
 
-            <h3 style="margin-top: 2rem;">⚡ The Libet Experiment: A Neuroscience Revolution</h3>
-            
-            <div class="feature-grid">
-                <div class="feature-card">
-                    <img src="images/libet-timeline.png" alt="Brain activity and consciousness timeline" class="feature-image">
-                    <div class="feature-content">
-                        <h3>🧠 The Brain Decides First</h3>
-                        <p>Unconscious neural activity (the "readiness potential") appears <strong>hundreds of milliseconds</strong> before you feel the urge to act.</p>
-                    </div>
-                </div>
+<section class="container section">
+<h2>The Mystery of "I Did That"</h2>
+<p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 32px;">When you do something voluntarily—like pressing a button—you feel like <em>you</em> caused it. That feeling of control is called your <strong>sense of agency</strong>. But when exactly does your brain decide "this action is mine"?</p>
 
-                <div class="feature-card">
-                    <img src="images/brain-control.png" alt="The paradox of control" class="feature-image">
-                    <div class="feature-content">
-                        <h3>🤔 The Paradox</h3>
-                        <p>If your brain "knows" before you do, who's really in control? Is your sense of agency an illusion? Or is there something deeper going on?</p>
-                    </div>
-                </div>
+<div class="experiment-image wide">
+<figure>
+<img src="voluntary-action-components.png" alt="Voluntary action components" />
+<p style="margin-top: 16px; color: #666; line-height: 1.6;">Every voluntary action has two parts: <strong>Intention</strong> (before you move) and <strong>Agency</strong> (the feeling of control you have afterward)</p>
+</figure>
+</div>
 
-                <div class="feature-card">
-                    <img src="images/libet-experiment.png" alt="Libet experiment setup" class="feature-image">
-                    <div class="feature-content">
-                        <h3>🔬 The Setup</h3>
-                        <p>Participants watched a clock and noted when they decided to move. Meanwhile, EEG recorded their brain activity, revealing the timing puzzle.</p>
-                    </div>
-                </div>
-            </div>
+<div style="background: linear-gradient(135deg, rgba(122, 162, 255, 0.1), rgba(122, 162, 255, 0.05)); border-left: 4px solid var(--accent); padding: 24px; margin: 32px 0; border-radius: 8px;">
+<h3>The Point of No Return</h3>
+<p style="line-height: 1.8;">Research shows there's a critical moment—roughly <strong>200 milliseconds</strong> before you physically move—when you can no longer cancel the action. It's like your brain has already said "we're doing this" even though your finger hasn't moved yet. This project asks: <strong>Is that the moment when you start to feel in control?</strong></p>
+</div>
+</section>
 
-            <div class="card" style="margin-top: 2rem; background: #fff3cd; border-left: 4px solid #ffc107;">
-                <h3>🎯 Our Approach</h3>
-                <p>
-                    We're revisiting Libet's findings with modern technology: real-time brain-computer interfaces, 
-                    machine learning, and more sophisticated neural recording methods. Our goal isn't just to replicate 
-                    the past, but to understand the <em>mechanisms</em> of voluntary action and test whether conscious 
-                    awareness can influence processes once thought to be purely unconscious.
-                </p>
-            </div>
-        </section>
+<section class="container section" style="background: rgba(122,162,255,0.05); padding: 60px 24px; border-radius: 20px;">
+<h2>The Hypothesis</h2>
 
-        <section id="experiment">
-            <h2>🔬 Experimental Design</h2>
-            <div class="card">
-                <h3>Setup & Methodology</h3>
-                <p><strong>Hardware:</strong></p>
-                <ul>
-                    <li>OpenBCI Cyton board (8-channel EEG)</li>
-                    <li>Standard 10-20 electrode placement focusing on motor cortex (C3, C4) and supplementary motor area</li>
-                    <li>High-precision timing system synchronized with neural recording</li>
-                </ul>
+<div class="experiment-image medium">
+<figure>
+<img src="hypothesis-timeline.png" alt="Timeline showing the hypothesis" />
+<p style="margin-top: 16px; color: #666; line-height: 1.6;">If an outcome (like a sound) happens after the "point of no return" but before you physically move, will you still feel like you caused it?</p>
+</figure>
+</div>
 
-                <p style="margin-top: 1.5rem;"><strong>Experimental Protocol:</strong></p>
-                <ul>
-                    <li>Participants perform self-paced voluntary movements (button presses)</li>
-                    <li>Real-time detection of readiness potential (RP) using trained classifiers</li>
-                    <li>Participants report timing of conscious intention using modified Libet clock</li>
-                    <li>Comparison of neural onset vs. reported awareness timing</li>
-                </ul>
+<p style="font-size: 1.1rem; line-height: 1.8; text-align: center; max-width: 800px; margin: 32px auto;">Once you cross the point of no return, your brain might treat the action as "already happening"—even before you move. So if something happens in that brief window, you should still feel responsible for it.</p>
+</section>
 
-                <p style="margin-top: 1.5rem;"><strong>Novel Additions:</strong></p>
-                <ul>
-                    <li><strong>Real-time feedback:</strong> Participants see prediction of their intention before they're consciously aware</li>
-                    <li><strong>Veto trials:</strong> Testing the "free won't" by allowing participants to cancel prepared actions</li>
-                    <li><strong>Agency manipulation:</strong> Introducing delays or mismatches to disrupt sense of agency</li>
-                </ul>
-            </div>
-        </section>
+<section class="container section">
+<h2>How Do We Test This?</h2>
+<p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 32px;">We built a brain-reading system that can detect <em>before</em> you move. Here's how:</p>
 
-        <section id="roadmap">
-            <h2>🗺️ Project Roadmap</h2>
-            <div class="card">
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <h3>Stage 1: System Development <span class="status-badge completed">✅ Completed</span></h3>
-                        <ul>
-                            <li>OpenBCI setup and signal acquisition pipeline</li>
-                            <li>Real-time signal processing and artifact rejection</li>
-                            <li>Basic RP detection algorithm</li>
-                            <li>Timing synchronization system</li>
-                        </ul>
-                    </div>
+<div class="experiment-image small">
+<figure>
+<img src="participant-setup.png" alt="Participant in the experiment" />
+<p style="margin-top: 16px; color: #666; line-height: 1.6;">Participant wearing an EEG cap to read brain activity, with their hand on a button</p>
+</figure>
+</div>
 
-                    <div class="timeline-item">
-                        <h3>Stage 2: Classic Replication <span class="status-badge in-progress">🔄 In Progress</span></h3>
-                        <ul>
-                            <li>Replicate original Libet experiment with modern equipment</li>
-                            <li>Establish baseline measurements of RP-to-awareness timing</li>
-                            <li>Validate measurement methodology</li>
-                            <li>Initial pilot testing (n=10 participants)</li>
-                        </ul>
-                    </div>
+<h3 style="margin-top: 60px; text-align: center;">Step 1: Teach the Computer to Read Your Brain</h3>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 32px;">First, we record brain activity while people press a button whenever they want. The computer learns to recognize the brain pattern that appears right before they move.</p>
 
-                    <div class="timeline-item">
-                        <h3>Stage 3: Real-time Feedback <span class="status-badge planned">📅 Planned</span></h3>
-                        <ul>
-                            <li>Implement ML-based intention prediction</li>
-                            <li>Design feedback paradigm (visual/auditory)</li>
-                            <li>Test effect of prediction feedback on awareness</li>
-                            <li>Measure changes in RP characteristics</li>
-                        </ul>
-                    </div>
+<div class="experiment-image wide">
+<figure>
+<img src="preparatory-timeline.png" alt="Training phase timeline" />
+<p style="margin-top: 16px; color: #666; line-height: 1.6;">During training, participants make self-paced button presses. Each press makes a sound. We record their brain activity to teach the AI.</p>
+</figure>
+</div>
 
-                    <div class="timeline-item">
-                        <h3>Stage 4: Agency Manipulation <span class="status-badge planned">📅 Planned</span></h3>
-                        <ul>
-                            <li>Introduce feedback delays and mismatches</li>
-                            <li>Measure sense of agency using questionnaires and implicit measures</li>
-                            <li>Explore boundary conditions of voluntary control</li>
-                            <li>Test "free won't" (veto) capabilities</li>
-                        </ul>
-                    </div>
+<h3 style="margin-top: 60px; text-align: center;">How the AI Learns</h3>
+<div class="image-grid">
+<div class="experiment-image">
+<figure>
+<img src="feature-extraction.png" alt="Feature extraction from brain signals" />
+<p style="margin-top: 16px; color: #666; line-height: 1.6;">Brain signals are broken into small time windows and analyzed</p>
+</figure>
+</div>
 
-                    <div class="timeline-item">
-                        <h3>Stage 5: Analysis & Publication <span class="status-badge planned">📅 Planned</span></h3>
-                        <ul>
-                            <li>Comprehensive data analysis across all conditions</li>
-                            <li>Theoretical integration with existing models</li>
-                            <li>Manuscript preparation</li>
-                            <li>Conference presentations</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
+<div class="experiment-image">
+<figure>
+<img src="feature-concatenation.png" alt="Combining signals from multiple brain areas" />
+<p style="margin-top: 16px; color: #666; line-height: 1.6;">Signals from multiple brain areas are combined to make predictions</p>
+</figure>
+</div>
+</div>
 
-        <section id="implications">
-            <h2>🌟 Potential Implications</h2>
-            <div class="feature-grid">
-                <div class="card">
-                    <h3>🧠 For Neuroscience</h3>
-                    <p>
-                        Better understanding of the neural mechanisms underlying voluntary action, consciousness, 
-                        and the sense of agency. Could reshape theories of motor control and decision-making.
-                    </p>
-                </div>
+<h3 style="margin-top: 60px; text-align: center;">Step 2: Test the Timing 🔄 In Progress</h3>
+<p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 32px;">Once the system can predict when you're about to move, we trigger a sound at different times—sometimes before the point of no return, sometimes after. Then we ask: "How much did you feel like <em>you</em> caused that sound?"</p>
 
-                <div class="card">
-                    <h3>🤖 For Brain-Computer Interfaces</h3>
-                    <p>
-                        Insights into how to design BCIs that preserve users' sense of agency and control. 
-                        Understanding intention prediction could improve assistive technologies.
-                    </p>
-                </div>
+<div class="experiment-image wide">
+<figure>
+<img src="realtime-timeline.png" alt="Real-time experiment timeline" />
+<p style="margin-top: 16px; color: #666; line-height: 1.6;">The trained system watches your brain in real-time. When it detects you're about to move, it triggers a sound at varying times. After each trial, you rate how much control you felt.</p>
+</figure>
+</div>
+</section>
 
-                <div class="card">
-                    <h3>⚖️ For Philosophy & Ethics</h3>
-                    <p>
-                        Empirical data to inform philosophical debates about free will, moral responsibility, 
-                        and the nature of human agency. Implications for legal and ethical frameworks.
-                    </p>
-                </div>
+<section class="container section" style="background: #f8f9fa; padding: 60px 24px; border-radius: 20px;">
+<h2>What We Found (So Far)</h2>
 
-                <div class="card">
-                    <h3>🏥 For Clinical Applications</h3>
-                    <p>
-                        Understanding disruptions in sense of agency could help treat conditions like 
-                        schizophrenia, OCD, and movement disorders where agency is impaired.
-                    </p>
-                </div>
-            </div>
-        </section>
-    </main>
+<div class="experiment-image medium">
+<figure>
+<img src="classification-results.png" alt="Results showing high accuracy" />
+<p style="margin-top: 16px; color: #666; line-height: 1.6;">The system achieved over 90% accuracy in detecting when people were about to move—before they actually did</p>
+</figure>
+</div>
 
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
+<div class="columns" style="margin-top: 40px;">
+<div class="box" style="border-left: 4px solid #4caf50;">
+<h4>✅ It Works!</h4>
+<p>We can reliably detect when someone is about to press a button just by reading their brain activity—before they move.</p>
+</div>
 
-        // Update active nav link on scroll
-        const sections = document.querySelectorAll('section[id]');
-        const navLinks = document.querySelectorAll('.nav-link');
+<div class="box" style="border-left: 4px solid #2196f3;">
+<h4>⚡ Fast Enough</h4>
+<p>The system updates every 20 milliseconds, making it quick enough to trigger outcomes within that critical 200ms window.</p>
+</div>
 
-        window.addEventListener('scroll', () => {
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (pageYOffset >= sectionTop - 200) {
-                    current = section.getAttribute('id');
-                }
-            });
+<div class="box" style="border-left: 4px solid #ff9800;">
+<h4>🔄 Currently Testing</h4>
+<p>The real-time experiment is now underway! We're testing whether timing truly affects your feeling of control—stay tuned for results.</p>
+</div>
+</div>
+</section>
 
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('active');
-                }
-            });
-        });
-    </script>
+<section class="container section">
+<h2>Why This Matters</h2>
+
+<div class="columns">
+<div class="box">
+<h4>🤖 Better Brain-Computer Interfaces</h4>
+<p>If a robotic arm or computer responds too early to your brain signals, you might feel like it's controlling <em>you</em> instead of the other way around. Understanding the timing of agency helps us design systems that feel natural.</p>
+</div>
+
+<div class="box">
+<h4>🧠 Understanding Free Will</h4>
+<p>When exactly does an action become "yours"? Is it when you think about it, when your brain commits, or when you physically move? This research helps answer fundamental questions about consciousness and control.</p>
+</div>
+
+<div class="box">
+<h4>⚖️ Ethics & Responsibility</h4>
+<p>If a brain-computer interface acts on your detected intentions before you consciously decide, who's responsible for the outcome? Understanding agency timing is crucial for legal and ethical frameworks.</p>
+</div>
+</div>
+</section>
+
+<section class="container section" style="text-align: center; max-width: 800px; margin: 60px auto;">
+<h3>Master's Thesis</h3>
+<p style="font-size: 1.1rem; margin: 16px 0;"><strong>Hamed Ghane</strong></p>
+<p>MSc Brain and Cognition · Pompeu Fabra University · 2023<br>
+Supervised by Prof. Salvador Soto Faraco</p>
+<div style="margin-top: 32px;">
+<a class="btn btn-primary" href="Decoding_Human_Agency.pdf" target="_blank">📄 Read Full Thesis</a>
+</div>
+</section>
+</main>
+
+<footer class="site-footer">
+<div class="container">
+<p>© 2023 Hamed Ghane · Pompeu Fabra University</p>
+</div>
+</footer>
 </body>
 </html>
