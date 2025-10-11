@@ -10,7 +10,7 @@
 <style>
 /* Landing-specific styles */
 .landing-hero {
-  min-height: 90vh;
+  min-height: 50vh;
   display: flex;
   align-items: center;
   background: 
@@ -19,13 +19,6 @@
     url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23ffffff" stroke-width="0.5" opacity="0.05"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
   position: relative;
   overflow: hidden;
-}
-
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1.3fr 1fr;
-  gap: 80px;
-  align-items: center;
 }
 
 .mega-title {
@@ -86,12 +79,7 @@
 
 .profile-showcase {
   position: relative;
-  animation: float 6s ease-in-out infinite;
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
+  display: inline-block;
 }
 
 .profile-hero {
@@ -143,6 +131,7 @@
 }
 
 .bci-frame-3 {
+  animation: frameAnimation3 15s infinite;
   animation-delay: 6s;
 }
 
@@ -154,12 +143,7 @@
   100% { opacity: 0; }
 }
 
-/* Frame 3 gets longer display time */
-.bci-frame-3 {
-  animation: frameAnimation3 15s infinite;
-  animation-delay: 6s;
-}
-
+/* Frame 3 gets longer display time (9 seconds vs 3 seconds) */
 @keyframes frameAnimation3 {
   0% { opacity: 0; }
   3% { opacity: 1; }
@@ -257,21 +241,6 @@
   gap: 8px;
 }
 
-.mini-about { max-width: 800px; margin: 0 auto; text-align: center; }
-.mini-about p { font-size: 1.2rem; color: var(--muted); line-height: 1.8; margin-bottom: 24px; }
-.expertise-chips { display:flex; flex-wrap:wrap; gap:12px; justify-content:center; margin-top:32px; }
-.expertise-chip {
-  background: rgba(122, 162, 255, 0.15);
-  color: var(--accent);
-  padding: 10px 20px;
-  border-radius: 25px;
-  font-size: 0.95rem;
-  font-weight: 600;
-  border: 1px solid rgba(122, 162, 255, 0.3);
-  transition: all 0.3s ease;
-}
-.expertise-chip:hover { background: var(--accent); color: var(--ink); transform: translateY(-2px); }
-
 /* Status badge styles */
 .status-badge {
   position: absolute;
@@ -299,19 +268,9 @@
   color: #fff;
 }
 
-/* small helper for teaser note */
-.project-note {
-  margin-top: 12px;
-  font-size: 0.9rem;
-  color: var(--accent);
-}
-
 /* responsive tweaks */
 @media (max-width: 968px) {
-  .hero-grid { grid-template-columns: 1fr; text-align: center; gap: 40px; }
-  .hero-buttons { justify-content: center; }
-  .quick-stats { justify-content: center; }
-  .profile-hero { max-width: 220px; margin: 0 auto; }
+  .profile-hero { max-width: 220px; }
   .mega-title { font-size: 2.5rem; }
   .mega-subtitle { font-size: 1.2rem; }
   .bci-animation-container { height: 300px; max-width: 100%; }
@@ -337,10 +296,9 @@
 </header>
 
 <main>
-<!-- HERO SECTION -->
+<!-- TOP: ANIMATED GIF SECTION -->
 <section class="landing-hero">
 <div class="container">
-<!-- Animated BCI Diagram -->
 <div style="text-align: center; margin-bottom: 60px;">
 <h2 style="font-size: 2.2rem; font-weight: 700; color: var(--accent); margin-bottom: 32px;">
 How a Control Engineer Approaches Neuroscience
@@ -355,31 +313,15 @@ Real-time closed-loop BCI architecture combining neuroscience and control engine
 </p>
 </div>
 
-<div class="hero-grid" style="grid-template-columns: 2fr 1fr;">
-<div class="hero-left">
+<div style="text-align: center; max-width: 900px; margin: 0 auto;">
 <h2 class="mega-title">Building Brain-Computer Interfaces</h2>
 <p class="mega-subtitle">Research scientist specializing in real-time ML on biosignals (EEG/EMG/ECG) and neural interfaces that enhance human capabilities</p>
-<div class="hero-buttons">
-<a href="assets/CV_Hamed_Ghane.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-large">📄 Download CV</a>
-</div>
-<div class="quick-stats">
-<div class="stat-mini"><strong>PhD</strong><span>Control Engineering</span></div>
-<div class="stat-mini"><strong>2nd MSc</strong><span>Brain & Cognition</span></div>
-<div class="stat-mini"><strong>Glasgow</strong><span>Research Associate</span></div>
-</div>
-</div>
-<div class="hero-right">
-<div class="profile-showcase">
-<img src="assets/hamed-profile.jpg" alt="Dr. Hamed Ghane" class="profile-hero" onerror="this.src='https://via.placeholder.com/250x250?text=Hamed+Ghane'">
-<div class="profile-badge">✨ Open to Collaboration</div>
-</div>
-</div>
 </div>
 </div>
 </section>
 
-<!-- FEATURED PROJECTS -->
-<section id="projects" class="container section" style="margin-top: -60px;">
+<!-- MIDDLE: FEATURED PROJECTS -->
+<section id="projects" class="container section">
 <h3>Featured Research Projects</h3>
 <p style="text-align: center; color: var(--muted); font-size: 1.1rem; max-width: 700px; margin: -30px auto 40px;">
 Cutting-edge neurotechnology research at the intersection of AI, neuroscience, and control engineering
@@ -451,7 +393,23 @@ Cutting-edge neurotechnology research at the intersection of AI, neuroscience, a
 </div>
 </section>
 
-<!-- (About & Contact sections removed to keep Neurotech as a projects hub) -->
+<!-- BOTTOM: PROFILE SECTION -->
+<section class="container section" style="padding: 80px 24px; text-align: center;">
+<div style="max-width: 800px; margin: 0 auto;">
+<div class="profile-showcase" style="margin: 0 auto 32px;">
+<img src="assets/hamed-profile.jpg" alt="Dr. Hamed Ghane" class="profile-hero" onerror="this.src='https://via.placeholder.com/250x250?text=Hamed+Ghane'">
+<div class="profile-badge">✨ Open to Collaboration</div>
+</div>
+<div class="quick-stats" style="justify-content: center; margin-bottom: 32px;">
+<div class="stat-mini"><strong>PhD</strong><span>Control Engineering</span></div>
+<div class="stat-mini"><strong>2nd MSc</strong><span>Brain & Cognition</span></div>
+<div class="stat-mini"><strong>Glasgow</strong><span>Research Associate</span></div>
+</div>
+<div class="hero-buttons" style="justify-content: center;">
+<a href="assets/CV_Hamed_Ghane.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-large">📄 Download CV</a>
+</div>
+</div>
+</section>
 </main>
 
 <footer class="site-footer">
