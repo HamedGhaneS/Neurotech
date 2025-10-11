@@ -21,26 +21,6 @@
   overflow: hidden;
 }
 
-.mega-title {
-  font-size: clamp(3rem, 8vw, 5.5rem);
-  font-weight: 900;
-  margin: 0 0 16px;
-  background: var(--gradient-primary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-}
-
-.mega-subtitle {
-  font-size: 1.5rem;
-  color: var(--muted);
-  margin: 0 0 40px;
-  line-height: 1.5;
-  font-weight: 400;
-}
-
 .hero-buttons {
   display: flex;
   gap: 16px;
@@ -271,10 +251,9 @@
 /* responsive tweaks */
 @media (max-width: 968px) {
   .profile-hero { max-width: 220px; }
-  .mega-title { font-size: 2.5rem; }
-  .mega-subtitle { font-size: 1.2rem; }
   .bci-animation-container { height: 300px; max-width: 100%; }
   .landing-hero h2 { font-size: 1.5rem; }
+  section h2 { font-size: 1.4rem; }
 }
 </style>
 </head>
@@ -299,7 +278,7 @@
 <!-- TOP: ANIMATED GIF SECTION -->
 <section class="landing-hero">
 <div class="container">
-<div style="text-align: center; margin-bottom: 60px;">
+<div style="text-align: center; margin-bottom: 40px;">
 <h2 style="font-size: 2.2rem; font-weight: 700; color: var(--accent); margin-bottom: 32px;">
 How a Control Engineer Approaches Neuroscience
 </h2>
@@ -311,11 +290,6 @@ How a Control Engineer Approaches Neuroscience
 <p style="color: var(--muted); margin-top: 16px; font-size: 0.95rem; font-style: italic;">
 Real-time closed-loop BCI architecture combining neuroscience and control engineering
 </p>
-</div>
-
-<div style="text-align: center; max-width: 900px; margin: 0 auto;">
-<h2 class="mega-title">Building Brain-Computer Interfaces</h2>
-<p class="mega-subtitle">Research scientist specializing in real-time ML on biosignals (EEG/EMG/ECG) and neural interfaces that enhance human capabilities</p>
 </div>
 </div>
 </section>
@@ -395,16 +369,31 @@ Cutting-edge neurotechnology research at the intersection of AI, neuroscience, a
 
 <!-- BOTTOM: PROFILE SECTION -->
 <section class="container section" style="padding: 80px 24px; text-align: center;">
-<div style="max-width: 800px; margin: 0 auto;">
+<div style="max-width: 900px; margin: 0 auto;">
+<!-- Title and Description - smaller and less dominant -->
+<div style="margin-bottom: 40px;">
+<h2 style="font-size: 1.8rem; font-weight: 600; color: var(--fg); margin-bottom: 12px;">
+Building Brain-Computer Interfaces
+</h2>
+<p style="font-size: 1rem; color: var(--muted); line-height: 1.6; max-width: 700px; margin: 0 auto;">
+Research scientist specializing in real-time ML on biosignals (EEG/EMG/ECG) and neural interfaces that enhance human capabilities
+</p>
+</div>
+
+<!-- Profile Image -->
 <div class="profile-showcase" style="margin: 0 auto 32px;">
 <img src="assets/hamed-profile.jpg" alt="Dr. Hamed Ghane" class="profile-hero" onerror="this.src='https://via.placeholder.com/250x250?text=Hamed+Ghane'">
 <div class="profile-badge">✨ Open to Collaboration</div>
 </div>
+
+<!-- Stats -->
 <div class="quick-stats" style="justify-content: center; margin-bottom: 32px;">
 <div class="stat-mini"><strong>PhD</strong><span>Control Engineering</span></div>
 <div class="stat-mini"><strong>2nd MSc</strong><span>Brain & Cognition</span></div>
 <div class="stat-mini"><strong>Glasgow</strong><span>Research Associate</span></div>
 </div>
+
+<!-- CV Button -->
 <div class="hero-buttons" style="justify-content: center;">
 <a href="assets/CV_Hamed_Ghane.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-large">📄 Download CV</a>
 </div>
