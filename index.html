@@ -96,7 +96,7 @@
 
 .profile-hero {
   width: 100%;
-  max-width: 320px;
+  max-width: 250px;
   border-radius: 24px;
   box-shadow: 0 20px 60px rgba(122,162,255,0.4);
   border: 4px solid var(--accent);
@@ -130,7 +130,7 @@
   height: 100%;
   object-fit: contain;
   opacity: 0;
-  animation: frameAnimation 9s infinite;
+  animation: frameAnimation 15s infinite;
   padding: 20px;
 }
 
@@ -148,9 +148,23 @@
 
 @keyframes frameAnimation {
   0% { opacity: 0; }
-  5% { opacity: 1; }
-  30% { opacity: 1; }
-  35% { opacity: 0; }
+  3% { opacity: 1; }
+  17% { opacity: 1; }
+  20% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/* Frame 3 gets longer display time */
+.bci-frame-3 {
+  animation: frameAnimation3 15s infinite;
+  animation-delay: 6s;
+}
+
+@keyframes frameAnimation3 {
+  0% { opacity: 0; }
+  3% { opacity: 1; }
+  57% { opacity: 1; }
+  60% { opacity: 0; }
   100% { opacity: 0; }
 }
 
@@ -297,10 +311,11 @@
   .hero-grid { grid-template-columns: 1fr; text-align: center; gap: 40px; }
   .hero-buttons { justify-content: center; }
   .quick-stats { justify-content: center; }
-  .profile-hero { max-width: 280px; margin: 0 auto; }
+  .profile-hero { max-width: 220px; margin: 0 auto; }
   .mega-title { font-size: 2.5rem; }
   .mega-subtitle { font-size: 1.2rem; }
   .bci-animation-container { height: 300px; max-width: 100%; }
+  .landing-hero h2 { font-size: 1.5rem; }
 }
 </style>
 </head>
@@ -327,17 +342,20 @@
 <div class="container">
 <!-- Animated BCI Diagram -->
 <div style="text-align: center; margin-bottom: 60px;">
+<h2 style="font-size: 2.2rem; font-weight: 700; color: var(--accent); margin-bottom: 32px;">
+How a Control Engineer Approaches Neuroscience
+</h2>
 <div class="bci-animation-container">
 <img src="assets/bci-frame1.png" class="bci-frame bci-frame-1" alt="BCI Closed-Loop Structure" onerror="this.style.display='none'">
 <img src="assets/bci-frame2.png" class="bci-frame bci-frame-2" alt="BCI with LSL Integration" onerror="this.style.display='none'">
 <img src="assets/bci-frame3.png" class="bci-frame bci-frame-3" alt="Complete BCI System" onerror="this.style.display='none'">
 </div>
 <p style="color: var(--muted); margin-top: 16px; font-size: 0.95rem; font-style: italic;">
-Neuroscience + Control Engineering: Real-time closed-loop BCI architecture
+Real-time closed-loop BCI architecture combining neuroscience and control engineering
 </p>
 </div>
 
-<div class="hero-grid">
+<div class="hero-grid" style="grid-template-columns: 2fr 1fr;">
 <div class="hero-left">
 <h2 class="mega-title">Building Brain-Computer Interfaces</h2>
 <p class="mega-subtitle">Research scientist specializing in real-time ML on biosignals (EEG/EMG/ECG) and neural interfaces that enhance human capabilities</p>
@@ -352,7 +370,7 @@ Neuroscience + Control Engineering: Real-time closed-loop BCI architecture
 </div>
 <div class="hero-right">
 <div class="profile-showcase">
-<img src="assets/hamed-profile.jpg" alt="Dr. Hamed Ghane" class="profile-hero" onerror="this.src='https://via.placeholder.com/350x350?text=Hamed+Ghane'">
+<img src="assets/hamed-profile.jpg" alt="Dr. Hamed Ghane" class="profile-hero" onerror="this.src='https://via.placeholder.com/250x250?text=Hamed+Ghane'">
 <div class="profile-badge">✨ Open to Collaboration</div>
 </div>
 </div>
@@ -361,7 +379,7 @@ Neuroscience + Control Engineering: Real-time closed-loop BCI architecture
 </section>
 
 <!-- FEATURED PROJECTS -->
-<section id="projects" class="container section">
+<section id="projects" class="container section" style="margin-top: -60px;">
 <h3>Featured Research Projects</h3>
 <p style="text-align: center; color: var(--muted); font-size: 1.1rem; max-width: 700px; margin: -30px auto 40px;">
 Cutting-edge neurotechnology research at the intersection of AI, neuroscience, and control engineering
