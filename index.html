@@ -212,23 +212,31 @@
 }
 .expertise-chip:hover { background: var(--accent); color: var(--ink); transform: translateY(-2px); }
 
-/* Coming soon / placeholder card styles */
-.project-preview-card.coming-soon {
-  opacity: 0.92;
-  filter: saturate(0.98);
-}
-
-.soon-badge {
+/* Status badge styles */
+.status-badge {
   position: absolute;
   top: 18px;
   right: 18px;
-  background: linear-gradient(90deg, rgba(122,162,255,1), rgba(80,227,194,1));
-  color: #021;
   font-weight: 700;
-  padding: 6px 10px;
+  padding: 6px 12px;
   border-radius: 12px;
   font-size: 0.8rem;
   box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+}
+
+.status-badge.proof-of-concept {
+  background: linear-gradient(90deg, rgba(255,193,7,1), rgba(255,152,0,1));
+  color: #021;
+}
+
+.status-badge.fundraising {
+  background: linear-gradient(90deg, rgba(156,39,176,1), rgba(233,30,99,1));
+  color: #fff;
+}
+
+.status-badge.completed {
+  background: linear-gradient(90deg, rgba(76,175,80,1), rgba(46,125,50,1));
+  color: #fff;
 }
 
 /* small helper for teaser note */
@@ -303,6 +311,7 @@ Cutting-edge neurotechnology research at the intersection of AI, neuroscience, a
 
 <div class="featured-preview" role="list" aria-label="Featured research projects">
   <a href="Prosody_on_Demand/" class="project-preview-card" role="listitem" aria-label="Prosody on Demand project">
+    <div class="status-badge proof-of-concept">Proof of Concept</div>
     <span class="project-icon">🎵</span>
     <h4>Prosody-on-Demand</h4>
     <p>AI-driven audio-neural interface that transforms speech into memorable formats using real-time EEG feedback. 40%+ memory improvement in clinical studies.</p>
@@ -314,6 +323,7 @@ Cutting-edge neurotechnology research at the intersection of AI, neuroscience, a
   </a>
 
   <a href="Agency-Safe-HMIs/" class="project-preview-card" role="listitem" aria-label="Agency Safe HMIs project">
+    <div class="status-badge fundraising">Fundraising</div>
     <span class="project-icon">⚖️</span>
     <h4>Agency-Safe HMIs</h4>
     <p>Establishing ethical timing thresholds for BCIs to preserve human sense of agency, autonomy, and legal responsibility in ultra-fast systems.</p>
@@ -324,7 +334,8 @@ Cutting-edge neurotechnology research at the intersection of AI, neuroscience, a
     </div>
   </a>
 
-  <div class="project-preview-card" role="listitem" aria-label="Multi-Modal BCI Platform (docs coming soon)">
+  <div class="project-preview-card" role="listitem" aria-label="Multi-Modal BCI Platform">
+    <div class="status-badge completed">Completed</div>
     <span class="project-icon">🔬</span>
     <h4>Multi-Modal BCI Platform</h4>
     <p>Real-time closed-loop system integrating EEG, ECG, and EMG for sensorimotor decision-making. Latency-optimized architecture with SIL/HIL validation.</p>
@@ -338,9 +349,8 @@ Cutting-edge neurotechnology research at the intersection of AI, neuroscience, a
     </div>
   </div>
 
-  <!-- UPDATED: Decoding Human Agency -->
-  <a href="Decoding_Human_Agency/" class="project-preview-card coming-soon" role="listitem" aria-label="Decoding Human Agency project">
-    <div class="soon-badge">Coming soon</div>
+  <a href="Decoding_Human_Agency/" class="project-preview-card" role="listitem" aria-label="Decoding Human Agency project">
+    <div class="status-badge completed">Completed</div>
     <span class="project-icon">🧭</span>
     <h4>Decoding Human Agency: Exploring the 'Point of No Return' through a real-time EEG-based Brain-Computer Interface experiment.</h4>
     <p>Real-time EEG experiment probing decision thresholds and the neural signatures of the 'point of no return'. Methods, stimuli, and analysis code will be published here.</p>
@@ -349,12 +359,10 @@ Cutting-edge neurotechnology research at the intersection of AI, neuroscience, a
       <span class="feature">Decision-making</span>
       <span class="feature">Closed-loop</span>
     </div>
-    <div class="project-note">🔖 Placeholder — full project page to follow</div>
   </a>
 
-  <!-- UPDATED: Heart-Brain Interaction -->
-  <a href="Heart_Brain_Interaction/" class="project-preview-card coming-soon" role="listitem" aria-label="Heart-Brain Interaction project">
-    <div class="soon-badge">Coming soon</div>
+  <a href="Heart_Brain_Interaction/" class="project-preview-card" role="listitem" aria-label="Heart-Brain Interaction project">
+    <div class="status-badge completed">Completed</div>
     <span class="project-icon">❤️</span>
     <h4>Heart-Brain Interaction via a ECG-EEG-based realtime BCI experiemnt: How heart affects the Brain in learning</h4>
     <p>ECG-EEG real-time investigations into cardiac phase effects on learning and neural processing. Data, experiment code, and measurement protocols will be posted here.</p>
@@ -363,7 +371,6 @@ Cutting-edge neurotechnology research at the intersection of AI, neuroscience, a
       <span class="feature">Learning</span>
       <span class="feature">Cardiac timing</span>
     </div>
-    <div class="project-note">🔖 Placeholder — replace with project resources when ready</div>
   </a>
 </div>
 </section>
