@@ -59,6 +59,43 @@
         grid-template-columns: 1fr;
     }
 }
+
+/* FIX: Ensure emoji icons are colored and visible by default */
+.hero-title {
+    filter: none !important;
+    opacity: 1 !important;
+}
+
+/* FIX: Make text in light gradient backgrounds readable */
+section[style*="linear-gradient"] h2,
+section[style*="linear-gradient"] h3,
+section[style*="linear-gradient"] h4,
+section[style*="linear-gradient"] p,
+section[style*="linear-gradient"] .hero-sub,
+section[style*="linear-gradient"] .lede {
+    color: #1a1a2e !important;
+}
+
+section[style*="linear-gradient"] strong {
+    color: #0d0d1a !important;
+    font-weight: 700;
+}
+
+section[style*="linear-gradient"] em {
+    color: #1a1a2e !important;
+}
+
+/* Also fix rgba background sections */
+section[style*="rgba(122,162,255"] h2,
+section[style*="rgba(122,162,255"] h3,
+section[style*="rgba(122,162,255"] p,
+section[style*="rgba(122,162,255"] .hero-sub {
+    color: #1a1a2e !important;
+}
+
+section[style*="rgba(122,162,255"] strong {
+    color: #0d0d1a !important;
+}
 </style>
 </head>
 <body>
