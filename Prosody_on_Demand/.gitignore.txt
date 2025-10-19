@@ -1,0 +1,27 @@
+# Keep roadmap private
+roadmap.md
+
+# Dataset files (keep private)
+dataset/
+*.json
+*.jsonl
+
+# Secrets
+.env
+keys.js
+secrets/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Models
+models/
+*.pth
+*.bin
+
+# Private notes
+private_notes/
+notes.md
