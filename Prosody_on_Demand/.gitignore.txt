@@ -1,27 +1,63 @@
-# Keep roadmap private
-roadmap.md
+# ===== PRIVATE FILES (Stay on your computer only) =====
 
-# Dataset files (keep private)
+# Development roadmap and planning
+roadmap.md
+development_log.md
+weekly_progress.md
+todo.md
+notes/
+
+# Dataset files (keep private until ready to publish)
 dataset/
+data/
 *.json
 *.jsonl
+*.csv
+!.gitignore
 
-# Secrets
+# API keys and secrets
 .env
 keys.js
 secrets/
+config/local.js
 
-# Python
+# Python virtual environment and cache
 __pycache__/
 *.pyc
 .venv/
 venv/
+env/
+*.egg-info/
 
-# Models
+# Models and weights (too large for git)
 models/
+checkpoints/
 *.pth
 *.bin
+*.safetensors
+*.onnx
+*.h5
 
-# Private notes
+# Experiment logs and outputs
+logs/
+experiments/
+outputs/
+results/
+*.log
+
+# Personal and private notes
 private_notes/
-notes.md
+scratch/
+temp/
+*.draft.md
+
+# OS files
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# IDE settings
+.vscode/
+.idea/
+*.code-workspace
