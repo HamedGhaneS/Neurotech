@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Brain ↔ Heart Communication</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<meta name="description" content="Does your heartbeat change how your brain learns? Exploring the hidden communication between your heart and brain." />
+</head>
+<body>
+<header class="site-header">
+<div class="container header-wrap">
+<div class="brand">
+<a href="../" class="btn btn-secondary">← Home</a>
+<div>
+<h1>Heart-Brain Interaction</h1>
+<p class="tag">When Your Heartbeat Shapes Learning</p>
+</div>
+</div>
+</div>
+</header>
+
+<main>
+<section class="hero hero--motion">
+<div class="container">
+<div class="hero-content" style="text-align: center;">
+<h2 class="hero-title" style="font-size: 3rem; margin-bottom: 24px;">🫀 ↔ 🧠</h2>
+<h2 class="hero-title">Brain and Heart Communicating?!</h2>
+<p class="hero-sub lede">Your heart doesn't just pump blood—it constantly sends signals to your brain. But here's the surprising part: <strong>when</strong> your heart beats might actually change how your brain processes information and learns.</p>
+</div>
+</div>
+</section>
+
+<section class="container section">
+<h2>The Cardiac Cycle: Your Heart's Rhythm</h2>
+<p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 32px;">Every heartbeat has two phases: <strong>systole</strong> (when your heart contracts and pumps blood) and <strong>diastole</strong> (when it relaxes and refills). This cycle repeats about 60-100 times per minute.</p>
+
+<div style="text-align: center; margin: 40px 0;">
+<img src="cardiac-cycle.png" alt="Cardiac cycle showing systole and diastole" style="max-width: 700px; width: 100%; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);" />
+<p style="margin-top: 16px; font-style: italic; color: #666;">The two phases of your heartbeat: Systole (~300ms) and Diastole (~400ms)</p>
+</div>
+</section>
+
+<section class="container section" style="background: rgba(122,162,255,0.05); padding: 60px 24px; border-radius: 20px;">
+<h2>See It in Action</h2>
+<div style="text-align: center; margin: 32px 0;">
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 800px; margin: 0 auto; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.15);">
+<iframe src="https://drive.google.com/file/d/1DGoQPgVOPlBt3HRfjQ26ZnD6vfh131rT/preview" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" allow="autoplay"></iframe>
+</div>
+<p style="margin-top: 16px; font-style: italic; color: #666;">Animation showing how the cardiac cycle unfolds in real-time<br>
+<a href="https://youtu.be/ygsvAZVA6sc?si=--OWFiMM6lCEkQWg" target="_blank" style="font-size: 0.9rem;">Video credit: Original source</a></p>
+</div>
+</section>
+
+<section class="container section">
+<h2>The Discovery: Heart Timing Affects the Brain</h2>
+<p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 32px;">Recent research published in <strong>Nature Communications</strong> revealed something remarkable: the brain processes rewards differently depending on whether they arrive during systole or diastole.</p>
+
+<div style="text-align: center; margin: 40px 0;">
+<img src="heart-brain-connection.png" alt="Heart-brain interaction diagram" style="max-width: 900px; width: 100%; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);" />
+<p style="margin-top: 16px; font-style: italic; color: #666;">Systole and diastole create different brain states, affecting how we learn from rewards</p>
+</div>
+
+<div style="background: linear-gradient(135deg, rgba(255,107,107,0.1), rgba(255,107,107,0.05)); border-left: 4px solid #ff6b6b; padding: 24px; margin: 32px 0; border-radius: 8px;">
+<h3>Why Does This Matter?</h3>
+<p style="line-height: 1.8;">When your heart contracts (systole), your body is in a higher arousal state. When it relaxes (diastole), arousal drops. These subtle changes in your body's state influence how your brain interprets events happening around you—including whether you learn from them.</p>
+</div>
+</section>
+
+<section class="container section" style="background: #f8f9fa; padding: 60px 24px; border-radius: 20px;">
+<h2>My Implementation: Real-Time Heart-Triggered Learning</h2>
+<p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 32px;">I built a system that detects heartbeats in real-time and presents feedback at precise moments in the cardiac cycle. This lets us explore not just systole vs diastole, but <strong>timing variations within these phases</strong>.</p>
+
+<div style="text-align: center; margin: 40px 0;">
+<img src="bci-setup.png" alt="Real-time BCI system diagram" style="max-width: 900px; width: 100%; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);" />
+<p style="margin-top: 16px; font-style: italic; color: #666;">The closed-loop system: Record heart → Detect R-peak → Trigger feedback at precise cardiac phase</p>
+</div>
+
+<div class="columns" style="margin-top: 40px;">
+<div class="box">
+<h4>🔍 What We're Exploring</h4>
+<p>Does it matter if feedback comes early vs late within diastole? The original paper compared systole vs diastole broadly—we're looking at fine-grained timing <em>within</em> these phases.</p>
+</div>
+
+<div class="box">
+<h4>⚙️ How It Works</h4>
+<p>Real-time ECG monitoring detects R-peaks (the heartbeat spike), calculates cardiac phase, and triggers visual feedback at precise moments—all within milliseconds.</p>
+</div>
+
+<div class="box">
+<h4>📊 Early Findings</h4>
+<p>We're finding that timing <em>within</em> diastole does produce different brain responses, suggesting even finer cardiac-brain coordination than previously thought.</p>
+</div>
+</div>
+</section>
+
+<section class="container section">
+<h2>The Big Picture</h2>
+<p style="font-size: 1.1rem; line-height: 1.8;">This research reveals that the brain doesn't process information in isolation—it's constantly influenced by the rhythmic signals from your heart. Understanding this could lead to:</p>
+
+<div class="columns" style="margin-top: 32px;">
+<div class="box" style="border-left: 4px solid #4caf50;">
+<h4>Better Learning Systems</h4>
+<p>Educational tools that present information at optimal cardiac moments for better retention</p>
+</div>
+
+<div class="box" style="border-left: 4px solid #2196f3;">
+<h4>Therapeutic Applications</h4>
+<p>Treatments for anxiety and emotional regulation that work with the body's natural rhythms</p>
+</div>
+
+<div class="box" style="border-left: 4px solid #ff9800;">
+<h4>Advanced BCIs</h4>
+<p>Brain-computer interfaces that adapt to physiological states for more natural interaction</p>
+</div>
+</div>
+</section>
+
+<section class="container section" style="text-align: center; max-width: 800px; margin: 60px auto;">
+<h3>Want to Learn More?</h3>
+<div style="margin-top: 32px; display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+<a class="btn btn-primary" href="https://www.nature.com/articles/s41467-024-46921-5" target="_blank">📄 Read the Paper</a>
+<a class="btn btn-secondary" href="https://github.com/HamedGhaneS/ECG-EEG-Based-BCI" target="_blank">💻 View Code</a>
+</div>
+<p style="margin-top: 24px; color: #666;">Research by Fouragnan et al. (2024) · Implementation by Hamed Ghane</p>
+</section>
+</main>
+
+<footer class="site-footer">
+<div class="container">
+<p>© 2024 · Heart-Brain Interaction Research · <a href="https://github.com/PhiliasTidesLab" target="_blank" style="color: inherit;">PhiliasTidesLab</a></p>
+</div>
+</footer>
+</body>
+</html>

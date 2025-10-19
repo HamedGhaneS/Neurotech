@@ -3,79 +3,257 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Neurotech Projects - Hamed Ghane</title>
+<title>Dr. Hamed Ghane - Neurotechnology Researcher</title>
 <link rel="icon" href="assets/favicon.png" />
-<meta name="description" content="Neurotech projects by Hamed Ghane — Prosody-on-Demand, real-time BCI, EEG-ECG-EMG timing, and more." />
+<meta name="description" content="Research scientist specializing in brain-computer interfaces, real-time ML on biosignals, and neural interface technology." />
 <link rel="stylesheet" href="assets/style.css" />
 <style>
-.construction-notice {
-  background: linear-gradient(135deg, rgba(255, 193, 7, 0.1), rgba(255, 152, 0, 0.1));
-  border: 2px solid #ffc107;
-  border-radius: 16px;
-  padding: 24px;
-  margin-bottom: 40px;
-  text-align: center;
-  animation: pulse 3s ease-in-out infinite;
+/* Landing-specific styles */
+.landing-hero {
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  background: 
+    radial-gradient(ellipse 1200px 600px at 30% 20%, rgba(122,162,255,0.15), transparent 60%),
+    radial-gradient(ellipse 800px 400px at 70% 80%, rgba(80,227,194,0.12), transparent 60%),
+    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23ffffff" stroke-width="0.5" opacity="0.05"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+  position: relative;
+  overflow: hidden;
 }
 
-.construction-notice h3 {
-  color: #ffc107;
-  margin: 0 0 12px;
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 48px;
+  flex-wrap: wrap;
+}
+
+.btn-large {
+  padding: 18px 36px;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.quick-stats {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.stat-mini {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-mini strong {
+  color: var(--accent);
   font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.stat-mini span {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.profile-showcase {
+  position: relative;
+  display: inline-block;
+}
+
+.profile-hero {
+  width: 100%;
+  max-width: 250px;
+  border-radius: 24px;
+  box-shadow: 0 20px 60px rgba(122,162,255,0.4);
+  border: 4px solid var(--accent);
+  transition: all 0.3s ease;
+}
+
+.profile-hero:hover {
+  transform: scale(1.02);
+  box-shadow: 0 25px 70px rgba(122,162,255,0.5);
+}
+
+/* BCI Animation Styles */
+.bci-animation-container {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  height: 450px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+  overflow: hidden;
 }
 
-.construction-notice p {
-  color: var(--fg);
-  margin: 0;
+.bci-frame {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0;
+  animation: frameAnimation 15s infinite;
+  padding: 20px;
+}
+
+.bci-frame-1 {
+  animation-delay: 0s;
+}
+
+.bci-frame-2 {
+  animation-delay: 3s;
+}
+
+.bci-frame-3 {
+  animation: frameAnimation3 15s infinite;
+  animation-delay: 6s;
+}
+
+@keyframes frameAnimation {
+  0% { opacity: 0; }
+  3% { opacity: 1; }
+  17% { opacity: 1; }
+  20% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/* Frame 3 gets longer display time (9 seconds vs 3 seconds) */
+@keyframes frameAnimation3 {
+  0% { opacity: 0; }
+  3% { opacity: 1; }
+  57% { opacity: 1; }
+  60% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+.profile-badge {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--gradient-primary);
+  color: var(--ink);
+  padding: 14px 28px;
+  border-radius: 30px;
+  font-weight: 700;
   font-size: 1rem;
-  line-height: 1.5;
-}
-
-.construction-icon {
-  font-size: 1.5rem;
-  animation: rotate 2s linear infinite;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+  animation: pulse 3s ease-in-out infinite;
 }
 
 @keyframes pulse {
-  0%, 100% { box-shadow: 0 0 20px rgba(255, 193, 7, 0.2); }
-  50% { box-shadow: 0 0 30px rgba(255, 193, 7, 0.4); }
+  0%, 100% { transform: translateX(-50%) scale(1); }
+  50% { transform: translateX(-50%) scale(1.05); }
 }
 
-@keyframes rotate {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+/* Featured Projects Preview */
+.featured-preview {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
+  margin-top: 40px;
 }
 
-.status-badge {
-  display: inline-block;
-  background: rgba(255, 193, 7, 0.2);
-  color: #ffc107;
-  padding: 4px 12px;
+.project-preview-card {
+  background: var(--card);
+  border: 1px solid rgba(255,255,255,0.1);
   border-radius: 20px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  margin-left: 8px;
-}
-
-.coming-soon-overlay {
+  padding: 32px;
+  transition: all 0.3s ease;
   position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  text-decoration: none;
+  display: block;
+  color: inherit;
+  min-height: 200px;
 }
 
-.coming-soon-overlay::after {
-  content: '🚧 In Development';
+.project-preview-card::before {
+  content: '';
   position: absolute;
-  top: 12px;
-  right: 12px;
-  background: rgba(255, 193, 7, 0.9);
-  color: #000;
-  padding: 4px 8px;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradient-primary);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.project-preview-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-hover);
+  border-color: rgba(122, 162, 255, 0.4);
+}
+
+.project-preview-card:hover::before {
+  transform: scaleX(1);
+}
+
+.project-icon {
+  font-size: 3rem;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.project-preview-card h4 {
+  font-size: 1.15rem;
+  margin: 0 0 12px;
+  color: var(--fg);
+}
+
+.project-preview-card p {
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0 0 20px;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* Status badge styles */
+.status-badge {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  font-weight: 700;
+  padding: 6px 12px;
   border-radius: 12px;
-  font-size: 0.7rem;
-  font-weight: 600;
+  font-size: 0.8rem;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+}
+
+.status-badge.proof-of-concept {
+  background: linear-gradient(90deg, rgba(255,193,7,1), rgba(255,152,0,1));
+  color: #021;
+}
+
+.status-badge.fundraising {
+  background: linear-gradient(90deg, rgba(156,39,176,1), rgba(233,30,99,1));
+  color: #fff;
+}
+
+.status-badge.completed {
+  background: linear-gradient(90deg, rgba(76,175,80,1), rgba(46,125,50,1));
+  color: #fff;
+}
+
+/* responsive tweaks */
+@media (max-width: 968px) {
+  .profile-hero { max-width: 220px; }
+  .bci-animation-container { height: 300px; max-width: 100%; }
+  .landing-hero h2 { font-size: 1.5rem; }
+  section h2 { font-size: 1.4rem; }
 }
 </style>
 </head>
@@ -83,395 +261,141 @@
 <header class="site-header">
 <div class="container header-wrap">
 <div class="brand">
-<img src="assets/logo.png" alt="Logo" class="logo" onerror="this.style.display='none'">
+<a href="https://hamedghanes.github.io/" class="btn btn-secondary" style="margin-right: 16px;">← Home</a>
 <div>
-<h1>Neurotech Projects</h1>
-<p class="tag">AI × Neuroscience × Control Engineering</p>
+<h1>Dr. Hamed Ghane</h1>
+<p class="tag">Neurotechnology Researcher</p>
 </div>
 </div>
 <nav class="nav">
 <a href="#projects">Projects</a>
-<a href="#about">About</a>
-<a href="#contact">Contact</a>
+<a href="assets/CV_Hamed_Ghane.pdf" target="_blank" rel="noopener noreferrer">CV</a>
 </nav>
 </div>
 </header>
 
 <main>
-<section class="hero">
+<!-- TOP: ANIMATED GIF SECTION -->
+<section class="landing-hero">
 <div class="container">
-<div class="construction-notice">
-<h3>
-<span class="construction-icon">🚧</span>
-Website Under Development
-<span class="construction-icon">🚧</span>
-</h3>
-<p>
-This research portfolio is currently being enhanced with additional content and features. 
-Some sections may be incomplete. Expected completion: <strong>Next Week</strong>. 
-The Prosody-on-Demand research is fully available for review.
+<div style="text-align: center; margin-bottom: 40px;">
+<h2 style="font-size: 2.2rem; font-weight: 700; color: var(--accent); margin-bottom: 32px;">
+How a Control Engineer Approaches Neuroscience
+</h2>
+<div class="bci-animation-container">
+<img src="assets/bci-frame1.png" class="bci-frame bci-frame-1" alt="BCI Closed-Loop Structure" onerror="this.style.display='none'">
+<img src="assets/bci-frame2.png" class="bci-frame bci-frame-2" alt="BCI with LSL Integration" onerror="this.style.display='none'">
+<img src="assets/bci-frame3.png" class="bci-frame bci-frame-3" alt="Complete BCI System" onerror="this.style.display='none'">
+</div>
+<p style="color: var(--muted); margin-top: 16px; font-size: 0.95rem; font-style: italic;">
+Real-time closed-loop BCI architecture combining neuroscience and control engineering
 </p>
-</div>
-
-<div class="hero-content">
-<h2 class="hero-title">Turn Speech into Memory</h2>
-<p class="hero-sub">Revolutionary audio-neural interface that transforms how we encode and recall information through prosodic speech enhancement.</p>
-<div class="hero-stats">
-<div class="stat">
-<span class="stat-number">40%</span>
-<span class="stat-label">Better Recall</span>
-</div>
-<div class="stat">
-<span class="stat-number">Real-time</span>
-<span class="stat-label">Processing</span>
-</div>
-<div class="stat">
-<span class="stat-number">Non-invasive</span>
-<span class="stat-label">Technology</span>
-</div>
-</div>
-<div class="hero-actions">
-<a class="btn btn-primary" href="Prosody_on_Demand/">🎯 Explore Research</a>
-<a class="btn btn-secondary" href="Prosody_on_Demand/examples.html">🎵 Hear Examples</a>
-</div>
 </div>
 </div>
 </section>
 
+<!-- MIDDLE: FEATURED PROJECTS -->
 <section id="projects" class="container section">
-<h3>Featured Research <span class="status-badge">Content Expanding</span></h3>
-<div class="grid">
-<article class="card featured">
-<div class="card-header">
-<h4>Prosody-on-Demand</h4>
-<span class="badge primary">Complete & Available</span>
-</div>
-<p class="card-description">AI-driven earplug that converts neutral speech into rhythmic, memorable formats using real-time EEG feedback. Helping Alzheimer's patients and learners retain information better.</p>
-<div class="card-features">
-<span class="feature">🧠 Neural Feedback</span>
-<span class="feature">🎵 Prosodic Transform</span>
-<span class="feature">⚡ Real-time</span>
-</div>
-<div class="card-actions">
-<a class="btn btn-primary" href="Prosody_on_Demand/">View Research</a>
-<a class="btn btn-outline" href="Prosody_on_Demand/examples.html">Audio Examples</a>
-</div>
-</article>
-
-<article class="card featured">
-<div class="card-header">
-<h4>Agency-Safe HMIs</h4>
-<span class="badge primary">Active Research</span>
-</div>
-<p class="card-description">Establishing ethical timing thresholds for brain-computer interfaces to preserve human sense of agency, autonomy, and legal responsibility in ultra-fast neurotechnology systems.</p>
-<div class="card-features">
-<span class="feature">⚖️ Ethics & Law</span>
-<span class="feature">🧠 Sense of Agency</span>
-<span class="feature">⚡ BCI Timing</span>
-</div>
-<div class="card-actions">
-<a class="btn btn-primary" href="Agency_Safe_HMIs/">View Research</a>
-</div>
-</article>
-
-<article class="card coming-soon-overlay">
-<div class="card-header">
-<h4>Closed-Loop BCI for Decision Timing</h4>
-<span class="badge">Content Coming Soon</span>
-</div>
-<p class="card-description">Real-time EEG/ECG markers to align stimuli with cardiac and intentional phases for optimal decision-making. Detailed documentation in progress.</p>
-<div class="card-features">
-<span class="feature">❤️ Cardiac Sync</span>
-<span class="feature">🧠 EEG Integration</span>
-<span class="feature">⏱️ Precision Timing</span>
-</div>
-</article>
-
-<article class="card coming-soon-overlay">
-<div class="card-header">
-<h4>EEG-ECG-EMG Synchrony</h4>
-<span class="badge">Content Coming Soon</span>
-</div>
-<p class="card-description">End-to-end timing verification and hardware-in-the-loop testing for multi-modal biosignal processing. Research details being compiled.</p>
-<div class="card-features">
-<span class="feature">📊 Multi-modal</span>
-<span class="feature">🔬 Precision Testing</span>
-<span class="feature">⚙️ Hardware Validation</span>
-</div>
-</article>
-</div>
-</section>
-
-<section class="highlight-section">
-<div class="container">
-<div class="highlight-content">
-<h3>Why This Matters</h3>
-<p class="highlight-text">"Memory isn't just storage—it's how we learn, connect, and maintain independence. Our prosodic enhancement technology could transform lives for millions with memory challenges."</p>
-<div class="impact-stats">
-<div class="impact-item">
-<strong>50M+</strong>
-<span>People with memory impairments worldwide</span>
-</div>
-<div class="impact-item">
-<strong>Clinical Evidence</strong>
-<span>Prosodic speech improves recall in Alzheimer's patients</span>
-</div>
-<div class="impact-item">
-<strong>Universal Benefit</strong>
-<span>Enhanced learning for students and professionals</span>
-</div>
-</div>
-</div>
-</div>
-</section>
-
-<section id="about" class="container section">
-<h3>About Me</h3>
-<p style="text-align: center; color: var(--accent); font-size: 1.2rem; margin-bottom: 40px;">
-<strong>Neurotechnologist • Control Engineer • AI Researcher</strong>
+<h3>Featured Research Projects</h3>
+<p style="text-align: center; color: var(--muted); font-size: 1.1rem; max-width: 700px; margin: -30px auto 40px;">
+Cutting-edge neurotechnology research at the intersection of AI, neuroscience, and control engineering
 </p>
 
-<div class="bio-layout">
-<div class="bio-left">
-<div class="bio-image-container">
-<div class="skill-orbit" id="skill-orbit">
-<div class="skill-symbol skill-control" title="Control Engineering">
-<span style="font-size: 2rem;">⚙️</span>
-</div>
-<div class="skill-symbol skill-ai" title="AI & Mathematics">
-<span style="font-size: 2rem;">🤖</span>
-</div>
-<div class="skill-symbol skill-neuro" title="Neuroscience">
-<span style="font-size: 2rem;">🧠</span>
-</div>
-</div>
-<div class="bio-image-wrapper">
-<img src="assets/hamed-profile.jpg" alt="Hamed Ghane" class="bio-image" onerror="this.src='https://via.placeholder.com/300x300?text=Hamed+Ghane'">
-</div>
-</div>
-</div>
+<div class="featured-preview" role="list" aria-label="Featured research projects">
+  <a href="Prosody_on_Demand/" class="project-preview-card" role="listitem" aria-label="Prosody on Demand project">
+    <div class="status-badge proof-of-concept">Proof of Concept</div>
+    <span class="project-icon">🎵</span>
+    <h4>Prosody-on-Demand</h4>
+    <p>AI-driven audio-neural interface that transforms speech into memorable formats using real-time EEG feedback. 40%+ memory improvement in clinical studies.</p>
+    <div class="project-tags">
+      <span class="feature">Neural Feedback</span>
+      <span class="feature">Memory Enhancement</span>
+      <span class="feature">Real-time AI</span>
+    </div>
+  </a>
 
-<div class="bio-right">
-<p style="font-size: 1.1rem; line-height: 1.7;">My name is <strong>Hamed</strong>, I am a neuroscientist with a PhD in Control Engineering. I am driven by understanding how the brain works and building intelligent systems that bridge neuroscience and artificial intelligence. Brain-computer interfaces have been the main focus of my research, combining real-time neural signal processing with adaptive control systems to create technologies that enhance human capabilities.</p>
+  <a href="Agency-Safe-HMIs/" class="project-preview-card" role="listitem" aria-label="Agency Safe HMIs project">
+    <div class="status-badge fundraising">Fundraising</div>
+    <span class="project-icon">⚖️</span>
+    <h4>Agency-Safe HMIs</h4>
+    <p>Establishing ethical timing thresholds for BCIs to preserve human sense of agency, autonomy, and legal responsibility in ultra-fast systems.</p>
+    <div class="project-tags">
+      <span class="feature">Ethics & Law</span>
+      <span class="feature">BCI Safety</span>
+      <span class="feature">Human Agency</span>
+    </div>
+  </a>
 
-<p style="margin-top: 24px;">Currently, I am a Postdoctoral Researcher at the University of Glasgow, developing BCI systems using EEG, EMG, and ECG for sensorimotor decision-making. My work combines computational neuroscience with machine learning to create intelligent interfaces between mind and machine.</p>
+  <div class="project-preview-card" role="listitem" aria-label="Multi-Modal BCI Platform">
+    <div class="status-badge completed">Completed</div>
+    <span class="project-icon">🔬</span>
+    <h4>Multi-Modal BCI Platform</h4>
+    <p>Real-time closed-loop system integrating EEG, ECG, and EMG for sensorimotor decision-making. Latency-optimized architecture with SIL/HIL validation.</p>
+    <div class="project-tags">
+      <span class="feature">Real-time ML</span>
+      <span class="feature">Multi-modal</span>
+      <span class="feature">Low Latency</span>
+    </div>
+    <div style="margin-top: 16px; font-size: 0.85rem; color: var(--accent);">
+      📝 Detailed documentation coming soon
+    </div>
+  </div>
 
-<h4 style="color: var(--accent); margin: 32px 0 16px;">Research & Expertise</h4>
-<div style="display: grid; gap: 12px;">
-<p><strong>🧠 Neural Interfaces</strong> — Developing brain-computer interfaces that translate neural signals into actionable commands</p>
-<p><strong>🔬 Computational Neuroscience</strong> — Modeling complex neural dynamics and cognitive processes</p>
-<p><strong>🤖 AI & Machine Learning</strong> — Applying deep learning to neural data analysis and pattern recognition</p>
-<p><strong>⚙️ Control Systems</strong> — Designing adaptive control algorithms for real-time neural signal processing</p>
-</div>
+  <a href="Decoding_Human_Agency/" class="project-preview-card" role="listitem" aria-label="Decoding Human Agency project">
+    <div class="status-badge completed">Completed</div>
+    <span class="project-icon">🧭</span>
+    <h4>Decoding Human Agency: Exploring the 'Point of No Return' through a real-time EEG-based Brain-Computer Interface experiment.</h4>
+    <p>Real-time EEG experiment probing decision thresholds and the neural signatures of the 'point of no return'. Methods, stimuli, and analysis code will be published here.</p>
+    <div class="project-tags">
+      <span class="feature">EEG</span>
+      <span class="feature">Decision-making</span>
+      <span class="feature">Closed-loop</span>
+    </div>
+  </a>
 
-<h4 style="color: var(--accent); margin: 32px 0 16px;">Technical Focus</h4>
-<div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px;">
-<span class="feature">Python</span>
-<span class="feature">MATLAB</span>
-<span class="feature">Deep Learning</span>
-<span class="feature">Signal Processing</span>
-<span class="feature">Control Theory</span>
-<span class="feature">Neurotechnology</span>
-</div>
-
-<h4 style="color: var(--accent); margin: 32px 0 16px;">Academic Journey</h4>
-<ul style="list-style: none; padding: 0;">
-<li style="margin-bottom: 16px;"><strong>🎓 Ph.D. Control Engineering</strong><br>
-<span style="font-size: 0.9rem; color: var(--muted);">Nonlinear Dynamics & System Optimization</span>
-</li>
-<li style="margin-bottom: 16px;"><strong>🧠 M.Sc. Brain & Cognition</strong><br>
-<span style="font-size: 0.9rem; color: var(--muted);">Computational approaches to understanding neural mechanisms</span>
-</li>
-<li style="margin-bottom: 16px;"><strong>🔬 Postdoctoral Research</strong><br>
-<span style="font-size: 0.9rem; color: var(--muted);">University of Glasgow & University of Groningen</span>
-</li>
-</ul>
-
-<h4 style="color: var(--accent); margin: 32px 0 16px;">Core Competencies</h4>
-<ul style="list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 8px;">
-<li>🧠 Brain-Computer Interfaces</li>
-<li>⚡ Real-time Neural Processing</li>
-<li>🤖 AI & Machine Learning</li>
-<li>📊 Computational Modeling</li>
-<li>🎯 Adaptive Control Systems</li>
-<li>🎵 Prosodic Speech Processing</li>
-</ul>
-</div>
+  <a href="Heart_Brain_Interaction/" class="project-preview-card" role="listitem" aria-label="Heart-Brain Interaction project">
+    <div class="status-badge completed">Completed</div>
+    <span class="project-icon">❤️</span>
+    <h4>Heart-Brain Interaction via a ECG-EEG-based realtime BCI experiemnt: How heart affects the Brain in learning</h4>
+    <p>ECG-EEG real-time investigations into cardiac phase effects on learning and neural processing. Data, experiment code, and measurement protocols will be posted here.</p>
+    <div class="project-tags">
+      <span class="feature">ECG</span>
+      <span class="feature">Learning</span>
+      <span class="feature">Cardiac timing</span>
+    </div>
+  </a>
 </div>
 </section>
 
-<style>
-.bio-layout {
-  display: flex;
-  gap: 60px;
-  margin-top: 40px;
-  align-items: flex-start;
-}
-
-.bio-left {
-  flex: 0 0 350px;
-  position: sticky;
-  top: 100px;
-}
-
-.bio-right {
-  flex: 1;
-  min-width: 0;
-}
-
-.bio-image-container {
-  position: relative;
-  width: 320px;
-  height: 320px;
-  margin: 0 auto;
-}
-
-.bio-image-wrapper {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
-}
-
-.bio-image {
-  width: 250px;
-  height: 250px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 4px solid var(--accent);
-  box-shadow: 0 8px 32px rgba(122, 162, 255, 0.3);
-  transition: all 0.5s ease;
-}
-
-.skill-orbit {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  transition: opacity 0.5s ease;
-}
-
-.skill-orbit.active {
-  opacity: 1;
-}
-
-.skill-symbol {
-  position: absolute;
-  width: 70px;
-  height: 70px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--card);
-  border: 3px solid var(--accent);
-  border-radius: 50%;
-  box-shadow: 0 4px 16px rgba(122, 162, 255, 0.4);
-  transition: all 0.3s ease;
-}
-
-.skill-symbol.vibrating {
-  animation: vibrate 0.5s ease-in-out infinite;
-}
-
-.skill-control {
-  top: 10%;
-  right: 5%;
-}
-
-.skill-ai {
-  bottom: 15%;
-  right: 0%;
-}
-
-.skill-neuro {
-  top: 45%;
-  left: -5%;
-}
-
-@keyframes vibrate {
-  0%, 100% { transform: translate(0, 0) rotate(0deg); }
-  25% { transform: translate(-3px, 3px) rotate(-5deg); }
-  50% { transform: translate(3px, -3px) rotate(5deg); }
-  75% { transform: translate(-3px, -3px) rotate(-5deg); }
-}
-
-.bio-right p {
-  color: var(--fg);
-  line-height: 1.8;
-}
-
-.bio-right h4 {
-  color: var(--accent);
-}
-
-@media (max-width: 968px) {
-  .bio-layout {
-    flex-direction: column;
-    gap: 40px;
-  }
-  
-  .bio-left {
-    flex: none;
-    width: 100%;
-    position: relative;
-    top: 0;
-  }
-  
-  .bio-image-container {
-    width: 280px;
-    height: 280px;
-  }
-  
-  .bio-image {
-    width: 200px;
-    height: 200px;
-  }
-  
-  .skill-symbol {
-    width: 60px;
-    height: 60px;
-  }
-  
-  .skill-symbol span {
-    font-size: 1.5rem !important;
-  }
-}
-</style>
-
-<section id="contact" class="container section contact-section">
-<h3>Get Involved</h3>
-<div class="contact-grid">
-<div class="contact-item">
-<h4>🤝 Collaboration</h4>
-<p>Interested in partnering on neurotechnology research? Let's discuss potential collaborations.</p>
-<a href="mailto:hmd.ghane.s@gmail.com" class="btn btn-outline" style="margin-top: 12px;">📧 Email Me</a>
-</div>
-<div class="contact-item">
-<h4>📧 Contact Details</h4>
-<p><strong>Hamed Ghane</strong><br>
-Postdoctoral Researcher<br>
-University of Glasgow</p>
-<p style="margin-top: 12px;">
-<a href="mailto:hmd.ghane.s@gmail.com" style="color: var(--accent); text-decoration: none;">hmd.ghane.s@gmail.com</a>
+<!-- BOTTOM: PROFILE SECTION -->
+<section class="container section" style="padding: 80px 24px; text-align: center;">
+<div style="max-width: 900px; margin: 0 auto;">
+<!-- Title and Description - smaller and less dominant -->
+<div style="margin-bottom: 40px;">
+<h2 style="font-size: 1.8rem; font-weight: 600; color: var(--fg); margin-bottom: 12px;">
+Building Brain-Computer Interfaces
+</h2>
+<p style="font-size: 1rem; color: var(--muted); line-height: 1.6; max-width: 700px; margin: 0 auto;">
+Research scientist specializing in real-time ML on biosignals (EEG/EMG/ECG) and neural interfaces that enhance human capabilities
 </p>
-<div style="margin-top: 16px; display: flex; gap: 8px; flex-wrap: wrap;">
-<a href="https://www.linkedin.com/in/hamedghane" target="_blank" rel="noopener" class="btn btn-outline">
-💼 LinkedIn
-</a>
-<a href="https://www.gla.ac.uk/schools/psychologyneuroscience/staff/hamedghanesasansaraei/" target="_blank" rel="noopener" class="btn btn-outline">
-🎓 Academic Profile
-</a>
 </div>
+
+<!-- Profile Image -->
+<div class="profile-showcase" style="margin: 0 auto 32px;">
+<img src="assets/hamed-profile.jpg" alt="Dr. Hamed Ghane" class="profile-hero" onerror="this.src='https://via.placeholder.com/250x250?text=Hamed+Ghane'">
+<div class="profile-badge">✨ Open to Collaboration</div>
 </div>
-<div class="contact-item">
-<h4>📊 Research & Code</h4>
-<p>Open research practices - code and datasets available on GitHub.</p>
-<a href="https://github.com/HamedGhaneS" target="_blank" rel="noopener" class="btn btn-outline" style="margin-top: 12px;">
-💻 GitHub Profile
-</a>
+
+<!-- Stats -->
+<div class="quick-stats" style="justify-content: center; margin-bottom: 32px;">
+<div class="stat-mini"><strong>PhD</strong><span>Control Engineering</span></div>
+<div class="stat-mini"><strong>2nd MSc</strong><span>Brain & Cognition</span></div>
+<div class="stat-mini"><strong>Glasgow</strong><span>Research Associate</span></div>
+</div>
+
+<!-- CV Button -->
+<div class="hero-buttons" style="justify-content: center;">
+<a href="assets/CV_Hamed_Ghane.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-large">📄 Download CV</a>
 </div>
 </div>
 </section>
@@ -479,57 +403,26 @@ University of Glasgow</p>
 
 <footer class="site-footer">
 <div class="container">
-<p>© <span id="y"></span> Hamed Ghane · University of Glasgow · Built with GitHub Pages</p>
-<p style="color: var(--muted); font-size: 0.8rem; margin-top: 8px;">
-🚧 Website actively under development - Content updates daily
+<p>© <span id="y"></span> Dr. Hamed Ghane · University of Glasgow · Research Scientist (Neurotech)</p>
+<p style="margin-top: 8px;">
+<a href="https://github.com/HamedGhaneS" target="_blank" rel="noopener noreferrer" style="color: var(--muted); text-decoration: none; margin: 0 12px;">GitHub</a>
+<a href="https://linkedin.com/in/hamedghane" target="_blank" rel="noopener noreferrer" style="color: var(--muted); text-decoration: none; margin: 0 12px;">LinkedIn</a>
+<a href="assets/CV_Hamed_Ghane.pdf" target="_blank" rel="noopener noreferrer" style="color: var(--muted); text-decoration: none; margin: 0 12px;">CV</a>
 </p>
 </div>
 </footer>
 <script>
 document.getElementById('y').textContent = new Date().getFullYear();
 
-// Skill symbols scroll animation
-let symbolsActivated = false;
-
-window.addEventListener('scroll', function() {
-  const bioSection = document.getElementById('about');
-  const skillOrbit = document.getElementById('skill-orbit');
-  
-  if (!bioSection || !skillOrbit) return;
-  
-  const sectionTop = bioSection.offsetTop;
-  const sectionHeight = bioSection.offsetHeight;
-  const scrollPosition = window.scrollY + window.innerHeight / 2;
-  
-  // Check if user is viewing the bio section
-  const inBioSection = scrollPosition > sectionTop && scrollPosition < (sectionTop + sectionHeight);
-  
-  if (inBioSection && !symbolsActivated) {
-    // Activate orbit
-    skillOrbit.classList.add('active');
-    
-    // Add vibrating animation to each symbol with staggered delay
-    setTimeout(() => {
-      document.querySelector('.skill-control').classList.add('vibrating');
-    }, 200);
-    
-    setTimeout(() => {
-      document.querySelector('.skill-ai').classList.add('vibrating');
-    }, 400);
-    
-    setTimeout(() => {
-      document.querySelector('.skill-neuro').classList.add('vibrating');
-    }, 600);
-    
-    symbolsActivated = true;
-  } else if (!inBioSection && symbolsActivated) {
-    // Deactivate when scrolling away
-    skillOrbit.classList.remove('active');
-    document.querySelectorAll('.skill-symbol').forEach(symbol => {
-      symbol.classList.remove('vibrating');
-    });
-    symbolsActivated = false;
-  }
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
 });
 </script>
 </body>

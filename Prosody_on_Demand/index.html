@@ -6,6 +6,106 @@
 <title>Prosody-on-Demand: Audio-Neural Interface for Memory Enhancement</title>
 <link rel="stylesheet" href="../assets/style.css" />
 <meta name="description" content="Revolutionary AI-driven earplug technology that enhances memory encoding through prosodic speech transformation and real-time neural feedback." />
+<style>
+/* Fix for light text visibility in info boxes */
+.highlight-box,
+.info-box,
+.critical-moment-box,
+section[style*="background"] p,
+section[style*="background"] h3,
+section[style*="background"] h4 {
+  color: #2d3748 !important;
+}
+
+section[style*="background"] strong {
+  color: #1a1a2e !important;
+  font-weight: 700;
+}
+
+/* Ensure all light-background sections have readable text */
+.container section {
+  color: #2d3748;
+}
+
+.container section h3,
+.container section h4 {
+  color: #1a1a2e;
+}
+
+/* Fix for emoji/icon visibility - ensure they're colored by default */
+img[alt*="brain"],
+img[alt*="stopwatch"],
+img[alt*="hand"],
+.emoji-icon,
+.icon-display img {
+  filter: none !important;
+  opacity: 1 !important;
+  -webkit-filter: none !important;
+}
+
+/* Ensure icon groups display properly */
+.icon-row,
+.icons-display,
+.hero-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  margin: 24px 0;
+}
+
+.icon-row img,
+.icons-display img,
+.hero-icons img {
+  width: 64px;
+  height: 64px;
+  filter: none;
+  opacity: 1;
+}
+
+/* Additional text contrast fixes */
+div[style*="background: rgba"],
+div[style*="background:rgba"] {
+  color: #2d3748;
+}
+
+div[style*="background: rgba"] p,
+div[style*="background:rgba"] p,
+div[style*="background: rgba"] strong,
+div[style*="background:rgba"] strong {
+  color: #2d3748 !important;
+}
+
+div[style*="background: rgba"] h3,
+div[style*="background:rgba"] h3,
+div[style*="background: rgba"] h4,
+div[style*="background:rgba"] h4 {
+  color: #1a1a2e !important;
+}
+
+/* System Diagram Styles */
+.system-diagram-container {
+  margin: 48px 0;
+  padding: 32px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.system-diagram-container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.system-diagram-container p {
+  margin-top: 16px;
+  color: #666;
+  font-size: 0.95rem;
+  font-style: italic;
+}
+</style>
 </head>
 <body>
 <header class="site-header">
@@ -35,7 +135,7 @@
 <p class="hero-sub lede">AI-driven audio-neural interface that transforms neutral speech into prosodic, memorable formats using real-time EEG feedback. Helping people with memory challenges retain information better.</p>
 <div class="hero-stats">
 <div class="stat">
-<span class="stat-number">40%+</span>
+<span class="stat-number">+?%</span>
 <span class="stat-label">Memory Improvement</span>
 </div>
 <div class="stat">
@@ -47,6 +147,13 @@
 <span class="stat-label">Earplug Design</span>
 </div>
 </div>
+
+<!-- System Block Diagram -->
+<div class="system-diagram-container">
+<img src="prosody-system-diagram.png" alt="Prosody-on-Demand Closed-Loop System Architecture" onerror="this.style.display='none'">
+<p>Closed-loop system: Speech → AI Processing → Active Earplug → Brain → EEG Feedback</p>
+</div>
+
 <div class="hero-actions">
 <a class="btn btn-primary" href="examples.html">🎵 Hear Examples</a>
 <a class="btn btn-secondary" href="summary.html">📄 Read Summary</a>
