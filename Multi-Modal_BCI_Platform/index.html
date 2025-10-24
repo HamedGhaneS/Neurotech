@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Multi-Modal BCI Platform - Dr. Hamed Ghane</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<meta name="description" content="Real-time closed-loop BCI system integrating EEG, ECG, and EMG for sensorimotor decision-making research." />
+<style>
+/* Image container styles */
+.experiment-image {
+    text-align: center;
+    margin: 40px 0;
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.experiment-image img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.experiment-image.wide img {
+    max-width: 900px;
+}
+
+.experiment-image.medium img {
+    max-width: 700px;
+}
+
+.experiment-image.small img {
+    max-width: 500px;
+}
+
+.experiment-image figcaption {
+    margin-top: 16px;
+    font-style: italic;
+    color: var(--muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Image grid for multiple images side by side */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    margin: 40px 0;
+}
+
+.image-grid .experiment-image {
+    margin: 0;
+}
+
+/* Hero logo container */
+.hero-logo-container {
+    text-align: center;
+    margin: 32px 0;
+    padding: 40px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+}
+
+.hero-logo-container img {
+    max-width: 600px;
+    width: 100%;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .image-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero-logo-container img {
+        max-width: 100%;
+    }
+}
+</style>
+</head>
+<body>
+<header class="site-header">
+<div class="container header-wrap">
+<div class="brand">
+<a href="../" class="btn btn-secondary">← Home</a>
+<div>
+<h1>Multi-Modal BCI Platform</h1>
+<p class="tag">Real-time Closed-Loop System</p>
+</div>
+</div>
+<nav class="nav">
+<a href="#overview">Overview</a>
+<a href="#validation">Validation</a>
+<a href="#performance">Performance</a>
+</nav>
+</div>
+</header>
+
+<main>
+<!-- ============================================
+     HERO SECTION with Closed-Loop Diagram
+     ============================================ -->
+<section class="hero hero--prosody">
+<div class="container">
+<div class="hero-content" style="text-align: center;">
+<h2 class="hero-title">Multi-Modal Closed-Loop BCI Platform</h2>
+<p class="hero-sub lede">
+Real-time system integrating EEG, ECG, and EMG for sensorimotor decision-making research. Ultra-low latency architecture validated through rigorous SIL/HIL methodologies.
+</p>
+
+<!-- Main Closed-Loop Diagram -->
+<div class="hero-logo-container">
+<img src="Closed-Loop.png" alt="Multi-Modal Closed-Loop BCI System Architecture" />
+<p style="margin-top: 16px; color: #666; font-size: 0.95rem; font-style: italic;">
+The closed-loop architecture: Subject → Biosignal Recording (Brain, Heart, Muscle) → Real-Time Processing → Feedback to Subject
+</p>
+</div>
+
+<!-- Hero Stats -->
+<div class="hero-stats" style="margin-top: 32px;">
+<div class="stat">
+<span class="stat-number">&lt;100ms</span>
+<span class="stat-label">End-to-end Latency</span>
+</div>
+<div class="stat">
+<span class="stat-number">3 Modalities</span>
+<span class="stat-label">EEG + ECG + EMG</span>
+</div>
+<div class="stat">
+<span class="stat-number">SIL/HIL</span>
+<span class="stat-label">Validated</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ============================================
+     OVERVIEW SECTION
+     ============================================ -->
+<section id="overview" class="container section">
+<h2>Project Overview</h2>
+<p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 32px;">
+This platform represents a comprehensive solution for real-time, closed-loop brain-computer interface research. Developed following control engineering principles, it combines multiple biosignal modalities with ultra-low-latency machine learning pipelines to enable precise investigation of sensorimotor decision-making processes.
+</p>
+
+<div style="background: linear-gradient(135deg, rgba(122, 162, 255, 0.1), rgba(122, 162, 255, 0.05)); border-left: 4px solid var(--accent); padding: 24px; margin: 32px 0; border-radius: 8px;">
+<h3>Key Achievement</h3>
+<p style="line-height: 1.8;">
+Successfully achieved end-to-end latency of <strong>&lt;100ms</strong> for the complete processing pipeline: from biosignal acquisition through ML inference to real-time stimulus adaptation. This performance enables investigation of rapid neural processes and their interaction with sensorimotor behavior.
+</p>
+</div>
+
+<!-- Three-column feature boxes -->
+<div class="columns">
+<div class="box">
+<h4>🧠 Multi-Modal Integration</h4>
+<p>Synchronized recording and processing of EEG, ECG, and EMG signals with precise timestamp alignment for investigating brain-heart-muscle interactions.</p>
+</div>
+
+<div class="box">
+<h4>⚡ Real-Time ML</h4>
+<p>Optimized machine learning models with sub-50ms inference times enable online neural decoding and adaptive experimental protocols.</p>
+</div>
+
+<div class="box">
+<h4>🔄 Closed-Loop Control</h4>
+<p>Dynamic stimulus modification based on real-time neural state, creating truly interactive brain-computer interface experiments.</p>
+</div>
+</div>
+</section>
+
+<!-- ============================================
+     VALIDATION SECTION - SIL and HIL
+     ============================================ -->
+<section id="validation" class="container section" style="background: rgba(122,162,255,0.05); padding: 60px 24px; border-radius: 20px;">
+<h2>System Validation Methodology</h2>
+<p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 32px;">
+Following control engineering best practices, the platform underwent rigorous validation using both Software-in-the-Loop (SIL) and Hardware-in-the-Loop (HIL) testing before human experiments.
+</p>
+
+<!-- SIL and HIL diagrams side by side -->
+<div class="image-grid">
+<div class="experiment-image">
+<figure>
+<img src="SIL.png" alt="Software-in-the-Loop (SIL) Validation" />
+<figcaption>
+<strong>Software-in-the-Loop (SIL):</strong> Simulated biosignals with known ground truth for algorithm validation. No participant or physical recording needed—pure software validation of the entire pipeline.
+</figcaption>
+</figure>
+</div>
+
+<div class="experiment-image">
+<figure>
+<img src="HIL.png" alt="Hardware-in-the-Loop (HIL) Validation" />
+<figcaption>
+<strong>Hardware-in-the-Loop (HIL):</strong> Physical signal generators mimicking realistic neural patterns, testing the complete hardware-software integration with actual EEG/ECG/EMG recording equipment.
+</figcaption>
+</figure>
+</div>
+</div>
+
+<div class="columns" style="margin-top: 40px;">
+<div class="box" style="border-left: 4px solid #4caf50;">
+<h4>✅ SIL Validation</h4>
+<p>Verified algorithm correctness, timing accuracy, and edge case handling using simulated biosignals with known ground truth.</p>
+</div>
+
+<div class="box" style="border-left: 4px solid #2196f3;">
+<h4>✅ HIL Validation</h4>
+<p>Tested real hardware components with synthetic signals to ensure the physical recording chain meets latency and quality requirements.</p>
+</div>
+
+<div class="box" style="border-left: 4px solid #ff9800;">
+<h4>✅ Integration Testing</h4>
+<p>End-to-end system validation under maximum data throughput and stress conditions before human subject experiments.</p>
+</div>
+</div>
+</section>
+
+<!-- ============================================
+     PERFORMANCE / TIMING SECTION
+     ============================================ -->
+<section id="performance" class="container section">
+<h2>Timing Analysis & Performance</h2>
+<p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 32px;">
+For real-time closed-loop BCI systems, timing is critical. We conducted comprehensive latency profiling at every stage of the processing pipeline to ensure sub-100ms end-to-end performance.
+</p>
+
+<!-- Timing Investigation Overview -->
+<div class="experiment-image wide">
+<figure>
+<img src="TIming_Investigation.png" alt="Timing and Delay Investigation Methodology" />
+<figcaption>
+<strong>Timing Investigation Setup:</strong> Systematic measurement of delays across the entire closed-loop system, from signal acquisition to stimulus presentation. Each component's latency was measured independently and validated against system requirements.
+</figcaption>
+</figure>
+</div>
+
+<!-- Measured Timeline -->
+<div class="experiment-image wide">
+<figure>
+<img src="TIming.png" alt="Measured Timeline and Delays in Closed-Loop BCI" />
+<figcaption>
+<strong>Measured System Timeline:</strong> Complete breakdown of latencies in the closed-loop BCI setup. Key measurements: <strong>t=0</strong> (stimulus onset), <strong>t=2.39ms</strong> (signal reaches recording PC), <strong>t=52.42ms</strong> (real-time analysis complete), <strong>t≤54.42ms</strong> (analysis delay), <strong>t≤55.42ms</strong> (LSL transmission), achieving total system latency well under 100ms for real-time closed-loop operation.
+</figcaption>
+</figure>
+</div>
+
+<!-- Performance Metrics Table -->
+<div style="background: white; border-radius: 12px; padding: 32px; margin: 40px 0; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+<h3 style="margin-top: 0;">Performance Metrics</h3>
+<table style="width: 100%; border-collapse: collapse;">
+<thead>
+<tr style="border-bottom: 2px solid #e0e0e0;">
+<th style="text-align: left; padding: 16px; color: var(--accent); font-weight: 700;">Component</th>
+<th style="text-align: left; padding: 16px; color: var(--accent); font-weight: 700;">Latency</th>
+<th style="text-align: left; padding: 16px; color: var(--accent); font-weight: 700;">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr style="border-bottom: 1px solid #e0e0e0;">
+<td style="padding: 16px;">Signal Acquisition</td>
+<td style="padding: 16px; font-weight: 600;">~2.39 ms</td>
+<td style="padding: 16px;">Hardware + USB transmission</td>
+</tr>
+<tr style="border-bottom: 1px solid #e0e0e0;">
+<td style="padding: 16px;">Real-Time Processing</td>
+<td style="padding: 16px; font-weight: 600;">~50 ms</td>
+<td style="padding: 16px;">Feature extraction + ML inference</td>
+</tr>
+<tr style="border-bottom: 1px solid #e0e0e0;">
+<td style="padding: 16px;">LSL Streaming</td>
+<td style="padding: 16px; font-weight: 600;">~2 ms</td>
+<td style="padding: 16px;">Network transmission delay</td>
+</tr>
+<tr style="border-bottom: 1px solid #e0e0e0;">
+<td style="padding: 16px;">Stimulus Generation</td>
+<td style="padding: 16px; font-weight: 600;">&lt;1 ms</td>
+<td style="padding: 16px;">Audio/visual presentation</td>
+</tr>
+<tr style="background: rgba(122,162,255,0.1);">
+<td style="padding: 16px; font-weight: 700;">Total End-to-End</td>
+<td style="padding: 16px; font-weight: 700; color: var(--accent);">&lt;100 ms</td>
+<td style="padding: 16px; font-weight: 700;">Complete closed-loop cycle</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<!-- ============================================
+     APPLICATIONS SECTION
+     ============================================ -->
+<section class="container section" style="background: #f8f9fa; padding: 60px 24px; border-radius: 20px;">
+<h2>Research Applications</h2>
+<p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 32px;">
+This platform has enabled multiple research projects investigating the neural mechanisms of decision-making, agency, and learning.
+</p>
+
+<div class="columns">
+<div class="card">
+<div class="card-header">
+<h4>🧭 Decoding Human Agency</h4>
+</div>
+<p class="card-description">Real-time EEG investigation of the "point of no return" in decision-making—the moment when actions can no longer be cancelled and agency is formed.</p>
+<div class="card-features">
+<span class="feature">EEG</span>
+<span class="feature">Decision-making</span>
+<span class="feature">Agency</span>
+</div>
+<a class="btn btn-outline" href="../Decoding_Human_Agency/" style="margin-top: 16px;">View Project →</a>
+</div>
+
+<div class="card">
+<div class="card-header">
+<h4>❤️ Heart-Brain Interaction</h4>
+</div>
+<p class="card-description">ECG-EEG real-time investigation of how cardiac phase affects learning and neural processing during decision-making tasks.</p>
+<div class="card-features">
+<span class="feature">ECG</span>
+<span class="feature">Learning</span>
+<span class="feature">Cardiac timing</span>
+</div>
+<a class="btn btn-outline" href="../Heart_Brain_Interaction/" style="margin-top: 16px;">View Project →</a>
+</div>
+
+<div class="card">
+<div class="card-header">
+<h4>🎵 Prosody-on-Demand</h4>
+</div>
+<p class="card-description">Audio-neural interface using real-time EEG feedback to optimize speech prosody for memory enhancement in clinical populations.</p>
+<div class="card-features">
+<span class="feature">EEG</span>
+<span class="feature">Memory</span>
+<span class="feature">Neural feedback</span>
+</div>
+<a class="btn btn-outline" href="../Prosody_on_Demand/" style="margin-top: 16px;">View Project →</a>
+</div>
+</div>
+</section>
+
+<!-- ============================================
+     TECHNICAL FEATURES SECTION
+     ============================================ -->
+<section class="container section">
+<h2>Technical Capabilities</h2>
+
+<div class="columns">
+<div class="box">
+<h4>📡 Multi-Modal Sensors</h4>
+<ul style="margin: 12px 0 0 20px; line-height: 1.8;">
+<li>EEG: Up to 64 channels, 1000 Hz sampling</li>
+<li>ECG: Synchronized cardiac monitoring</li>
+<li>EMG: Multi-muscle array recording</li>
+<li>Lab Streaming Layer (LSL) integration</li>
+</ul>
+</div>
+
+<div class="box">
+<h4>⚙️ Signal Processing</h4>
+<ul style="margin: 12px 0 0 20px; line-height: 1.8;">
+<li>Real-time filtering and artifact removal</li>
+<li>Multi-modal signal synchronization</li>
+<li>Cardiac phase detection (R-peak)</li>
+<li>Feature extraction pipelines</li>
+</ul>
+</div>
+
+<div class="box">
+<h4>🧮 ML Pipeline</h4>
+<ul style="margin: 12px 0 0 20px; line-height: 1.8;">
+<li>Sub-50ms inference times</li>
+<li>Online learning capabilities</li>
+<li>Multiple ML framework support</li>
+<li>Performance monitoring</li>
+</ul>
+</div>
+
+<div class="box">
+<h4>🎯 Closed-Loop Control</h4>
+<ul style="margin: 12px 0 0 20px; line-height: 1.8;">
+<li>Adaptive stimulus generation</li>
+<li>Timing-critical event handling</li>
+<li>Multi-threaded architecture</li>
+<li>&lt;5ms timing jitter</li>
+</ul>
+</div>
+</div>
+</section>
+
+<!-- ============================================
+     PUBLICATIONS SECTION
+     ============================================ -->
+<section class="container section" style="background: rgba(122,162,255,0.05); padding: 60px 24px; border-radius: 20px;">
+<h2>Publications & Documentation</h2>
+<p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 32px;">
+Research findings and technical documentation from projects using this platform.
+</p>
+
+<div class="columns">
+<div class="box">
+<h4>📝 In Preparation</h4>
+<p>Detailed documentation of the system architecture, validation methodology, and experimental results from multiple research studies are currently in preparation.</p>
+</div>
+
+<div class="box">
+<h4>🔗 Related Publications</h4>
+<p>This platform served as the technical foundation for multiple research projects. See the individual project pages for specific publications.</p>
+</div>
+</div>
+
+<div style="text-align: center; margin-top: 32px;">
+<p style="font-size: 1.1rem; color: var(--accent); font-weight: 600;">
+System architecture white paper and technical specifications coming soon
+</p>
+</div>
+</section>
+
+<!-- ============================================
+     FINAL CALL-TO-ACTION SECTION
+     ============================================ -->
+<section class="container section" style="text-align: center; max-width: 800px; margin: 60px auto;">
+<h3>Interested in Collaboration?</h3>
+<p style="font-size: 1.1rem; margin: 16px 0; line-height: 1.8;">
+This platform is available for collaborative research. If you're interested in multi-modal BCI research or need a real-time closed-loop system for your experiments, let's discuss how we can work together.
+</p>
+<div style="margin-top: 32px; display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+<a class="btn btn-primary" href="../assets/CV_Hamed_Ghane.pdf" target="_blank">📄 View CV</a>
+<a class="btn btn-secondary" href="https://linkedin.com/in/hamedghane" target="_blank">💼 Connect on LinkedIn</a>
+</div>
+</section>
+</main>
+
+<footer class="site-footer">
+<div class="container">
+<p>© <span id="y"></span> Dr. Hamed Ghane · University of Glasgow · Research Scientist (Neurotech)</p>
+</div>
+</footer>
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
