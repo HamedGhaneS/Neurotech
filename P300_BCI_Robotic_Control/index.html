@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>P300 BCI Robotic Control - Dr. Hamed Ghane</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<meta name="description" content="Novel control algorithm for a 2-DoF robotic arm using P300-based brain-computer interface with 97% recognition accuracy." />
+<style>
+.experiment-image {
+    text-align: center;
+    margin: 40px 0;
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.experiment-image img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.experiment-image.wide img {
+    max-width: 900px;
+}
+
+.experiment-image.medium img {
+    max-width: 700px;
+}
+
+.experiment-image.small img {
+    max-width: 500px;
+}
+
+.experiment-image figcaption {
+    margin-top: 16px;
+    font-style: italic;
+    color: var(--muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    margin: 40px 0;
+}
+
+.image-grid .experiment-image {
+    margin: 0;
+}
+
+.project-header {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.project-title {
+    font-size: 2.2rem;
+    color: var(--accent);
+    margin-bottom: 16px;
+}
+
+.project-meta {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin: 24px 0;
+    flex-wrap: wrap;
+}
+
+.meta-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.meta-label {
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-bottom: 4px;
+}
+
+.meta-value {
+    font-weight: 700;
+    color: var(--fg);
+}
+
+.paper-citation {
+    background: var(--card);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 24px;
+    margin: 32px 0;
+}
+
+.paper-citation h4 {
+    font-size: 1.1rem;
+    margin: 0 0 16px;
+}
+
+.paper-citation p {
+    font-family: 'Georgia', serif;
+    font-style: italic;
+    color: var(--muted);
+    margin-bottom: 16px;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .image-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .project-meta {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+</style>
+</head>
+<body>
+<header class="site-header">
+<div class="container header-wrap">
+<div class="brand">
+<a href="../" class="btn btn-secondary" style="margin-right: 16px;">← Back</a>
+<div>
+<h1>Dr. Hamed Ghane</h1>
+<p class="tag">Neurotechnology Researcher</p>
+</div>
+</div>
+<nav class="nav">
+<a href="#overview">Overview</a>
+<a href="#methodology">Methodology</a>
+<a href="#results">Results</a>
+<a href="../assets/CV_Hamed_Ghane.pdf" target="_blank" rel="noopener noreferrer">CV</a>
+</nav>
+</div>
+</header>
+
+<main>
+<!-- TOP HERO SECTION -->
+<section class="hero hero--prosody">
+<div class="container">
+<div class="hero-content" style="text-align: center;">
+<h2 class="hero-title">P300 BCI Robotic Control</h2>
+<p class="hero-sub lede">
+A novel brain-computer interface for robotic arm control using P300 potentials from visual stimulation
+</p>
+
+<div class="hero-stats">
+<div class="stat">
+<span class="stat-number">97%</span>
+<span class="stat-label">Recognition Accuracy</span>
+</div>
+<div class="stat">
+<span class="stat-number">2-DoF</span>
+<span class="stat-label">Robotic Control</span>
+</div>
+<div class="stat">
+<span class="stat-number">Real-time</span>
+<span class="stat-label">Neural Processing</span>
+</div>
+</div>
+
+<div class="experiment-image wide">
+<figure>
+<img src="../assets/bci-robotic-control.png" alt="BCI Robotic Control System Diagram" onerror="this.src='https://via.placeholder.com/800x400?text=BCI+Robotic+Control+System'">
+<figcaption>Figure 1: The procedure of controlling a robot by a BCI system</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+
+<!-- PROJECT OVERVIEW SECTION -->
+<section id="overview" class="container section">
+<div class="project-header">
+<div class="status-badge completed">Completed</div>
+<h2 class="project-title">Brain-Computer Interface for Robotic Control</h2>
+<p>Novel control algorithm for a 2-DoF robotic arm using a P300-based brain-computer interface</p>
+</div>
+
+<div class="project-meta">
+<div class="meta-item">
+<span class="meta-label">RECOGNITION ACCURACY</span>
+<span class="meta-value">97%</span>
+</div>
+<div class="meta-item">
+<span class="meta-label">PUBLISHED</span>
+<span class="meta-value">2019</span>
+</div>
+<div class="meta-item">
+<span class="meta-label">TECHNOLOGY</span>
+<span class="meta-value">EEG + P300 + Robotics</span>
+</div>
+</div>
+
+<h3>Project Overview</h3>
+<p>
+  This research developed a novel control algorithm based on a P300-based brain-computer interface (BCI) to control a 2-DoF robotic arm. 
+  The system allows users to control robotic movement through brain signals alone, providing a potential pathway for assistive technology 
+  for patients with motor impairments such as Amyotrophic Lateral Sclerosis (ALS) and Spinal Cord Injury (SCI).
+</p>
+
+<p>
+  Eight subjects (five men and three women) performed a 2-dimensional target tracking task in a simulated environment. 
+  Their EEG signals from the visual cortex were recorded, and P300 components were extracted and evaluated to deliver a real-time 
+  BCI-based controller. The volunteer's intention was recognized and decoded as an appropriate command to control the cursor,
+  which was then used to control a simulated robotic arm in a 2-dimensional space.
+</p>
+
+<div style="background: linear-gradient(135deg, rgba(122, 162, 255, 0.1), rgba(122, 162, 255, 0.05)); border-left: 4px solid var(--accent); padding: 24px; margin: 32px 0; border-radius: 8px;">
+<h3>Key Achievement</h3>
+<p style="line-height: 1.8;">
+The system successfully demonstrated point-to-point control of the robotic arm in a 2-dimensional space with high reliability. The best classification results were obtained with a multi-classifier solution with a recognition rate of <strong>97 percent</strong>, without requiring channel selection before classification.
+</p>
+</div>
+
+<!-- Three-column feature boxes -->
+<div class="columns">
+<div class="box">
+<h4>🧠 P300 Neural Detection</h4>
+<p>Robust detection of P300 event-related potentials from EEG signals using optimized processing and classification algorithms.</p>
+</div>
+
+<div class="box">
+<h4>🤖 Robotic Arm Control</h4>
+<p>2-DoF robotic arm control with precise movement capabilities in a 2D plane using inverse dynamics control algorithm.</p>
+</div>
+
+<div class="box">
+<h4>⚡ Real-Time Processing</h4>
+<p>End-to-end real-time processing from EEG signal acquisition through feature extraction, classification, and robotic control.</p>
+</div>
+</div>
+</section>
+
+<!-- METHODOLOGY SECTION -->
+<section id="methodology" class="container section" style="background: rgba(122,162,255,0.05); padding: 60px 24px; border-radius: 20px;">
+<h2>Methodology</h2>
+
+<h3>System Architecture</h3>
+<p>
+  The BCI system was implemented in four key steps:
+</p>
+<ol>
+  <li><strong>Visual Stimulus Design:</strong> A custom GUI with four bulbs representing directions (up, down, left, right) that flash randomly to elicit P300 responses</li>
+  <li><strong>EEG Signal Processing:</strong> Recording brain signals from the visual cortex followed by filtering and feature extraction</li>
+  <li><strong>Classification:</strong> Using K-nearest neighbors (KNN) and support vector machine (SVM) classifiers to interpret brain signals</li>
+  <li><strong>Robotic Control:</strong> Converting classified brain signals into movement commands for the robotic arm</li>
+</ol>
+
+<div class="image-grid">
+<div class="experiment-image">
+<figure>
+<img src="../assets/bci-gui.png" alt="BCI Graphical User Interface" onerror="this.src='https://via.placeholder.com/400x300?text=BCI+GUI'">
+<figcaption>
+<strong>Visual Stimulus GUI:</strong> Four bulbs representing directional controls flash randomly to elicit P300 responses from the subject.
+</figcaption>
+</figure>
+</div>
+
+<div class="experiment-image">
+<figure>
+<img src="../assets/bci-robot.png" alt="2-DoF Robotic Arm" onerror="this.src='https://via.placeholder.com/400x300?text=2-DoF+Robotic+Arm'">
+<figcaption>
+<strong>2-DoF Robotic Arm:</strong> The simulated robotic arm with two revolute joints for movement in a 2D plane.
+</figcaption>
+</figure>
+</div>
+</div>
+
+<h3>Feature Extraction and Classification</h3>
+<p>
+  The signal processing pipeline included:
+</p>
+<ul>
+  <li><strong>Hilbert-Huang Transform:</strong> For non-linear and non-stationary signal analysis</li>
+  <li><strong>Wavelet Transform:</strong> For time-frequency analysis of EEG signals</li>
+  <li><strong>Principal Component Analysis (PCA):</strong> For dimension reduction</li>
+  <li><strong>K-nearest Neighbors (KNN) Classification:</strong> Achieving a 97% recognition rate</li>
+</ul>
+
+<div class="experiment-image medium">
+<figure>
+<img src="../assets/feature-extraction.png" alt="Feature Extraction Process" onerror="this.src='https://via.placeholder.com/600x400?text=Feature+Extraction+Process'">
+<figcaption>
+<strong>Feature Extraction Process:</strong> The pipeline for extracting meaningful features from raw EEG signals, including filtering, wavelet transformation, and dimensionality reduction.
+</figcaption>
+</figure>
+</div>
+
+<h3>Robotic Control System</h3>
+<p>
+  The robotic arm was controlled using an inverse dynamics control method:
+</p>
+<ul>
+  <li><strong>Dynamics Modeling:</strong> Accurate modeling of the 2-DoF robotic arm dynamics</li>
+  <li><strong>Inverse Dynamics Control:</strong> Converting desired trajectories into appropriate joint torques</li>
+  <li><strong>Reference Input Generation:</strong> Translating BCI outputs into reference positions for the robot</li>
+  <li><strong>Point-to-Point Control:</strong> Enabling smooth movement between arbitrary positions</li>
+</ul>
+</section>
+
+<!-- RESULTS SECTION -->
+<section id="results" class="container section">
+<h2>Results & Applications</h2>
+
+<div class="experiment-image wide">
+<figure>
+<img src="../assets/classification-results.png" alt="Classification Results" onerror="this.src='https://via.placeholder.com/800x400?text=Classification+Results'">
+<figcaption>
+<strong>Classification Results:</strong> Comparison of different classifiers showing KNN with 3 neighbors achieving the highest recognition rate of 97%.
+</figcaption>
+</figure>
+</div>
+
+<h3>Drawing Task Demonstration</h3>
+<p>
+  To validate the system's practical application, subjects were asked to draw shapes using the BCI-controlled robotic arm:
+</p>
+<ol>
+  <li>The subject imagines the desired shape and the required movements</li>
+  <li>For each movement, the subject focuses on the corresponding direction's bulb in the BCI panel</li>
+  <li>The BCI system detects the P300 response and translates it into a direction command</li>
+  <li>The robotic arm moves the end-effector (with attached marker) accordingly</li>
+  <li>By sequentially focusing on different directions, complete shapes can be drawn</li>
+</ol>
+
+<div class="experiment-image medium">
+<figure>
+<img src="../assets/drawing-results.png" alt="Drawing Task Results" onerror="this.src='https://via.placeholder.com/600x400?text=Drawing+Task+Results'">
+<figcaption>
+<strong>Drawing Task Results:</strong> Sample of a letter 'G' drawn by a subject using the BCI-controlled robotic arm. The drawing demonstrates the system's accuracy in following directional commands.
+</figcaption>
+</figure>
+</div>
+
+<div class="paper-citation">
+<h4>Original Publication</h4>
+<p>Garakani, G., Ghane, H., & Menhaj, M. B. (2019). Control of a 2-DoF robotic arm using a P300-based brain-computer interface. AUT Journal of Modeling and Simulation, 51(2), 153-162. DOI: 10.22060/miscj.2019.15569.5136</p>
+<a href="https://miscj.aut.ac.ir/article_3457.html" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">View Full Paper</a>
+</div>
+
+<h3>Impact and Applications</h3>
+<p>
+  This research demonstrates the potential for BCI systems to provide intuitive control mechanisms for robotic devices, particularly for:
+</p>
+
+<div class="columns">
+<div class="box">
+<h4>👨‍⚕️ Assistive Technology</h4>
+<p>Helping patients with motor impairments like ALS and SCI control robotic devices for improved independence and quality of life.</p>
+</div>
+
+<div class="box">
+<h4>🏥 Rehabilitation</h4>
+<p>Supporting rehabilitation processes for those recovering from stroke or other neurological conditions affecting motor function.</p>
+</div>
+
+<div class="box">
+<h4>🔬 Industrial Applications</h4>
+<p>Hands-free control for robots in specialized environments where manual control is difficult or unsafe.</p>
+</div>
+
+<div class="box">
+<h4>🦾 Prosthetics</h4>
+<p>Foundation for more advanced neural control systems for next-generation prosthetic limbs.</p>
+</div>
+</div>
+</section>
+
+<!-- FINAL CALL TO ACTION -->
+<section class="container section" style="text-align: center; max-width: 800px; margin: 60px auto;">
+<h3>Interested in Collaboration?</h3>
+<p style="font-size: 1.1rem; margin: 16px 0; line-height: 1.8;">
+This research demonstrates the potential of BCI technology for robotic control applications. If you're interested in brain-computer interfaces or need a neural control system for assistive technology, let's discuss how we can work together.
+</p>
+<div style="margin-top: 32px; display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+<a class="btn btn-primary" href="../assets/CV_Hamed_Ghane.pdf" target="_blank">📄 View CV</a>
+<a class="btn btn-secondary" href="https://linkedin.com/in/hamedghane" target="_blank">💼 Connect on LinkedIn</a>
+</div>
+</section>
+</main>
+
+<footer class="site-footer">
+<div class="container">
+<p>© <span id="y"></span> Dr. Hamed Ghane · University of Glasgow · Research Scientist (Neurotech)</p>
+</div>
+</footer>
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
