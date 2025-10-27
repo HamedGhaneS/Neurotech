@@ -3,201 +3,398 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>P300 BCI Robotic Control - Dr. Hamed Ghane</title>
-<link rel="icon" href="../assets/favicon.png" />
-<meta name="description" content="Novel control algorithm for a 2-DoF robotic arm using P300-based brain-computer interface with 97% recognition accuracy." />
-<link rel="stylesheet" href="../assets/style.css" />
+<title>Dr. Hamed Ghane - Neurotechnology Researcher</title>
+<link rel="icon" href="assets/favicon.png" />
+<meta name="description" content="Research scientist specializing in brain-computer interfaces, real-time ML on biosignals, and neural interface technology." />
+<link rel="stylesheet" href="assets/style.css" />
 <style>
-  .project-header {
-    text-align: center;
-    margin-bottom: 48px;
-  }
+/* Landing-specific styles */
+.landing-hero {
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  background: 
+    radial-gradient(ellipse 1200px 600px at 30% 20%, rgba(122,162,255,0.15), transparent 60%),
+    radial-gradient(ellipse 800px 400px at 70% 80%, rgba(80,227,194,0.12), transparent 60%),
+    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23ffffff" stroke-width="0.5" opacity="0.05"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+  position: relative;
+  overflow: hidden;
+}
 
-  .project-title {
-    font-size: 2.2rem;
-    color: var(--accent);
-    margin-bottom: 16px;
-  }
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 48px;
+  flex-wrap: wrap;
+}
 
-  .project-meta {
-    display: flex;
-    justify-content: center;
-    gap: 24px;
-    margin: 24px 0;
-    flex-wrap: wrap;
-  }
+.btn-large {
+  padding: 18px 36px;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
 
-  .meta-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+.quick-stats {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+}
 
-  .meta-label {
-    font-size: 0.85rem;
-    color: var(--muted);
-    margin-bottom: 4px;
-  }
+.stat-mini {
+  display: flex;
+  flex-direction: column;
+}
 
-  .meta-value {
-    font-weight: 700;
-    color: var(--fg);
-  }
+.stat-mini strong {
+  color: var(--accent);
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
 
-  .paper-citation {
-    background: var(--card);
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 12px;
-    padding: 24px;
-    margin: 32px 0;
-  }
+.stat-mini span {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
 
-  .paper-citation h4 {
-    font-size: 1.1rem;
-    margin: 0 0 16px;
-  }
+.profile-showcase {
+  position: relative;
+  display: inline-block;
+}
 
-  .paper-citation p {
-    font-family: 'Georgia', serif;
-    font-style: italic;
-    color: var(--muted);
-    margin-bottom: 16px;
-    line-height: 1.6;
-  }
+.profile-hero {
+  width: 100%;
+  max-width: 250px;
+  border-radius: 24px;
+  box-shadow: 0 20px 60px rgba(122,162,255,0.4);
+  border: 4px solid var(--accent);
+  transition: all 0.3s ease;
+}
 
-  .diagram {
-    text-align: center;
-    margin: 40px 0;
-  }
+.profile-hero:hover {
+  transform: scale(1.02);
+  box-shadow: 0 25px 70px rgba(122,162,255,0.5);
+}
 
-  .diagram img {
-    max-width: 100%;
-    border-radius: 8px;
-    border: 1px solid rgba(255,255,255,0.1);
-  }
+/* BCI Animation Styles */
+.bci-animation-container {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
 
-  .diagram figcaption {
-    margin-top: 12px;
-    color: var(--muted);
-    font-size: 0.9rem;
-  }
+.bci-frame {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0;
+  animation: frameAnimation 15s infinite;
+  padding: 20px;
+}
+
+.bci-frame-1 {
+  animation-delay: 0s;
+}
+
+.bci-frame-2 {
+  animation-delay: 3s;
+}
+
+.bci-frame-3 {
+  animation: frameAnimation3 15s infinite;
+  animation-delay: 6s;
+}
+
+@keyframes frameAnimation {
+  0% { opacity: 0; }
+  3% { opacity: 1; }
+  17% { opacity: 1; }
+  20% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/* Frame 3 gets longer display time (9 seconds vs 3 seconds) */
+@keyframes frameAnimation3 {
+  0% { opacity: 0; }
+  3% { opacity: 1; }
+  57% { opacity: 1; }
+  60% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+.profile-badge {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--gradient-primary);
+  color: var(--ink);
+  padding: 14px 28px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 1rem;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+  animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: translateX(-50%) scale(1); }
+  50% { transform: translateX(-50%) scale(1.05); }
+}
+
+/* Featured Projects Preview */
+.featured-preview {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
+  margin-top: 40px;
+}
+
+.project-preview-card {
+  background: var(--card);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 20px;
+  padding: 32px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  text-decoration: none;
+  display: block;
+  color: inherit;
+  min-height: 200px;
+}
+
+.project-preview-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradient-primary);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.project-preview-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-hover);
+  border-color: rgba(122, 162, 255, 0.4);
+}
+
+.project-preview-card:hover::before {
+  transform: scaleX(1);
+}
+
+.project-icon {
+  font-size: 3rem;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.project-preview-card h4 {
+  font-size: 1.15rem;
+  margin: 0 0 12px;
+  color: var(--fg);
+}
+
+.project-preview-card p {
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0 0 20px;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* Status badge styles */
+.status-badge {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+}
+
+.status-badge.proof-of-concept {
+  background: linear-gradient(90deg, rgba(255,193,7,1), rgba(255,152,0,1));
+  color: #021;
+}
+
+.status-badge.fundraising {
+  background: linear-gradient(90deg, rgba(156,39,176,1), rgba(233,30,99,1));
+  color: #fff;
+}
+
+.status-badge.completed {
+  background: linear-gradient(90deg, rgba(76,175,80,1), rgba(46,125,50,1));
+  color: #fff;
+}
+
+/* responsive tweaks */
+@media (max-width: 968px) {
+  .profile-hero { max-width: 220px; }
+  .bci-animation-container { height: 300px; max-width: 100%; }
+  .landing-hero h2 { font-size: 1.5rem; }
+  section h2 { font-size: 1.4rem; }
+}
 </style>
 </head>
 <body>
 <header class="site-header">
 <div class="container header-wrap">
 <div class="brand">
-<a href="../" class="btn btn-secondary" style="margin-right: 16px;">← Back</a>
+<a href="https://hamedghanes.github.io/" class="btn btn-secondary" style="margin-right: 16px;">← Home</a>
 <div>
 <h1>Dr. Hamed Ghane</h1>
 <p class="tag">Neurotechnology Researcher</p>
 </div>
 </div>
 <nav class="nav">
-<a href="../#projects">Projects</a>
-<a href="../assets/CV_Hamed_Ghane.pdf" target="_blank" rel="noopener noreferrer">CV</a>
+<a href="#projects">Projects</a>
+<a href="assets/CV_Hamed_Ghane.pdf" target="_blank" rel="noopener noreferrer">CV</a>
 </nav>
 </div>
 </header>
 
 <main>
-<section class="container section">
-  <div class="project-header">
+<!-- TOP: ANIMATED GIF SECTION -->
+<section class="landing-hero">
+<div class="container">
+<div style="text-align: center; margin-bottom: 40px;">
+<h2 style="font-size: 2.2rem; font-weight: 700; color: var(--accent); margin-bottom: 32px;">
+How a Control Engineer Approaches Neuroscience
+</h2>
+<div class="bci-animation-container">
+<img src="assets/bci-frame1.png" class="bci-frame bci-frame-1" alt="BCI Closed-Loop Structure" onerror="this.style.display='none'">
+<img src="assets/bci-frame2.png" class="bci-frame bci-frame-2" alt="BCI with LSL Integration" onerror="this.style.display='none'">
+<img src="assets/bci-frame3.png" class="bci-frame bci-frame-3" alt="Complete BCI System" onerror="this.style.display='none'">
+</div>
+<p style="color: var(--muted); margin-top: 16px; font-size: 0.95rem; font-style: italic;">
+Real-time closed-loop BCI architecture combining neuroscience and control engineering
+</p>
+</div>
+</div>
+</section>
+
+<!-- MIDDLE: FEATURED PROJECTS -->
+<section id="projects" class="container section">
+<h3>Featured Research Projects</h3>
+<p style="text-align: center; color: var(--muted); font-size: 1.1rem; max-width: 700px; margin: -30px auto 40px;">
+Cutting-edge neurotechnology research at the intersection of AI, neuroscience, and control engineering
+</p>
+
+<div class="featured-preview" role="list" aria-label="Featured research projects">
+  <a href="Prosody_on_Demand/" class="project-preview-card" role="listitem" aria-label="Prosody on Demand project">
+    <div class="status-badge proof-of-concept">Proof of Concept</div>
+    <span class="project-icon">🎵</span>
+    <h4>Prosody-on-Demand</h4>
+    <p>AI-driven audio-neural interface that transforms speech into memorable formats using real-time EEG feedback. 40%+ memory improvement in clinical studies.</p>
+    <div class="project-tags">
+      <span class="feature">Neural Feedback</span>
+      <span class="feature">Memory Enhancement</span>
+      <span class="feature">Real-time AI</span>
+    </div>
+  </a>
+
+  <a href="Agency-Safe-HMIs/" class="project-preview-card" role="listitem" aria-label="Agency Safe HMIs project">
+    <div class="status-badge fundraising">Fundraising</div>
+    <span class="project-icon">⚖️</span>
+    <h4>Agency-Safe HMIs</h4>
+    <p>Establishing ethical timing thresholds for BCIs to preserve human sense of agency, autonomy, and legal responsibility in ultra-fast systems.</p>
+    <div class="project-tags">
+      <span class="feature">Ethics & Law</span>
+      <span class="feature">BCI Safety</span>
+      <span class="feature">Human Agency</span>
+    </div>
+  </a>
+
+  <a href="Multi-Modal_BCI_Platform/" class="project-preview-card" role="listitem" aria-label="Multi-Modal BCI Platform">
     <div class="status-badge completed">Completed</div>
-    <h2 class="project-title">P300 BCI Robotic Control</h2>
-    <p>Novel control algorithm for a 2-DoF robotic arm using a P300-based brain-computer interface</p>
-  </div>
-
-  <div class="project-meta">
-    <div class="meta-item">
-      <span class="meta-label">RECOGNITION ACCURACY</span>
-      <span class="meta-value">97%</span>
+    <span class="project-icon">🔬</span>
+    <h4>Multi-Modal BCI Platform</h4>
+    <p>Real-time closed-loop system integrating EEG, ECG, and EMG for sensorimotor decision-making. Latency-optimized architecture with SIL/HIL validation.</p>
+    <div class="project-tags">
+      <span class="feature">Real-time ML</span>
+      <span class="feature">Multi-modal</span>
+      <span class="feature">Low Latency</span>
     </div>
-    <div class="meta-item">
-      <span class="meta-label">PUBLISHED</span>
-      <span class="meta-value">2019</span>
+  </a>
+
+  <a href="Decoding_Human_Agency/" class="project-preview-card" role="listitem" aria-label="Decoding Human Agency project">
+    <div class="status-badge completed">Completed</div>
+    <span class="project-icon">🧭</span>
+    <h4>Decoding Human Agency: Exploring the 'Point of No Return' through a real-time EEG-based Brain-Computer Interface experiment.</h4>
+    <p>Real-time EEG experiment probing decision thresholds and the neural signatures of the 'point of no return'. Methods, stimuli, and analysis code will be published here.</p>
+    <div class="project-tags">
+      <span class="feature">EEG</span>
+      <span class="feature">Decision-making</span>
+      <span class="feature">Closed-loop</span>
     </div>
-    <div class="meta-item">
-      <span class="meta-label">TECHNOLOGY</span>
-      <span class="meta-value">EEG + P300 + Robotics</span>
+  </a>
+
+  <a href="Heart_Brain_Interaction/" class="project-preview-card" role="listitem" aria-label="Heart-Brain Interaction project">
+    <div class="status-badge completed">Completed</div>
+    <span class="project-icon">❤️</span>
+    <h4>Heart-Brain Interaction via a ECG-EEG-based realtime BCI experiemnt: How heart affects the Brain in learning</h4>
+    <p>ECG-EEG real-time investigations into cardiac phase effects on learning and neural processing. Data, experiment code, and measurement protocols will be posted here.</p>
+    <div class="project-tags">
+      <span class="feature">ECG</span>
+      <span class="feature">Learning</span>
+      <span class="feature">Cardiac timing</span>
     </div>
-  </div>
+  </a>
+</div>
+</section>
 
-  <h3>Project Overview</h3>
-  <p>
-    This research developed a novel control algorithm based on a P300-based brain-computer interface (BCI) to control a 2-DoF robotic arm. 
-    The system allows users to control robotic movement through brain signals alone, providing a potential pathway for assistive technology 
-    for patients with motor impairments such as Amyotrophic Lateral Sclerosis (ALS) and Spinal Cord Injury (SCI).
-  </p>
+<!-- BOTTOM: PROFILE SECTION -->
+<section class="container section" style="padding: 80px 24px; text-align: center;">
+<div style="max-width: 900px; margin: 0 auto;">
+<!-- Title and Description - smaller and less dominant -->
+<div style="margin-bottom: 40px;">
+<h2 style="font-size: 1.8rem; font-weight: 600; color: var(--fg); margin-bottom: 12px;">
+Building Brain-Computer Interfaces
+</h2>
+<p style="font-size: 1rem; color: var(--muted); line-height: 1.6; max-width: 700px; margin: 0 auto;">
+Research scientist specializing in real-time ML on biosignals (EEG/EMG/ECG) and neural interfaces that enhance human capabilities
+</p>
+</div>
 
-  <p>
-    Eight subjects (five men and three women) performed a 2-dimensional target tracking task in a simulated environment. 
-    Their EEG signals from the visual cortex were recorded, and P300 components were extracted and evaluated to deliver a real-time 
-    BCI-based controller. The volunteer's intention was recognized and decoded as an appropriate command to control the cursor,
-    which was then used to control a simulated robotic arm in a 2-dimensional space.
-  </p>
+<!-- Profile Image -->
+<div class="profile-showcase" style="margin: 0 auto 32px;">
+<img src="assets/hamed-profile.jpg" alt="Dr. Hamed Ghane" class="profile-hero" onerror="this.src='https://via.placeholder.com/250x250?text=Hamed+Ghane'">
+<div class="profile-badge">✨ Open to Collaboration</div>
+</div>
 
-  <div class="diagram">
-    <figure>
-      <img src="../assets/bci-robotic-control.png" alt="BCI Robotic Control System Diagram" onerror="this.src='https://via.placeholder.com/800x400?text=BCI+Robotic+System+Diagram'">
-      <figcaption>Figure 1: The procedure of controlling a robot by a BCI system</figcaption>
-    </figure>
-  </div>
+<!-- Stats -->
+<div class="quick-stats" style="justify-content: center; margin-bottom: 32px;">
+<div class="stat-mini"><strong>PhD</strong><span>Control Engineering</span></div>
+<div class="stat-mini"><strong>2nd MSc</strong><span>Brain & Cognition</span></div>
+<div class="stat-mini"><strong>Glasgow</strong><span>Research Associate</span></div>
+</div>
 
-  <h3>Methodology</h3>
-  <h4>System Architecture</h4>
-  <p>
-    The BCI system was implemented in four key steps:
-  </p>
-  <ol>
-    <li><strong>Visual Stimulus Design:</strong> A custom GUI with four bulbs representing directions (up, down, left, right) that flash randomly to elicit P300 responses</li>
-    <li><strong>EEG Signal Processing:</strong> Recording brain signals from the visual cortex followed by filtering and feature extraction</li>
-    <li><strong>Classification:</strong> Using K-nearest neighbors (KNN) and support vector machine (SVM) classifiers to interpret brain signals</li>
-    <li><strong>Robotic Control:</strong> Converting classified brain signals into movement commands for the robotic arm</li>
-  </ol>
-
-  <h4>Feature Extraction and Classification</h4>
-  <p>
-    The signal processing pipeline included:
-  </p>
-  <ul>
-    <li>Hilbert-Huang transform for non-linear and non-stationary signal analysis</li>
-    <li>Wavelet transform for time-frequency analysis of EEG signals</li>
-    <li>Principal Component Analysis (PCA) for dimension reduction</li>
-    <li>K-nearest neighbors (KNN) classification, achieving a 97% recognition rate</li>
-  </ul>
-
-  <h3>Results</h3>
-  <p>
-    The system successfully demonstrated point-to-point control of the robotic arm in a 2-dimensional space. The best classification results were 
-    obtained with a multi-classifier solution with a recognition rate of 97 percent, without requiring channel selection before classification.
-  </p>
-  <p>
-    The robotic control system used inverse dynamics control to translate the BCI outputs into smooth robotic movements. The system was tested 
-    in a simulation environment where subjects could draw shapes by focusing on directional cues, demonstrating practical application of the BCI system.
-  </p>
-
-  <div class="paper-citation">
-    <h4>Original Publication</h4>
-    <p>Garakani, G., Ghane, H., & Menhaj, M. B. (2019). Control of a 2-DoF robotic arm using a P300-based brain-computer interface. AUT Journal of Modeling and Simulation, 51(2), 153-162. DOI: 10.22060/miscj.2019.15569.5136</p>
-    <a href="https://miscj.aut.ac.ir/article_3457.html" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">View Full Paper</a>
-  </div>
-
-  <h3>Impact and Applications</h3>
-  <p>
-    This research demonstrates the potential for BCI systems to provide intuitive control mechanisms for robotic devices, particularly for:
-  </p>
-  <ul>
-    <li>Assistive technology for patients with motor impairments</li>
-    <li>Rehabilitation systems for those recovering from neurological conditions</li>
-    <li>Hands-free control for industrial or medical robots in specialized environments</li>
-    <li>Foundation for more advanced neural control systems in prosthetics</li>
-  </ul>
-
-  <p>
-    The high recognition rate (97%) achieved in this study represents a significant advancement in the reliability of BCI systems, 
-    making them more viable for real-world applications where accuracy is crucial.
-  </p>
+<!-- CV Button -->
+<div class="hero-buttons" style="justify-content: center;">
+<a href="assets/CV_Hamed_Ghane.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-large">📄 Download CV</a>
+</div>
+</div>
 </section>
 </main>
 
@@ -207,12 +404,23 @@
 <p style="margin-top: 8px;">
 <a href="https://github.com/HamedGhaneS" target="_blank" rel="noopener noreferrer" style="color: var(--muted); text-decoration: none; margin: 0 12px;">GitHub</a>
 <a href="https://linkedin.com/in/hamedghane" target="_blank" rel="noopener noreferrer" style="color: var(--muted); text-decoration: none; margin: 0 12px;">LinkedIn</a>
-<a href="../assets/CV_Hamed_Ghane.pdf" target="_blank" rel="noopener noreferrer" style="color: var(--muted); text-decoration: none; margin: 0 12px;">CV</a>
+<a href="assets/CV_Hamed_Ghane.pdf" target="_blank" rel="noopener noreferrer" style="color: var(--muted); text-decoration: none; margin: 0 12px;">CV</a>
 </p>
 </div>
 </footer>
 <script>
 document.getElementById('y').textContent = new Date().getFullYear();
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
 </script>
 </body>
 </html>
