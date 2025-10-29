@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Last Moment Change of Mind - Dr. Hamed Ghane</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<meta name="description" content="Hardware-synchronized closed-loop EMG-EEG BCI system for detecting and responding to last-moment decision changes." />
+<style>
+.hero-image {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.hero-image img {
+    max-width: 900px;
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.diagram-container {
+    text-align: center;
+    margin: 40px 0;
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.diagram-container img {
+    max-width: 900px;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.diagram-container figcaption {
+    margin-top: 16px;
+    font-style: italic;
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 6px 14px;
+    background: linear-gradient(90deg, rgba(33,150,243,1), rgba(3,169,244,1));
+    color: white;
+    font-weight: 700;
+    font-size: 0.8rem;
+    border-radius: 30px;
+    margin-bottom: 16px;
+    box-shadow: 0 4px 12px rgba(3,169,244,0.3);
+}
+
+.hero-sub {
+    /* Improved text color for better contrast */
+    color: #2a4365 !important;
+    font-weight: 500;
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 0 auto 30px;
+}
+
+/* Custom hero background with gradient for better contrast */
+.custom-hero {
+    background: linear-gradient(135deg, #e6f1ff 0%, #f0f9ff 100%);
+    padding: 60px 0;
+    border-radius: 0 0 30px 30px;
+}
+
+/* Additional info box */
+.system-info {
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+    text-align: left;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.system-info h4 {
+    color: var(--accent);
+    margin-top: 0;
+    font-size: 1.1rem;
+}
+</style>
+</head>
+<body>
+<header class="site-header">
+<div class="container header-wrap">
+<div class="brand">
+<a href="../" class="btn btn-secondary">← Home</a>
+<div>
+<h1>Last Moment Change of Mind</h1>
+<p class="tag">Real-time EMG-EEG BCI System</p>
+</div>
+</div>
+</div>
+</header>
+
+<main>
+<!-- Hero Section -->
+<section class="custom-hero">
+<div class="container">
+<div class="hero-content" style="text-align: center;">
+<div class="status-badge">In Progress</div>
+<h2 class="hero-title" style="background: linear-gradient(90deg, #4a89dc, #79e7d7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 2.8rem;">Finding the "Point of No Return"</h2>
+<p class="hero-sub">When is a decision truly committed? This hardware-optimized closed-loop BCI system investigates the critical threshold between decision initiation and irreversible commitment.</p>
+
+<div class="hero-image">
+<img src="experiment-design.png" alt="Last Moment Change of Mind Experimental Design" />
+</div>
+
+<!-- Added system architecture explanation -->
+<div class="system-info">
+<h4>Closed-Loop System Architecture</h4>
+<p>The experiment runs on a dual-PC setup for optimal performance. The task PC presents the random dot motion stimulus and handles participant responses, while the detector PC continuously monitors EMG signals for movement onset. When EMG onset is detected, a trigger is sent via hardware-synchronized connections to modify the visual stimulus with sub-millisecond precision. This closed-loop architecture enables us to probe exactly when actions become irreversible.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Main Content Section -->
+<section class="container section">
+<div class="columns">
+<div class="box">
+<h4>Research Question</h4>
+<p>When does a motor action become irreversible after initial motor preparation begins? Our experiment determines the exact timing of the "point of no return" in decision-making.</p>
+</div>
+
+<div class="box">
+<h4>Methodology</h4>
+<p>Participants perform a dot-motion task while EMG activity is monitored. When muscle activity is detected, visual evidence changes after variable delays to test if actions can still be cancelled.</p>
+</div>
+
+<div class="box">
+<h4>Technical Innovation</h4>
+<p>Hardware-synchronized parallel port timing ensures sub-millisecond precision, allowing us to pinpoint exactly when actions become committed.</p>
+</div>
+</div>
+
+<!-- Main Diagram -->
+<div class="diagram-container">
+<figure>
+<img src="experiment-design.png" alt="Last Moment Change of Mind Experimental Design" />
+<figcaption>
+The experimental design shows how changing visual evidence after EMG onset reveals the boundary between voluntary control and committed action.
+</figcaption>
+</figure>
+</div>
+</section>
+</main>
+
+<footer class="site-footer">
+<div class="container">
+<p>© <span id="y"></span> Dr. Hamed Ghane · University of Glasgow · Research Scientist (Neurotech)</p>
+</div>
+</footer>
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
