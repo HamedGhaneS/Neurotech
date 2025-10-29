@@ -1,4 +1,5 @@
 <!doctype html>
+
 <html lang="en">
 <head>
 <meta charset="utf-8" />
@@ -13,83 +14,84 @@
 }
 
 .hero-image img {
-    max-width: 900px;
-    width: 100%;
-    height: auto;
-    border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+max-width: 900px;
+width: 100%;
+height: auto;
+border-radius: 16px;
+box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 .diagram-container {
-    text-align: center;
-    margin: 40px 0;
-    padding: 30px;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+text-align: center;
+margin: 40px 0;
+padding: 30px;
+background: white;
+border-radius: 12px;
+box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .diagram-container img {
-    max-width: 900px;
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
+max-width: 900px;
+width: 100%;
+height: auto;
+border-radius: 8px;
 }
 
 .diagram-container figcaption {
-    margin-top: 16px;
-    font-style: italic;
-    color: var(--muted);
-    font-size: 0.95rem;
+margin-top: 16px;
+font-style: italic;
+color: var(–muted);
+font-size: 0.95rem;
 }
 
 .status-badge {
-    display: inline-block;
-    padding: 6px 14px;
-    background: linear-gradient(90deg, rgba(33,150,243,1), rgba(3,169,244,1));
-    color: white;
-    font-weight: 700;
-    font-size: 0.8rem;
-    border-radius: 30px;
-    margin-bottom: 16px;
-    box-shadow: 0 4px 12px rgba(3,169,244,0.3);
+display: inline-block;
+padding: 6px 14px;
+background: linear-gradient(90deg, rgba(33,150,243,1), rgba(3,169,244,1));
+color: white;
+font-weight: 700;
+font-size: 0.8rem;
+border-radius: 30px;
+margin-bottom: 16px;
+box-shadow: 0 4px 12px rgba(3,169,244,0.3);
 }
 
 .hero-sub {
-    /* Improved text color for better contrast */
-    color: #2a4365 !important;
-    font-weight: 500;
-    font-size: 1.1rem;
-    max-width: 800px;
-    margin: 0 auto 30px;
+/* Improved text color for better contrast */
+color: #2a4365 !important;
+font-weight: 500;
+font-size: 1.1rem;
+max-width: 800px;
+margin: 0 auto 30px;
 }
 
 /* Custom hero background with gradient for better contrast */
 .custom-hero {
-    background: linear-gradient(135deg, #e6f1ff 0%, #f0f9ff 100%);
-    padding: 60px 0;
-    border-radius: 0 0 30px 30px;
+background: linear-gradient(135deg, #e6f1ff 0%, #f0f9ff 100%);
+padding: 60px 0;
+border-radius: 0 0 30px 30px;
 }
 
 /* Additional info box */
 .system-info {
-    background: white;
-    border-radius: 12px;
-    padding: 24px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    margin-top: 30px;
-    text-align: left;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
+background: white;
+border-radius: 12px;
+padding: 24px;
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+margin-top: 30px;
+text-align: left;
+max-width: 800px;
+margin-left: auto;
+margin-right: auto;
 }
 
 .system-info h4 {
-    color: var(--accent);
-    margin-top: 0;
-    font-size: 1.1rem;
+color: var(–accent);
+margin-top: 0;
+font-size: 1.1rem;
 }
 </style>
+
 </head>
 <body>
 <header class="site-header">
@@ -118,6 +120,7 @@
 </div>
 
 <!-- Added system architecture explanation -->
+
 <div class="system-info">
 <h4>Closed-Loop System Architecture</h4>
 <p>The experiment runs on a dual-PC setup for optimal performance. The task PC presents the random dot motion stimulus and handles participant responses, while the detector PC continuously monitors EMG signals for movement onset. When EMG onset is detected, a trigger is sent via hardware-synchronized connections to modify the visual stimulus with sub-millisecond precision. This closed-loop architecture enables us to probe exactly when actions become irreversible.</p>
@@ -127,6 +130,7 @@
 </section>
 
 <!-- Main Content Section -->
+
 <section class="container section">
 <div class="columns">
 <div class="box">
@@ -146,6 +150,7 @@
 </div>
 
 <!-- Main Diagram -->
+
 <div class="diagram-container">
 <figure>
 <img src="experiment-design.png" alt="Last Moment Change of Mind Experimental Design" />
